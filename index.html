@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>[이름] | 게임 기획 포트폴리오</title>
+<meta name="description" content="[한 줄 소개 — 예: 전투 밸런스를 수치로 검증하는 게임 기획 지망생]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F3F4F1; --panel:#FFFFFF; --sunk:#EAECE7; --fg:#1B1F1C; --muted:#5D655E; --line:#D8DCD5;
+  --accent:#2C5D78; --accent-soft:#E1EBF1;
+  --sans:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#121513; --panel:#191D1A; --sunk:#222723; --fg:#E5E8E3; --muted:#A0A8A1; --line:#2F3530;
+  --accent:#8FBBD4; --accent-soft:#1F2F38; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+header.top{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin:0 0 12px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.25;margin:0 0 14px;letter-spacing:-.02em}
+.lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:0 0 24px;max-width:640px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{font-size:13px;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:20px;margin:0 0 20px;letter-spacing:-.01em}
+h2 small{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;margin-left:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+a.card{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translateY(-2px);outline:none}
+.tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em}
+.card h3{margin:0;font-size:18px}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+.card dl{margin:4px 0 0;font-size:14px}
+.card dt{font-weight:600;font-size:12px;color:var(--accent);margin-top:8px}
+.card dd{margin:2px 0 0;color:var(--fg)}
+.go{margin-top:auto;padding-top:10px;font-size:14px;font-weight:600;color:var(--accent)}
+.philo{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.philo li{padding:14px 18px;background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+.philo b{display:block;margin-bottom:2px}
+.contact{display:grid;gap:8px;font-size:15px}
+.contact a{color:var(--accent)}
+.contact span{display:inline-block;min-width:72px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+footer{padding:28px 0 56px;font-size:12px;color:var(--muted);font-family:var(--mono)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}a.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="kicker">Game Design Portfolio</p>
+  <h1>[이름]<br>[한 줄 소개 — 무엇을 하는 기획자인지]</h1>
+  <p class="lead">[2~3문장 소개. 지원 직무(예: 전투 밸런스 기획)와 가장 강조하고 싶은 강점을 적습니다.]</p>
+  <ul class="chips">
+    <li>[핵심 역량 1]</li>
+    <li>[핵심 역량 2]</li>
+    <li>[핵심 역량 3]</li>
+  </ul>
+</header>
+
+<section id="projects">
+  <h2>프로젝트 <small>PROJECTS</small></h2>
+  <div class="cards">
+
+    <a class="card" href="extraction-wiki.html">
+      <span class="tag">[분류 — 예: 콘텐츠 기획서]</span>
+      <h3>익스트랙션 모드 기획 위키</h3>
+      <p>[한 줄 요약]</p>
+      <dl>
+        <dt>상황 및 문제</dt><dd>[무엇이 문제였는지]</dd>
+        <dt>해결 및 설계 방향</dt><dd>[어떻게 풀었는지]</dd>
+      </dl>
+      <span class="go">기획서 보기 →</span>
+    </a>
+
+    <a class="card" href="ai-experience.html">
+      <span class="tag">[분류 — 예: AI 활용]</span>
+      <h3>AI 활용 경험</h3>
+      <p>[한 줄 요약]</p>
+      <dl>
+        <dt>상황 및 문제</dt><dd>[무엇이 문제였는지]</dd>
+        <dt>해결 및 설계 방향</dt><dd>[어떻게 풀었는지]</dd>
+      </dl>
+      <span class="go">내용 보기 →</span>
+    </a>
+
+    <!-- 세 번째 프로젝트가 생기면 위 <a class="card"> 블록을 복사해 href만 바꾸세요. -->
+
+  </div>
+</section>
+
+<section id="philosophy">
+  <h2>설계 관점 <small>PHILOSOPHY</small></h2>
+  <ul class="philo">
+    <li><b>[원칙 1 제목]</b>[한두 문장 설명]</li>
+    <li><b>[원칙 2 제목]</b>[한두 문장 설명]</li>
+    <li><b>[원칙 3 제목]</b>[한두 문장 설명]</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>연락처 <small>CONTACT</small></h2>
+  <div class="contact">
+    <div><span>EMAIL</span><a href="mailto:[이메일]">[이메일]</a></div>
+    <div><span>GITHUB</span><a href="https://github.com/hwisookun">github.com/hwisookun</a></div>
+  </div>
+</section>
+
+<footer>© [연도] [이름]</footer>
+</div>
+</body>
+</html>
