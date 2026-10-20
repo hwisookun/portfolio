@@ -22,29 +22,71 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
 .wrap{max-width:880px;margin:0 auto;padding:0 20px}
-header.top{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+header.top{padding:64px 0 36px;border-bottom:1px solid var(--line)}
 .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;margin:0 0 12px}
 h1{font-size:clamp(28px,5vw,40px);line-height:1.25;margin:0 0 14px;letter-spacing:-.02em}
-.lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:0 0 24px;max-width:640px}
+.lead{font-size:clamp(16px,2.2vw,18px);color:var(--muted);margin:0 0 22px;max-width:640px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips li{font-size:13px;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+nav.jump{display:flex;gap:18px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px}
+nav.jump a{color:var(--muted);text-decoration:none}
+nav.jump a:hover{color:var(--accent)}
 section{padding:44px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:0}
-h2{font-size:20px;margin:0 0 20px;letter-spacing:-.01em}
+h2{font-size:20px;margin:0 0 6px;letter-spacing:-.01em}
 h2 small{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;margin-left:8px}
+.sub{color:var(--muted);font-size:14.5px;margin:0 0 20px}
+h3.sec{font-size:15px;margin:28px 0 12px;color:var(--muted);font-weight:600}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.fc .g{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em}
+.fc h4{margin:2px 0 0;font-size:16.5px}
+.fc p{margin:8px 0 0;font-size:14px;color:var(--muted)}
+details.all{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-top:18px}
+details.all>summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details.all>summary::-webkit-details-marker{display:none}
+details.all>summary::after{content:"▾";color:var(--muted);transition:transform .15s}
+details.all[open]>summary::after{transform:rotate(180deg)}
+.cnt{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:400;margin-left:8px}
+.panel{padding:0 20px 20px;border-top:1px solid var(--line)}
+.search{width:100%;margin:16px 0 12px;padding:10px 14px;font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px}
+.search:focus{outline:2px solid var(--accent);outline-offset:1px}
+.fchips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font:inherit;font-size:13px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){.chip[aria-pressed="true"]{color:#0b1114}}
+.chip i{font-style:normal;font-family:var(--mono);font-size:11px;opacity:.7;margin-left:4px}
+.status{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:10px}
+.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;margin:0;padding:0;list-style:none}
+.list li{padding:6px 10px;border-radius:6px;background:var(--bg);font-size:14px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.list li span{font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.list li.empty{grid-column:1/-1;background:none;color:var(--muted)}
+mark{background:var(--accent-soft);color:inherit;border-radius:2px}
+.philo{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}
+.philo div{padding:22px 24px;border-right:1px dotted var(--line);border-bottom:1px dotted var(--line)}
+.philo div:nth-child(2n){border-right:0}
+.philo div:nth-child(n+3){border-bottom:0}
+.philo b{display:block;font-size:16.5px;margin-bottom:6px}
+.philo b::before{content:"✓ ";color:var(--accent)}
+.philo p{margin:0;font-size:14.5px;color:var(--muted)}
+@media (max-width:640px){.philo{grid-template-columns:1fr}.philo div{border-right:0!important;border-bottom:1px dotted var(--line)!important}.philo div:last-child{border-bottom:0!important}}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-a.card{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:inherit;text-decoration:none;transition:border-color .15s,transform .15s}
+a.card,div.card{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:inherit;text-decoration:none}
+a.card{transition:border-color .15s,transform .15s}
 a.card:hover,a.card:focus-visible{border-color:var(--accent);transform:translateY(-2px);outline:none}
+div.card{border-style:dashed}
 .tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.06em}
-.card h3{margin:0;font-size:18px}
+.card h4{margin:0;font-size:18px}
 .card p{margin:0;font-size:14.5px;color:var(--muted)}
+.kpis{display:flex;gap:8px;margin:2px 0}
+.kpis div{flex:1;background:var(--bg);border-radius:8px;padding:8px 10px;text-align:center}
+.kpis b{display:block;font-family:var(--mono);font-size:17px;color:var(--accent);line-height:1.3}
+.kpis span{font-size:11.5px;color:var(--muted);line-height:1.3;display:block}
 .card dl{margin:4px 0 0;font-size:14px}
 .card dt{font-weight:600;font-size:12px;color:var(--accent);margin-top:8px}
 .card dd{margin:2px 0 0;color:var(--fg)}
 .go{margin-top:auto;padding-top:10px;font-size:14px;font-weight:600;color:var(--accent)}
-.philo{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.philo li{padding:14px 18px;background:var(--panel);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
-.philo b{display:block;margin-bottom:2px}
+.soon{margin-top:auto;padding-top:10px;font-size:13px;color:var(--muted);font-family:var(--mono)}
 .contact{display:grid;gap:8px;font-size:15px}
 .contact a{color:var(--accent)}
 .contact span{display:inline-block;min-width:72px;font-family:var(--mono);font-size:12px;color:var(--muted)}
@@ -65,26 +107,73 @@ footer{padding:28px 0 56px;font-size:12px;color:var(--muted);font-family:var(--m
     <li>AI 협업 워크플로</li>
   </ul>
 </header>
+<nav class="jump" aria-label="섹션 이동">
+  <a href="#games">플레이한 게임</a><a href="#philosophy">설계 관점</a><a href="#projects">프로젝트</a><a href="#contact">연락처</a>
+</nav>
+
+<section id="games">
+  <h2>플레이한 게임 <small>GAMES</small></h2>
+  <p class="sub">여러 장르를 오래 플레이하며 쌓은 경험입니다.</p>
+  <h3 class="sec">기억에 남는 게임</h3>
+  <div class="feat" id="feat"></div>
+  <details class="all" open>
+    <summary><span>전체 목록 <span class="cnt" id="total"></span></span></summary>
+    <div class="panel">
+      <input class="search" id="q" type="search" placeholder="게임 이름 검색" aria-label="게임 이름 검색">
+      <div class="fchips" id="chips" role="group" aria-label="장르 필터"></div>
+      <div class="status" id="status" aria-live="polite"></div>
+      <ul class="list" id="list"></ul>
+    </div>
+  </details>
+</section>
+
+<section id="philosophy">
+  <h2>설계 관점 <small>PHILOSOPHY</small></h2>
+  <p class="sub">기획서를 쓸 때 지키는 네 가지 원칙입니다.</p>
+  <div class="philo">
+    <div><b>가정은 가정이라고 적습니다</b><p>근거가 없는 값은 사실처럼 쓰지 않고 따로 표시합니다. 출처도 공식·2차 인용·비공식·구버전으로 나눠 적어, 읽는 사람이 어디까지 믿을지 정할 수 있게 합니다.</p></div>
+    <div><b>기준을 먼저 세우고 숫자로 확인합니다</b><p>'출발선 격차 10%p 이내'처럼 합격선을 먼저 정한 뒤 계산합니다. 기준을 넘으면 어느 값을 어떻게 낮출지까지 이어서 검토합니다.</p></div>
+    <div><b>기존 게임의 핵심 가치를 지킵니다</b><p>새 시스템은 원작이 지켜 온 가치와 충돌하지 않는지 먼저 따집니다. 익스트랙션 기획에서는 PUBG의 '평등한 시작'을 지키려고 반입 예산을 모두 같게 두었습니다.</p></div>
+    <div><b>AI는 빠른 손, 방향과 검증은 사람입니다</b><p>초안과 구현은 AI에게 맡기고, 무엇을 만들지와 맞는지 확인하는 일은 제가 합니다. 매끄러운 답일수록 근거부터 확인합니다.</p></div>
+  </div>
+</section>
 
 <section id="projects">
   <h2>프로젝트 <small>PROJECTS</small></h2>
+  <p class="sub">카드를 누르면 상세 기획서와 자료로 이동합니다.</p>
   <div class="cards">
 
     <a class="card" href="extraction-wiki.html">
       <span class="tag">신규 모드 기획서 · PUBG</span>
-      <h3>익스트랙션 모드 기획 위키</h3>
+      <h4>익스트랙션 모드 기획 위키</h4>
       <p>16인 익스트랙션에 차량 운반과 은신처 성장을 붙인 모드입니다.</p>
+      <div class="kpis">
+        <div><b>23%</b><span>차량이 유리해지는 생존 확률</span></div>
+        <div><b>12.2%p</b><span>맵 안 파밍 격차</span></div>
+        <div><b>6.2%p</b><span>출발선 격차</span></div>
+      </div>
       <dl>
         <dt>상황 및 문제</dt><dd>PUBG는 한 판이 끝나면 아무것도 남지 않습니다. 그렇다고 지난 판의 성장이 전투력이 되면 '평등한 시작'이 무너집니다.</dd>
-        <dt>해결 및 설계 방향</dt><dd>성장은 선택지·편의·과시를 넓히는 쪽으로만 쓰고, 반입 예산을 모두 같게 둡니다. 계산 결과 차량 생존 확률 23%만 넘어도 도보보다 유리하고, 맵 안 파밍 격차가 기준(10%p)을 넘는 12.2%p로 나와 조정 대상으로 잡았습니다.</dd>
+        <dt>해결 및 설계 방향</dt><dd>성장은 선택지·편의·과시를 넓히는 쪽으로만 쓰고, 반입 예산을 모두 같게 둡니다. 맵 안 파밍 격차는 기준(10%p)을 넘어 조정 대상으로 잡았습니다.</dd>
       </dl>
       <span class="go">기획서 보기 →</span>
     </a>
 
+    <div class="card" aria-label="PUBG TTK 시뮬레이터 (준비 중)">
+      <span class="tag">전투 밸런스 · 계산 도구</span>
+      <h4>PUBG TTK 시뮬레이터</h4>
+      <span class="soon">준비 중</span>
+    </div>
+
     <a class="card" href="ai-experience.html">
       <span class="tag">AI 활용 · 개인·학교 프로젝트</span>
-      <h3>AI 활용 경험</h3>
+      <h4>AI 활용 경험</h4>
       <p>향수 앱 '맡다.'를 Claude와 혼자 기획·개발한 과정입니다.</p>
+      <div class="kpis">
+        <div><b>3</b><span>Claude로 진행한 프로젝트</span></div>
+        <div><b>5</b><span>AI의 첫 답을 되돌린 장면</span></div>
+        <div><b>15</b><span>혼자 구현한 앱 화면</span></div>
+      </div>
       <dl>
         <dt>상황 및 문제</dt><dd>AI는 그럴듯한 답을 자신 있게 내놓기 때문에, 그대로 쓰면 근거 없는 설계가 섞입니다.</dd>
         <dt>해결 및 설계 방향</dt><dd>계획 → 승인 → 되묻기 → 확인 순서로 일했습니다. 원문을 확인하지 못한 근거는 버렸고, 설명서는 코드와 대조해 고쳤습니다.</dd>
@@ -92,18 +181,7 @@ footer{padding:28px 0 56px;font-size:12px;color:var(--muted);font-family:var(--m
       <span class="go">내용 보기 →</span>
     </a>
 
-    <!-- 세 번째 프로젝트가 생기면 위 <a class="card"> 블록을 복사해 href만 바꾸세요. -->
-
   </div>
-</section>
-
-<section id="philosophy">
-  <h2>설계 관점 <small>PHILOSOPHY</small></h2>
-  <ul class="philo">
-    <li><b>가정은 가정이라고 적습니다</b>근거가 없는 값은 사실처럼 쓰지 않고 따로 표시합니다. 출처도 공식·2차 인용·비공식·구버전으로 나눠 적어, 읽는 사람이 어디까지 믿을지 정할 수 있게 합니다.</li>
-    <li><b>기준을 먼저 세우고 숫자로 확인합니다</b>'출발선 격차 10%p 이내'처럼 합격선을 먼저 정한 뒤 계산합니다. 기준을 넘으면 어느 값을 어떻게 낮출지까지 이어서 검토합니다.</li>
-    <li><b>AI는 빠른 손, 방향과 검증은 사람입니다</b>초안과 구현은 AI에게 맡기고, 무엇을 만들지와 맞는지 확인하는 일은 제가 합니다. 매끄러운 답일수록 근거부터 확인합니다.</li>
-  </ul>
 </section>
 
 <section id="contact">
@@ -116,5 +194,152 @@ footer{padding:28px 0 56px;font-size:12px;color:var(--muted);font-family:var(--m
 
 <footer>© 2026 김휘수</footer>
 </div>
+
+<script>
+/* 기억에 남는 게임: [이름, 장르, 한 줄 코멘트(없으면 빈 문자열)] */
+const FEATURED=[
+  ["PUBG: 배틀그라운드","슈터",""],
+  ["클레르 옵스퀴르 : 33 원정대","RPG",""],
+  ["서머너즈 워","수집형·모바일",""],
+  ["메이플스토리","MMORPG",""],
+  ["Elden Ring","액션·어드벤처",""],
+  ["던전앤파이터","MMORPG",""]
+];
+/* 전체 목록: 이름|장르 */
+const RAW=`이터널 리턴|AOS·배틀로얄
+하스스톤|카드·전략
+마그나카르타 진홍의 성흔|RPG
+리그 오브 레전드|AOS·배틀로얄
+발로란트|슈터
+테일즈런너|캐주얼·레이싱
+SD 건담 캡슐파이터|격투
+철권7|격투
+블러디 로어 2|MMORPG
+라쳇 & 클랭크 퓨처|액션·어드벤처
+라쳇 & 클랭크 리부트|액션·어드벤처
+바우트|격투
+록맨 8, 9, 10, 11|액션·어드벤처
+메가맨 X 7, 8|액션·어드벤처
+리니지|MMORPG
+리니지 2|MMORPG
+블레이드앤소울|MMORPG
+블레이드앤소울 2|MMORPG
+검은사막|MMORPG
+아이온|MMORPG
+아이온 2|MMORPG
+붉은사막|액션·어드벤처
+이카루스|MMORPG
+로스트아크|MMORPG
+PLAYERUNKNOWN'S BATTLEGROUNDS|슈터
+PLAYERUNKNOWN'S BATTLEGROUNDS Moblie|슈터
+쿠키런|캐주얼·레이싱
+쿠키런 : 오븐브레이크|캐주얼·레이싱
+쿠키런 : 모험의 탑|수집형·모바일
+쿠키런 킹덤|수집형·모바일
+언차티드 시리즈 전편|액션·어드벤처
+슬라이쿠퍼 시리즈 전편|액션·어드벤처
+갓 오브 워 시리즈 전편|액션·어드벤처
+디아블로 3|RPG
+레이튼 교수와 악마의 상자|퍼즐·리듬
+매일매일 DS 두뇌 트레이닝|퍼즐·리듬
+리듬 세상|퍼즐·리듬
+놀러오세요 동물의 숲|캐주얼·레이싱
+도와줘! 리듬 히어로|퍼즐·리듬
+포켓몬스터DP 디아루가|RPG
+포켓몬스터DP 펄기아|RPG
+포켓몬스터 하트골드|RPG
+포켓몬스터 소울실버|RPG
+포켓몬스터 블랙|RPG
+포켓몬스터 화이트|RPG
+별의 커비 울트라 슈퍼 디럭스|액션·어드벤처
+젤다의 전설 시간의 오카리나|액션·어드벤처
+젤다의 전설 몽환의 모래시계|액션·어드벤처
+젤다의 전설 야생의 숨결|액션·어드벤처
+젤다의 전설 스카이워드 소드|액션·어드벤처
+위쳐 3|RPG
+폴아웃 3|RPG
+콜 오브 듀티 4 : 모던 워페어|슈터
+배트맨 : 아캄 나이트|액션·어드벤처
+엘더스크롤 : 5 스카이림|RPG
+더 라스트 오브 어스 시리즈|액션·어드벤처
+엘소드|MMORPG
+오버워치|슈터
+다크에덴|MMORPG
+그랜드체이스|MMORPG
+로스트사가|슈터
+바람의 나라|MMORPG
+메이플스토리|MMORPG
+메이플스토리 DS|MMORPG
+메이플스토리 M|MMORPG
+마비노기 영웅전|MMORPG
+아키에이지|MMORPG
+케로로팡팡|캐주얼·레이싱
+카트라이더|캐주얼·레이싱
+에어라이더|캐주얼·레이싱
+크레이지 아케이드|캐주얼·레이싱
+버블 파이터|슈터
+F1 24|스포츠·레이싱
+F1 25|스포츠·레이싱
+피파 온라인2|스포츠·레이싱
+피파 온라인3|스포츠·레이싱
+피파 온라인4|스포츠·레이싱
+FC 온라인|스포츠·레이싱
+퍼스트 디센던트|슈터
+퍼스트 버서커 : 카잔|액션·어드벤처
+사이퍼즈|AOS·배틀로얄
+던전앤파이터|MMORPG
+던전앤파이터 모바일|MMORPG
+능력자X|MMORPG
+레드데드리뎀션 1,2|액션·어드벤처
+서든어택|슈터
+카운터 스트라이크 온라인|슈터
+카운터 스트라이크 온라인2|슈터
+카운터 스트라이크 글로벌 오펜시브|슈터
+GTA 2, 산안드레아스, 바이스시티, 4, 5|액션·어드벤처
+클레르 옵스퀴르 : 33 원정대|RPG
+Outlast|생존·공포·샌드박스
+It takes Two|액션·어드벤처
+Left 4 Dead 1, 2|슈터
+Half-life 2|슈터
+Portal 2|퍼즐·리듬
+Palworld|생존·공포·샌드박스
+P의 거짓|액션·어드벤처
+Dark Soul 3|액션·어드벤처
+Elden ring|액션·어드벤처
+Blood Borne|액션·어드벤처
+Terraria|생존·공포·샌드박스
+Minecraft|생존·공포·샌드박스
+Warframe|슈터
+테트리스|퍼즐·리듬
+바이오하자드 5~7|생존·공포·샌드박스
+검은 신화 : 오공|액션·어드벤처
+호라이즌 제로 던 시리즈|액션·어드벤처
+Sims 4|생존·공포·샌드박스
+stonewards|카드·전략
+니케 : 승리의 여신|수집형·모바일
+몬길 : 스타다이브|수집형·모바일
+에픽세븐|수집형·모바일
+서머너즈워|수집형·모바일
+윈드러너|캐주얼·레이싱
+팔라독|수집형·모바일`;
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const $=id=>document.getElementById(id);
+$("feat").innerHTML=FEATURED.map(([n,g,c])=>`<div class="fc"><span class="g">${esc(g)}</span><h4>${esc(n)}</h4>${c?`<p>${esc(c)}</p>`:""}</div>`).join("");
+const games=[...new Map(RAW.split("\n").map(l=>l.split("|")).map(([n,g])=>[n.trim(),{n:n.trim(),g:g.trim()}])).values()];
+const genres=[...games.reduce((m,x)=>m.set(x.g,(m.get(x.g)||0)+1),new Map())].sort((a,b)=>b[1]-a[1]);
+let active=null,query="";
+$("total").textContent=games.length+"개";
+const chips=$("chips");
+function chip(label,val,count){const b=document.createElement("button");b.className="chip";b.type="button";b.dataset.v=val??"";b.innerHTML=esc(label)+`<i>${count}</i>`;b.setAttribute("aria-pressed",String(val===active));b.onclick=()=>{active=val;[...chips.children].forEach(c=>c.setAttribute("aria-pressed",String((c.dataset.v||null)===active)));render()};chips.appendChild(b)}
+chip("전체",null,games.length);genres.forEach(([g,c])=>chip(g,g,c));
+function render(){
+  const q=query.trim().toLowerCase();
+  const r=games.filter(x=>(!active||x.g===active)&&(!q||x.n.toLowerCase().includes(q)));
+  $("status").textContent=`${games.length}개 중 ${r.length}개`;
+  $("list").innerHTML=r.length?r.map(x=>{let n=esc(x.n);if(q){const i=x.n.toLowerCase().indexOf(q);if(i>=0)n=esc(x.n.slice(0,i))+"<mark>"+esc(x.n.slice(i,i+q.length))+"</mark>"+esc(x.n.slice(i+q.length))}return `<li>${n}<span>${esc(x.g)}</span></li>`}).join(""):`<li class="empty">검색 결과가 없습니다.</li>`;
+}
+$("q").addEventListener("input",e=>{query=e.target.value;render()});
+render();
+</script>
 </body>
 </html>
