@@ -166,6 +166,7 @@ input[type=range]{width:100%;accent-color:var(--ink)}
 .cross .tr{position:relative;height:12px;background:var(--soft);border-radius:99px}
 .cross .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--accent)}
 .cross .tr i.car{background:#7A97E8}
+.cross.wide .row{grid-template-columns:72px 1fr 60px}
 .cross .tr .lim{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink)}
 
 /* ③ */
@@ -257,6 +258,23 @@ table.t th:first-child,table.t td:first-child{text-align:left}
 table.t td.y{background:var(--inp-bg)}
 #tables table.t th,#tables table.t td{text-align:left}
 #tables table.t td.num{text-align:right}
+#tables table.t th small{display:block;font-weight:400;color:var(--faint);font-size:10.5px}
+#tables td.dv{color:var(--accent);font-weight:600}
+.dtnav{display:grid;gap:7px;margin:0 0 12px}
+.dtg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dtg>span{flex:0 0 64px;font-size:11.5px;font-weight:700;color:var(--muted)}
+.dtb{font:inherit;font-size:12.5px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.dtb small{margin-left:5px;color:var(--faint);font-size:11px}
+.dtb[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}.dtb[aria-pressed=true] small{color:#C9C4BC}
+.dtp{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--paper)}
+.dth{display:flex;justify-content:space-between;align-items:flex-start;gap:8px 12px;flex-wrap:wrap}
+.dth b{font-size:16px;margin-right:8px}.dth span{font-size:12px;color:var(--muted)}
+.dtgo{font:inherit;font-size:12px;font-weight:600;padding:4px 10px;border-radius:8px;border:1px solid var(--line);background:var(--soft);cursor:pointer;color:var(--ink)}
+.dsrc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.dsrc span{font-size:11px;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.dtlg{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:10px;font-size:12px;color:var(--muted)}
+.dtlg .sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}.sw.y{background:var(--inp-bg);border:1px solid var(--inp-line)}.sw.d{background:var(--accent-soft);border:1px solid var(--accent)}
+.dtlg .csvb{margin:0 0 0 auto}
+@media(max-width:640px){.dtg>span{flex-basis:100%}.dtlg .csvb{margin:0}}
 .csvb{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;border:1px solid var(--ink);background:var(--paper);cursor:pointer;margin:12px 0 6px}
 .csvb:hover{background:var(--ink);color:#fff}
 .src{font-size:11.5px;color:var(--muted)}
@@ -267,6 +285,22 @@ table.t td.y{background:var(--inp-bg)}
 .int2 p{margin:0;font-size:14.5px}
 .int2 ul,.int2 ol{margin:0;padding-left:18px;font-size:14.5px}
 .int2 li{margin:3px 0}
+.wm{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;list-style:none;padding:0;margin:10px 0 0}
+.wm li{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.55}
+.wm b{display:block;margin-bottom:3px;font-size:14.5px}
+.whymode{border-left:3px solid var(--accent)}
+@media(max-width:700px){.wm{grid-template-columns:1fr}}
+.cmpb{display:grid;grid-template-columns:minmax(150px,1.1fr) 2fr 64px 64px;gap:8px 12px;align-items:center;font-size:13px}
+.cmpb .h{font-size:11.5px;color:var(--muted);font-weight:600}
+.cmpb .lb b{display:block;font-size:13.5px}.cmpb .lb span{font-size:11.5px;color:var(--muted)}
+.cmpb .br{position:relative;height:12px;border-radius:99px;background:var(--soft)}
+.cmpb .br i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--accent)}
+.cmpb .br i.vest{background:var(--muted)}
+.cmpb .br .lim{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--warn)}
+.cmpb .v{font-weight:700;text-align:right;white-space:nowrap}.cmpb .ms{text-align:right;color:var(--muted);white-space:nowrap}
+@media(max-width:640px){.cmpb{grid-template-columns:1fr 64px 60px}.cmpb .lb{grid-column:1/-1;margin-top:4px}.cmpb .hl{display:none}}
+.t.lt th,.t.lt td{text-align:left!important}
+.cyc{width:100%;border-collapse:collapse;font-size:12.5px}.cyc th{text-align:left;color:var(--muted);font-weight:600;padding:6px 8px 6px 0;white-space:nowrap;vertical-align:top}.cyc td{padding:6px 0;border-top:1px solid var(--line);vertical-align:top}.cyc tr:first-child td,.cyc tr:first-child th{border-top:0}.cyc tr+tr th{border-top:1px solid var(--line)}
 .oneline{font-size:16px;font-weight:700;letter-spacing:-.01em;margin:0 0 14px;padding:12px 16px;border-left:3px solid var(--accent);background:var(--paper);border-radius:0 10px 10px 0}
 .vt{width:100%;border-collapse:collapse;font-size:13.5px}
 .vt th{font-size:12px;color:var(--muted);font-weight:600;text-align:left;padding:8px 10px;background:var(--soft)}
@@ -324,7 +358,7 @@ table.t td.y{background:var(--inp-bg)}
 <!-- 01 요약 -->
 <section id="summary" style="padding-top:0">
   <ul class="docinfo" aria-label="문서 정보">
-    <li>문서 <b>PUBG 익스트랙션 모드 기획서</b></li><li>버전 <b>v1.0</b></li><li>작성 <b>김휘수</b></li><li>수정 <b>2026-10-22</b></li>
+    <li>문서 <b>PUBG 익스트랙션 모드 기획서</b></li><li>버전 <b>v0.4</b></li><li>작성 <b>김휘수</b></li><li>수정 <b>2026-10-22</b></li>
   </ul>
   <p class="eyebrow">PUBG 신규 모드 기획서</p>
   <h1>같은 출발선에서 시작해,<br>가져온 것으로 은신처를 키운다</h1>
@@ -339,7 +373,7 @@ table.t td.y{background:var(--inp-bg)}
   </div>
 
   <div class="grid three">
-    <div class="blk rule"><span class="n">규칙 1</span><b>반입 예산은 모두 같다</b><p>은신처 장비는 5점 안에서만 들고 들어간다. 레전더리·얼티밋은 반입할 수 없다.</p></div>
+    <div class="blk rule"><span class="n">규칙 1</span><b>반입 예산은 모두 같다</b><p>총기·방어구는 모두 같은 기본 장비로 시작한다. 은신처 애드온만 5점 안에서 들고 들어가고, 레전더리·얼티밋은 반입할 수 없다.</p></div>
     <div class="blk rule"><span class="n">규칙 2</span><b>살아서 나가야 내 것</b><p>죽으면 보험 칸 외에는 잃는다. 차량 트렁크는 더 싣는 대신 엔진 소리로 위치가 드러난다.</p></div>
     <div class="blk rule"><span class="n">규칙 3</span><b>최고 등급은 이번 판에서만</b><p>레전더리·얼티밋은 맵 안에서만 얻고 저장할 수 없다. PUBG 보급 무기와 같은 성격이다.</p></div>
   </div>
@@ -353,14 +387,32 @@ table.t td.y{background:var(--inp-bg)}
   <h2>왜 PUBG에 익스트랙션과 차량을 붙였나</h2>
   <div class="int2">
     <div class="blk"><h3>문제</h3><p>PUBG는 한 판이 끝나면 아이템과 성과가 모두 리셋된다. 잘해도 쌓이는 것이 없어, 다음 판을 할 이유가 '또 해보고 싶다'는 감정에만 기댄다.</p></div>
-    <div class="blk"><h3>왜 익스트랙션을 접목했나</h3><ol><li><b>남는 것이 생긴다.</b> 살아서 가져온 것만 내 것이 되고(한 판의 긴장), 가져온 것으로 은신처가 자란다(판과 판 사이의 이유).</li><li><b>PUBG와 뼈대가 같다.</b> 파밍하고, 싸우고, 살아남는 흐름이 이미 PUBG의 핵심이다. 바뀌는 건 '1등'에 '살아서 나가기'라는 목표가 하나 더 붙는 것이다.</li><li><b>검증된, 커지는 장르다.</b> 타르코프는 정식 출시 한 달 만에 100만 장, 아크 레이더스는 1,400만 장 이상 (2차 인용).</li></ol><p class="mut" style="margin-top:6px;font-size:13.5px">레이드의 위험이 은신처의 가치를 만들고, 은신처의 성장이 다시 레이드로 돌아오는 이유가 된다.</p></div>
+    <div class="blk"><h3>왜 익스트랙션을 접목했나</h3><ol><li><b>남는 것이 생긴다.</b> 살아서 가져온 것만 내 것이 되고(한 판의 긴장), 가져온 것으로 은신처가 자란다(판과 판 사이의 이유).</li><li><b>PUBG와 뼈대가 같다.</b> 파밍하고, 싸우고, 살아남는 흐름이 이미 PUBG의 핵심이다. 바뀌는 건 '1등'에 '살아서 나가기'라는 목표가 하나 더 붙는 것이다.</li><li><b>검증된, 커지는 장르다.</b> 타르코프는 정식 출시 한 달 만에 100만 장, 아크 레이더스는 1,400만 장 이상 (2차 인용). 다만 같은 IP의 독립 신작은 개발이 멈췄다 (아래).</li></ol><p class="mut" style="margin-top:6px;font-size:13.5px">레이드의 위험이 은신처의 가치를 만들고, 은신처의 성장이 다시 레이드로 돌아오는 이유가 된다.</p></div>
     <div class="blk"><h3>왜 차량인가</h3><ol><li>운반량의 병목을 푼다. 트렁크는 더 가져갈 수 있는 선택지이자, 그만큼 잃을 위험도 커지는 선택이다.</li><li>PUBG의 정체성이다. 차량 조작과 추격전은 다른 익스트랙션 게임에 없는 경험이다.</li><li>후반 동선의 변수를 만든다. '걸어서 조용히 vs 차로 빠르게'를 골라 철수 동선이 읽히지 않게 한다.</li></ol></div>
     <div class="blk"><h3>설계 원칙</h3><ul><li>성장은 수집·숙련·과시로 나누고, 순수 전투력 상승은 최소화한다 (눈덩이 방지)</li><li>상위 등급은 교전에서 확실히 강하다. 대가는 교전 밖(총소리 노출)에서 치르고, 최고 등급은 저장할 수 없다</li><li>첫 몇 판은 잃을 것이 없게 해, 신규 유저가 장비 공포로 이탈하지 않게 한다</li></ul></div>
+  </div>
+  <div class="blk whymode" style="margin-top:12px">
+    <h3 style="font-size:15px;margin:0 0 6px">왜 별도 게임이 아니라 PUBG 안의 모드인가</h3>
+    <p style="margin:0;font-size:14.5px">크래프톤은 PUBG IP의 익스트랙션 신작 'PUBG: 블랙 버짓'(최대 45인 · 3인 스쿼드 · PvPvE)을 알파 테스트 두 번 뒤인 2026년 9월에 개발 종료했다 <span class="src">(<a href="https://www.invenglobal.com/articles/26699/krafton-ends-development-on-amsterdam-studios-new-title-pubg-black-budget" target="_blank" rel="noopener">Inven Global</a>, 2차 인용)</span>. 종료 이유는 공개되지 않아 추측하지 않는다. 이 기획은 같은 장르를 더 작고 덜 위험한 방식으로 시험한다.</p>
+    <ol class="wm">
+      <li><b>새 게임이 아니라 모드</b>이미 PUBG를 하는 유저가 같은 총기·차량·조작으로 바로 해 본다. 반응이 나쁘면 모드만 내리면 된다.</li>
+      <li><b>PUBG에만 있는 것으로 차별화</b>차량 운반과 '모두 같은 출발선'. 장비가 쌓일수록 강해지는 기존 익스트랙션과 달리, 쌓인 것은 선택지와 과시로 쓰인다.</li>
+      <li><b>작게 연다</b>16인 · 한 판 15~20분 · 1순위 맵 하나로 시작한다.</li>
+    </ol>
+  </div>
+  <div class="blk" style="margin-top:12px">
+    <h3 style="font-size:15px;margin:0 0 4px">이 모드가 노리는 순간</h3>
+    <p class="mut" style="margin:0;font-size:13.5px">숫자는 아래 단계에서 확인한다. 여기서는 규칙이 만드는 고민을 적는다.</p>
+    <ol class="wm">
+      <li><b>얼티밋을 주웠다</b>저장이 안 된다 → 이번 판에 쓰려고 싸우러 갈지, 들고 나가 진열할지.</li>
+      <li><b>트렁크를 채우고 시동을 건다</b>엔진 소리가 위치를 알린다 → 지금 차로 나갈지, 짐을 나눠 걸어갈지.</li>
+      <li><b>철수 지점의 10초</b>기다리는 동안 위치가 드러난다 → 지금 나갈지, 남아서 챔피언을 노릴지.</li>
+    </ol>
   </div>
   <div class="blk" style="margin-top:12px;padding:0;overflow:hidden">
     <div class="k" style="padding:14px 16px 0">PUBG의 첫 번째 가치는 '모두가 같은 조건에서 시작해 파밍하고, 싸워 이기고, 살아남아 1등을 한다'이다. 익스트랙션과 부딪히는 지점마다 장치를 하나씩 둔다.</div>
     <div class="tw" style="margin-top:8px"><table class="vt"><tr><th>가치</th><th>익스트랙션과 부딪히는 점</th><th>해결 장치</th><th></th></tr>
-      <tr><td>평등한 시작</td><td>지난 판에서 가져온 장비로 출발선이 달라진다</td><td>반입 예산 동일, 레전더리·얼티밋 반입 불가, 매칭은 실력 기준</td><td><button class="go" data-s="0">1 준비 →</button></td></tr>
+      <tr><td>평등한 시작</td><td>지난 판에서 가져온 장비로 출발선이 달라진다</td><td>총기·방어구는 같은 기본 장비, 애드온 반입 예산 동일, 레전더리·얼티밋 반입 불가, 매칭은 실력 기준</td><td><button class="go" data-s="0">1 준비 →</button></td></tr>
       <tr><td>파밍</td><td>좋은 장비를 들고 오면 파밍할 이유가 줄어든다</td><td>최고 등급은 고위험 구역·비밀의 방·보급에서만</td><td><button class="go" data-s="2" data-t="box">3 상자 →</button></td></tr>
       <tr class="chg"><td>싸워서 이긴다</td><td>장비 격차가 실력을 덮는다</td><td>반입 가능 등급의 격차는 승률 5%p 이내, 최고 등급은 이번 판에서만</td><td><button class="go" data-s="2" data-t="duel">3 교전 →</button></td></tr>
       <tr><td>생존과 1등</td><td>철수가 목표가 되면 끝까지 싸울 이유가 사라진다</td><td>마지막 팀은 철수 없이 승리, 챔피언 보너스 > 철수 보상</td><td><button class="go" data-s="4">5 철수 →</button></td></tr>
@@ -393,6 +445,13 @@ table.t td.y{background:var(--inp-bg)}
     <tr><td>최고 등급 공급</td><td>레전더리+얼티밋 판당 1~4개가 실제로 열림</td><td><b>0.59개</b> (계산 2.8개)</td><td><span class="flag over">미달 · 열쇠 확률 조정</span></td><td><button class="go" data-s="2" data-t="box">3 상자 →</button></td></tr>
     <tr><td>판이 굴러가는가</td><td>탈출률 50~60%, 판당 교전 5회 안팎</td><td><b>60.8%</b> · 5.3회</td><td><span class="flag over">탈출률 소폭 초과</span></td><td><button class="go" data-s="4">5 철수 →</button></td></tr></table></div>
   <p class="small" style="margin:8px 0 0">교전 승률은 1:1 교전 모델(엑셀 수식), 나머지는 봇 16명 × 3,000판 점검 값이다. 기준 값은 모두 작성자 가정.</p>
+  <div class="blk" style="margin-top:12px">
+    <div class="k" style="margin:0 0 4px">기준의 크기를 실력과 방어구로 바꿔 보면 <span class="tagA">모델 안의 환산</span></div>
+    <p class="small" style="margin:0 0 12px">기준 값은 가정이라, 같은 교전 모델에서 '반응이 몇 초 빠른 것'과 'PUBG 방어구 한 벌'로 바꿔 크기가 적당한지 비교했다.</p>
+    <div class="cmpb" id="cmpb"></div>
+    <p class="small" id="cmpmsg" style="margin:12px 0 0"></p>
+    <p class="src" style="margin:8px 0 0">반응 환산: 같은 장비에서 한쪽 반응을 평균 몇 초 앞당겨야 같은 격차가 나는지 (반응 편차 0.05초 가정). 3레벨 조끼: M416 가슴 기준 상대가 맞혀야 할 수 4발 → 6발 (데미지 40 · 가슴 ×1.1 · 조끼 경감 1~3레벨 30/40/55%. 출처: pubgstatistics.com, 비공식 · 프로토타입 데이터).</p>
+  </div>
 
   <h3 style="margin:26px 0 6px">실제로 돌아가는 게임에서 다시 확인했다</h3>
   <p class="mut" style="margin:0 0 12px">위 표의 수치는 공간이 없는 시뮬레이션 값이다. 같은 규칙을 언리얼 5.5 프로토타입(사람 1 + 봇 15, 6×6 &quot;댐과 지하 계곡&quot;)에 넣어 봇만 여러 판 돌려, 시뮬레이션과 얼마나 같은지 비교했다.</p>
@@ -411,7 +470,7 @@ table.t td.y{background:var(--inp-bg)}
       <li>기준값(탈출률 50~60% 등)과 봇 행동 값은 작성자 가정이다. 실제 유저 데이터가 아니다.</li>
       <li>공간이 없는 모델이라 &quot;마주쳐야 싸우는&quot; 게임과 유형별 결과가 어긋난다. 파밍형은 낮고 교전형은 높게 나온다.</li>
       <li>차량이 도보보다 안전하다는 결과는 가정과 반대 방향이라, 소음 배율을 다시 맞출 예정이다.</li>
-      <li>교전 승률은 1:1 모델이다. 팀 교전은 아직 계산하지 않았다.</li></ul></div>
+      <li>교전 승률은 서로 동시에 발견한 1:1 모델이다. 팀 교전과, 상위 등급의 대가인 총소리(+3%/단계)로 먼저 들키는 효과는 넣지 않았다.</li></ul></div>
     <div class="blk"><h3>프로토타입의 한계</h3><ul>
       <li>사람이 직접 한 플레이 확인이 아직 적다. 조작감과 재미는 검증하지 못했고, 대부분 입력을 주입한 자동 검사다.</li>
       <li>사람 1명 + 봇 15명의 단독 플레이만 된다. 멀티플레이는 만들지 않았다.</li>
@@ -424,24 +483,36 @@ table.t td.y{background:var(--inp-bg)}
 <section id="appendix">
   <p class="eyebrow">05 · 부록</p>
   <h2>데이터와 근거</h2>
-  <p class="mut" style="margin:0 0 6px">본문에 쓴 수치의 원본 표다. 개발에서 바로 쓰도록 ID를 붙였고 CSV로 내려받을 수 있다.</p>
+  <p class="mut" style="margin:0 0 6px">본문에 쓴 수치의 원본 표다. 언리얼 프로토타입이 읽는 CSV와 열 이름이 같아, 내려받아 바로 쓸 수 있다.</p>
 
-  <details class="ap"><summary>데이터 테이블<small>등급 · 애드온 · 상자 · 맵</small></summary><div class="apb" id="tables"></div></details>
+  <details class="ap"><summary>데이터 테이블<small>19종 · 프로토타입 CSV와 같은 열</small></summary><div class="apb" id="tables"></div></details>
 
   <details class="ap"><summary>1:1 교전 승률표<small>6×6 · 거리 가중</small></summary><div class="apb">
     <p class="small" style="margin:0 0 8px">행 = 나, 열 = 상대. 거리 분포(10m 35 · 30m 25 · 60m 20 · 100m 10 · 150m 6 · 200m 4%)로 가중. <span class="tagA">가정</span></p>
     <div class="tw"><table class="t" id="mx"></table></div><button class="csvb" type="button" id="csvM">승률표 CSV</button>
-    <p class="src">계산: 빗나간 탄 수의 분포(음이항) × 반응 시간 편차(정규 분포). 엑셀 2021 수식과 같은 식.</p>
+    <p class="src">계산: 빗나간 탄 수의 분포(음이항) × 반응 시간 편차(정규 분포). 엑셀 '교전 모델' 시트와 같은 식 (대조 8항목 일치).</p>
+    <h3 style="margin:16px 0 6px">엑셀 값과 대조</h3>
+    <div class="tw"><table class="t"><tr><th>항목</th><th>엑셀</th><th>이 페이지</th><th>차이</th></tr>
+      <tr><td style="text-align:left">종합 반동 감소 · 클래식</td><td>0.314750</td><td>0.314750</td><td>0</td></tr>
+      <tr><td style="text-align:left">종합 반동 감소 · 얼티밋</td><td>0.501966</td><td>0.501966</td><td>0</td></tr>
+      <tr><td style="text-align:left">30m 얼티밋 vs 클래식 승률</td><td>0.590076</td><td>0.590068</td><td>0.000007</td></tr>
+      <tr><td style="text-align:left">얼티밋 vs 클래식 격차</td><td>+10.4749%p</td><td>+10.4742%p</td><td>0.0007%p</td></tr>
+      <tr><td style="text-align:left">예산 최대 빌드 격차</td><td>+3.4639%p</td><td>+3.4633%p</td><td>0.0007%p</td></tr>
+      <tr><td style="text-align:left">승률표 36칸</td><td colspan="2">최대 차이</td><td>0.000007</td></tr>
+      <tr><td style="text-align:left">예산 빌드 44개 격차</td><td colspan="2">최대 차이</td><td>0.0011%p</td></tr>
+      <tr><td style="text-align:left">예산 최대 빌드</td><td colspan="2">에픽 총구 · 엘리트 손잡이 · 클래식 개머리판</td><td>같음</td></tr></table></div>
+    <p class="src">엑셀: 익스트랙션_기획서_단계흐름형.xlsx '교전 모델' 시트 (2026-10-22). 엑셀은 빗나감 0~199발을 모두 더하고, 이 페이지는 확률 합이 99.999%를 넘으면 멈춰 소수 넷째 자리 아래에서 차이가 난다. 차이 칸은 반올림 전 값끼리 뺀 값이다. v0.4에서 더한 방어구 비교와 반응 환산은 아직 엑셀 시트에 없다.</p>
   </div></details>
 
-  <details class="ap"><summary>레퍼런스<small>왜 타르코프인가</small></summary><div class="apb">
+  <details class="ap"><summary>레퍼런스<small>왜 타르코프인가 · 블랙 버짓</small></summary><div class="apb">
     <div class="tw"><table class="t"><tr><th>판단 기준</th><th>판정</th><th>근거</th><th>출처 성격</th></tr>
       <tr><td>장르의 원형인가</td><td>예</td><td style="white-space:normal;text-align:left">'걸고 들어가 살아 나와야 내 것' 루프를 대중화 (Insider Gaming, Gfinity)</td><td>2차 인용</td></tr>
       <tr><td>흥행이 검증됐는가</td><td>예</td><td style="white-space:normal;text-align:left">2025-11-15 정식 출시, 한 달 100만 장 이상 (개발사 발표, GamingBolt 인용)</td><td>2차 인용</td></tr>
       <tr><td>장르 시장이 커지는가</td><td>예</td><td style="white-space:normal;text-align:left">아크 레이더스 1,400만 장 이상 (Shacknews, 실적 원문 미확인)</td><td>2차 인용</td></tr>
       <tr><td>분석할 자료가 있는가</td><td>예</td><td style="white-space:normal;text-align:left">상자별 드랍 구조 공개 데이터 (SPT)</td><td>비공식</td></tr>
-      <tr><td>그대로 가져와도 되는가</td><td>아니오</td><td style="white-space:normal;text-align:left">장비 격차가 실력을 덮어 PUBG '평등한 시작'과 충돌</td><td>작성자 해석</td></tr></table></div>
-    <p class="small" style="margin:10px 0 0">결론: 타르코프에서 구조를, 아크 레이더스에서 대중화 방식을 가져오고, PUBG 가치와 맞지 않는 부분은 버린다.</p>
+      <tr><td>그대로 가져와도 되는가</td><td>아니오</td><td style="white-space:normal;text-align:left">장비 격차가 실력을 덮어 PUBG '평등한 시작'과 충돌</td><td>작성자 해석</td></tr>
+      <tr><td>같은 IP로 시도된 적이 있는가</td><td>예 (중단)</td><td style="white-space:normal;text-align:left">PUBG: 블랙 버짓, 알파 테스트 2회 뒤 2026-09 개발 종료, 이유 비공개 (<a href="https://www.invenglobal.com/articles/26699/krafton-ends-development-on-amsterdam-studios-new-title-pubg-black-budget" target="_blank" rel="noopener">Inven Global</a>, 2026-09-30)</td><td>2차 인용</td></tr></table></div>
+    <p class="small" style="margin:10px 0 0">결론: 타르코프에서 구조를, 아크 레이더스에서 대중화 방식을 가져오고, PUBG 가치와 맞지 않는 부분은 버린다. 블랙 버짓의 사례 때문에 별도 게임이 아니라 본편 안의 모드로 작게 시험한다.</p>
   </div></details>
 
   <details class="ap"><summary>시뮬레이션을 게임에 맞춘 기록<small>언리얼 프로토타입 · 자체 측정</small></summary><div class="apb">
@@ -470,8 +541,8 @@ table.t td.y{background:var(--inp-bg)}
     <div class="tw"><table class="t"><tr><th>버전</th><th>날짜</th><th>내용</th></tr>
       <tr><td>v0.1</td><td>2026-10-16</td><td style="white-space:normal;text-align:left">엑셀 기획서와 위키 첫 작성</td></tr>
       <tr><td>v0.2</td><td>2026-10-21</td><td style="white-space:normal;text-align:left">'한 판 따라가기'로 재구성 · 1:1 교전 승률 모델 도입(TTK 식 수정, 지수 2 가정 폐기) · 교전 단점을 교전 밖 대가로 이동 · 등급 곡선 2단(레전더리 ×1.6, 얼티밋 ×1.8) · 차량 손익분기에 탑승 인원과 짐 양 반영</td></tr>
-      <tr><td>v0.3</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">언리얼 프로토타입으로 시뮬레이션 결과 재확인(교전 모델 일치, 봇 판 단위 비교) · 검증 결과에 한계 추가 · 부록에 시뮬레이션 맞추기 기록</td></tr>
-      <tr><td>v1.0</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">v0.3 내용으로 확정 · 애드온 데이터 표를 13종 전체로 정리 · 표기 통일</td></tr></table></div>
+      <tr><td>v0.3</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">언리얼 프로토타입으로 시뮬레이션 결과 재확인(교전 모델 일치, 봇 판 단위 비교) · 검증 결과에 한계 추가 · 부록에 시뮬레이션 맞추기 기록 · 엑셀을 웹 기획서 v0.2에 맞춤(등급 배율 2단 곡선, 교전 모델 시트, 대조 일치)</td></tr>
+      <tr><td>v0.4</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">왜 별도 게임이 아니라 모드인가(블랙 버짓 개발 종료 반영) · 총기·방어구 반입 규칙과 근거(3레벨 조끼 비교) · 노리는 순간 · 은신처 순환표 · 기준을 반응 시간·방어구로 환산 · TTK를 첫 발부터 처치까지로 정정 · 엑셀 대조표 · 데이터 테이블 19종으로 확장(프로토타입 CSV와 같은 열, 다른 값 표시)</td></tr></table></div>
   </div></details>
 
   <p class="foot">원본: 익스트랙션_기획서_단계흐름형.xlsx · 작성 김휘수 · 만든 방식은 <a href="ai-experience.html">AI 활용 경험</a>에 정리했다.</p>
@@ -530,19 +601,56 @@ function hitRange(d){for(let i=0;i<RANGE.length-1;i++){const[a,l1,h1]=RANGE[i],[
 function recoil(m,g,s){const km=MULT[m],kg=MULT[g],ks=MULT[s];const Rv=1-(1-.15*km)*(1-.15*kg),Rp=1-(1-.25*km)*(1-.20*kg)*(1-.20*ks),Rh=Math.min(1,.10*km);return .5*Rv+.3*Rp+.2*Rh}
 function hitp(R,d){const[lo,hi]=hitRange(d);return Math.min(.99,lo+(hi-lo)*R)}
 const cache=new Map();
-function dist(p){const key=p.toFixed(5);if(cache.has(key))return cache.get(key);const o=[];let c=1,acc=0;for(let f=0;f<400;f++){if(f>0)c=c*(f+N-1)/f;const pr=c*p**N*(1-p)**f;acc+=pr;const s=f+N-1;o.push([pr,ADS+s*IV+Math.floor(s/MAG)*RELOAD]);if(acc>.99999)break}cache.set(key,o);return o}
+function dist(p,n=N){const key=p.toFixed(5)+"_"+n;if(cache.has(key))return cache.get(key);const o=[];let c=1,acc=0;for(let f=0;f<400;f++){if(f>0)c=c*(f+n-1)/f;const pr=c*p**n*(1-p)**f;acc+=pr;const s=f+n-1;o.push([pr,ADS+s*IV+Math.floor(s/MAG)*RELOAD]);if(acc>.99999)break}cache.set(key,o);return o}
 function erf(x){const s=Math.sign(x);x=Math.abs(x);const t=1/(1+.3275911*x);return s*(1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x))}
 const Phi=z=>.5*(1+erf(z/Math.SQRT2)),SS=SIG*Math.SQRT2;
-function winR(Ra,Rb,d){if(Math.abs(Ra-Rb)<1e-12)return .5;const A=dist(hitp(Ra,d)),B=dist(hitp(Rb,d));let s=0;for(const[pa,ta]of A)for(const[pb,tb]of B)s+=pa*pb*Phi((tb-ta)/SS);return s}
+/* na = 내가 맞혀야 할 수, nb = 상대가 맞혀야 할 수, dr = 내 반응이 평균 몇 초 빠른가 */
+function winR(Ra,Rb,d,na=N,nb=N,dr=0){if(Math.abs(Ra-Rb)<1e-12&&na===nb&&!dr)return .5;const A=dist(hitp(Ra,d),na),B=dist(hitp(Rb,d),nb);let s=0;for(const[pa,ta]of A)for(const[pb,tb]of B)s+=pa*pb*Phi((tb-ta+dr)/SS);return s}
 const RG=g=>recoil(g,g,g);
-const wwinR=(Ra,Rb)=>DB.reduce((s,d,i)=>s+WT[i]*winR(Ra,Rb,d),0);
-const ttk=(R,d)=>{const p=hitp(R,d),sh=N/p;return REACT+ADS+(sh-1)*IV+Math.floor((sh-1)/MAG)*RELOAD};
+const wwinR=(Ra,Rb,na=N,nb=N,dr=0)=>DB.reduce((s,d,i)=>s+WT[i]*winR(Ra,Rb,d,na,nb,dr),0);
+/* TTK = 첫 발부터 쓰러뜨릴 때까지 (반응·조준 제외) */
+const ttk=(R,d)=>{const p=hitp(R,d),sh=N/p;return (sh-1)*IV+Math.floor((sh-1)/MAG)*RELOAD};
+const VEST3=6; /* 3레벨 조끼: M416 가슴 필요 명중 4발 → 6발 */
+const bestBuild=()=>{let m=-1;for(let a=0;a<4;a++)for(let b=0;b<4;b++)for(let c=0;c<4;c++)if(COST[a]+COST[b]+COST[c]<=5)m=Math.max(m,wwinR(recoil(a,b,c),RG(0)));return (m-.5)*100};
+let BEST=null;const best5=()=>BEST??(BEST=bestBuild());
+/* ── 게임 데이터 (언리얼 프로토타입 Data/*.csv와 같은 값·열 이름) ── */
+const OPEN=.7;   /* 판당 상자 개봉 비율 (기대값 계산용, 가정) */
+const WEAP=[["M416","AR",40,700,30,2.4],["UMP","SMG",42,670,25,2.1],["SLR","DMR",49,320,20,3.0],["Kar98k","SR",79,30,5,3.5]];
+const ARMOR=[0,.3,.4,.55];
+const HZ=[["head",1.0,"head","helmet"],["neck",.75,"head","neck"],["clavicle",1.0,"torso","vest"],["chest",1.1,"torso","vest"],["ustomach",1.0,"torso","vest"],["lstomach",.95,"torso","vest"],["pelvis",1.0,"pelvis","vest"],["uarm",.6,"arm",""],["farm",.5,"arm",""],["hand",.3,"arm",""],["thigh",.6,"leg",""],["calf",.5,"leg",""],["foot",.3,"leg",""]];
+const CLS=[["AR",2.35,1.0,1.0,.9,.9],["SMG",2.1,1.05,1.05,1.3,1.3],["DMR",2.35,1.05,1.05,.95,.95],["SR",2.5,1.3,1.3,.95,.95]];
+const CHEST=WEAP[0][2]*HZ[3][1]*CLS[0][2];               /* M416 가슴 1발 = 40 × 1.1 × 1.0 */
+const hitsTo=r=>Math.ceil(100/(CHEST*(1-r))-1e-9);
+/* 상자: id, 이름, 6×6 배치 수, 평균 개수, 애드온 비율, 구역 비중(외곽·중간·고위험), 열쇠, 열리는 시각(분), 등급 가중치 6, 기타 가중치(탄약·회복·재료·대형·수집품), 정한 곳 */
+const CR=[["ammo","탄약 상자",60,2,.1,.5,.35,.15,0,0,[.7,.25,.05,0,0,0],[7,2,1,0,0],"ref"],
+ ["weapon","무기 상자",40,3,.6,0,.7,.3,0,0,[.4,.3,.18,.12,0,0],[3,1,1,0,0],"ref"],
+ ["locker","개인 사물함",70,1.5,.2,.6,.4,0,0,0,[.6,.3,.1,0,0,0],[2,2,2,0,3],"ref"],
+ ["secret","비밀의 방 상자",3,2,.8,0,0,1,1,0,[0,0,.2,.4,.3,.1],[0,0,0,0,3],"ref"],
+ ["supply","보급 상자",3,2,.7,.5,.35,.15,0,9,[0,0,.1,.4,.35,.15],[1,1,0,0,0],"ref"],
+ ["tool","공구함",50,2,0,.6,.4,0,0,0,[0,0,0,0,0,0],[1,0,8,1,0],"assume"],
+ ["medbag","의약품 가방",40,2,0,.5,.35,.15,0,0,[0,0,0,0,0,0],[0,10,0,0,0],"assume"],
+ ["bigpart","대형 부품 상자",10,1,0,0,1,0,0,0,[0,0,0,0,0,0],[0,0,2,8,0],"assume"],
+ ["safe","금고",6,1.5,0,0,0,1,0,0,[0,0,0,0,0,0],[0,0,0,0,10],"assume"]];
+const crEV=c=>c[2]*OPEN*c[3]*c[4];
+const EV={all:CR.reduce((s,c)=>s+crEV(c),0),lu:CR.reduce((s,c)=>s+crEV(c)*(c[10][4]+c[10][5]),0)};
+const TVAL=[1,2,4,8,16,32];
+const ITM=[["ammo","탄약",1,1],["med","회복",1,1],["mat","제작 재료",1,2],["big","대형 부품",2,6],["coll","수집품",1,5],["key","열쇠",0,0]];
+const ZONES=[["outer","외곽",.5,1,.0015],["mid","중간",.35,0,.004],["high","고위험",.15,0,.009]];
+const PHASES=[[1,0,5,1,0],[2,5,9,.55,.4],[3,9,13,.3,.8],[4,13,17,.14,1.5],[5,17,20,.05,3]];
+const VEH=[["정찰 차량",4,20,800,150,12,3,4,6]];
+const EXW=[[1,8,11,3],[2,12,15,3],[3,16,19,3]];
+const LOADS=[["무료","M416",1,0,0,0,0,.3],["예산 중간","M416",1,1,2,0,3,.35],["예산 최대","M416",1,3,2,0,5,.35]];
+const BOTS=[["파밍형",6,.4,1,1,11,"outer@0;mid@6",0],["교전형",6,.05,1.15,.6,14,"mid@0;high@8",0],["차량형",4,.2,1,1,11,"outer@0;mid@5",1]];
+/* 전역 값: key, 항목, 값, 단위, 가정 여부 */
+const PRM=[["players","한 판 인원",16,"명",0],["match_min","한 판 길이",20,"분",1],["walk_mps","도보 속도",5,"m/s",1],["car_mps","차량 속도",20,"m/s",1],["bag_slots","가방 (1인)",10,"칸",0],["trunk_slots","트렁크",20,"칸",0],["budget","반입 예산",5,"점",0],["player_hp","체력",100,"",0],["heal_amount","회복량 (1개)",25,"",1],["heal_sec","회복 시간",1.5,"초",1],["key_prob_locker","사물함에서 열쇠가 나올 확률",.05,"",1],["insured_slots","보험 칸",1,"칸",1],["champion_mult","챔피언 보상 배율",1.5,"배",1],["extract_wait_sec","철수 대기",10,"초",1],["extract_window_sec","철수 창 길이",(EXW[0][2]-EXW[0][1])*60,"초",1],["extract_dist_min_m","철수 지점 거리 하한",500,"m",1],["extract_dist_max_m","철수 지점 거리 상한",3000,"m",1],["car_noise_mult","차량 이동 중 교전 계수",2.5,"배",1],["car_ambush_skill","차량에서 교전할 때 실력",.85,"배",1],["crate_open_share","상자 개봉 비율 (기대값 계산용)",OPEN,"",1]];
+const PV=k=>PRM.find(r=>r[0]===k)[2];
+
 
 /* ── 단계 정의 ── */
 const STEPS=[
  {t:"준비",v:"반입 예산 5점",goal:"무엇을 걸고 들어갈지 고른다",val:"평등한 시작",
-  rules:["예산 5점 안에서만 반입 (클래식 0 · 레어 1 · 엘리트 2 · 에픽 3점)","레전더리·얼티밋은 반입 불가"],
-  why:"모두 같은 예산이라 출발선 차이가 작다."},
+  rules:["총기·방어구는 반입하지 않는다. 모두 M416 · 1레벨 조끼로 시작","애드온만 예산 5점 안에서 반입 (클래식 0 · 레어 1 · 엘리트 2 · 에픽 3점)","레전더리·얼티밋은 반입 불가"],
+  why:"총기·방어구가 같고 애드온 예산도 같아 출발선 차이가 작다."},
  {t:"입장",v:"16명 · 맵 3종",goal:"맵 크기가 걸을지 탈지를 정한다",val:"평등한 시작",
   rules:["16명, 솔로 ~ 4인 스쿼드","1순위 6×6 댐과 지하 계곡"],
   why:"도보로 한 변을 건너는 시간이 한 판 길이와 비슷하면 차량이 진짜 선택지가 된다."},
@@ -556,7 +664,7 @@ const STEPS=[
   rules:["철수 지점 3곳, 8~11 · 12~15 · 16~19분에만 열림","지점에서 10초 대기, 그동안 위치가 드러남","철수하지 않고 마지막까지 남은 팀은 챔피언"],
   why:"철수 지점의 거리와 열리는 시간이 도보 철수가 가능한지를 정한다."},
  {t:"정산",v:"은신처",goal:"가져온 것이 어디로 가는지",val:"판 밖의 성장",
-  rules:["반출품은 반입 · 제작 · 진열로만 쓰인다","죽으면 보험 칸 외에는 잃는다"],
+  rules:["반출품은 반입 · 제작 · 진열로만 쓰인다","총기·방어구·레전더리·얼티밋은 저장되지 않는다 → 진열 또는 분해","죽으면 보험 칸 외에는 잃는다"],
   why:"성장이 전투력이 되면 이긴 사람이 계속 이긴다."}
 ];
 let cur=0;
@@ -586,10 +694,14 @@ function s1(){
   $("playbox").querySelectorAll(".slot .seg").forEach(sg=>sg.onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;const i=+sg.dataset.i,g=+b.dataset.g,nl=LO.slice();nl[i]=g;
     if(nl.reduce((a,x)=>a+COST[x],0)>5){$("lomsg").innerHTML=`<b style="color:var(--warn)">예산 5점을 넘는다.</b> 다른 슬롯 등급을 낮춰야 한다.`;return}LO=nl;s1()});
   const R=recoil(LO[0],LO[2],LO[3]),R0=RG(0),gap=(wwinR(R,R0)-.5)*100;
-  const best=(()=>{let m=-1;for(let a=0;a<4;a++)for(let b=0;b<4;b++)for(let c=0;c<4;c++)if(COST[a]+COST[b]+COST[c]<=5)m=Math.max(m,wwinR(recoil(a,b,c),R0));return (m-.5)*100})();
+  const best=best5(),vest=(wwinR(R0,R0,N,VEST3)-.5)*100;
   exnum(`<div class="bigline" style="margin:0"><span class="small">풀 클래식 상대 승률 격차</span><b id="logap">${pp(gap)}</b></div>
    <div class="meter" style="margin:8px 0 4px"><i class="${gap>5?"over":""}" style="width:${Math.min(100,gap/10*100)}%"></i></div>
-   <p class="small" style="margin:0">예산으로 만들 수 있는 최대 ${pp(best)} · 기준 5%p ${best<=5?'<span class="flag ok">이내</span>':'<span class="flag over">초과</span>'}</p>`);
+   <p class="small" style="margin:0">예산으로 만들 수 있는 최대 ${pp(best)} · 기준 5%p ${best<=5?'<span class="flag ok">이내</span>':'<span class="flag over">초과</span>'}</p>
+   <div class="k" style="margin:14px 0 6px">방어구도 반입할 수 있다면? <span class="tagA">가정</span></div>
+   <div class="cross wide" style="margin:0"><div class="row"><span>애드온 최대</span><div class="tr"><i style="width:${best/40*100}%"></i></div><b>${pp(best)}</b></div>
+   <div class="row"><span>3레벨 조끼</span><div class="tr"><i style="width:${Math.min(100,vest/40*100)}%;background:var(--muted)"></i></div><b>${pp(vest)}</b></div></div>
+   <p class="small" style="margin:6px 0 0">3레벨 조끼 한 벌이 상대가 맞혀야 할 수를 4발에서 6발로 늘린다. 애드온 예산 전체의 약 ${Math.round(vest/best)}배라, 총기·방어구는 반입하지 않는다.</p>`);
   FX.num($("logap"),"lo",gap,pp);
 }
 
@@ -597,7 +709,7 @@ function s1(){
 const MAPS=[{n:"봉쇄 항만 도시",s:4,rk:"",d:"컨테이너 사이 짧고 잦은 교전, 차량 비중 낮음"},{n:"댐과 지하 계곡",s:6,rk:"1순위",d:"지상은 차량 도로, 지하는 도보 터널"},{n:"사막 고속도로 회랑",s:8,rk:"",d:"차량 필수, 교전이 드묾"}];
 let mapI=1;
 function s2(){
-  const m=MAPS[mapI],side=m.s*1000,walk=side/5/60,car=side/20/60,dens=16/(m.s*m.s);
+  const m=MAPS[mapI],side=m.s*1000,walk=side/PV("walk_mps")/60,car=side/PV("car_mps")/60,dens=PV("players")/(m.s*m.s);
   $("playbox").innerHTML=`<div class="k">맵 고르기 <span class="tagA">속도 가정 도보 5 · 차량 20 m/s</span></div>
   <div class="maps">${MAPS.map((x,i)=>`<button type="button" class="mapc" data-i="${i}" aria-pressed="${i===mapI}"><span class="rk">${x.rk||"&nbsp;"}</span><b>${x.n}</b><span>${x.s}×${x.s}km · ${x.d}</span></button>`).join("")}</div>
   <div class="kv"><div><b>${dens.toFixed(2)}</b><span>밀도 (명/㎢)</span></div><div><b>${(walk/20*100).toFixed(0)}%</b><span>도보 한 변 ÷ 한 판 20분</span></div></div>
@@ -610,7 +722,7 @@ function s2(){
 
 /* ③ 파밍·교전 */
 const OTHER={"탄약 상자":["탄약","투척물"],"무기 상자":["총기","탄약"],"개인 사물함":["소지품","비밀의 방 열쇠"],"비밀의 방":["귀중품"],"보급 상자":["상위 방어구","회복템"]};
-const BOX=[{n:"탄약 상자",z:"전 구역",avg:2,ad:.10,w:[70,25,5,0,0,0]},{n:"무기 상자",z:"중간 이상",avg:3,ad:.60,w:[40,30,18,12,0,0]},{n:"개인 사물함",z:"외곽·중간",avg:1.5,ad:.20,w:[60,30,10,0,0,0]},{n:"비밀의 방",z:"열쇠 필요",avg:2,ad:.80,w:[0,0,20,40,30,10]},{n:"보급 상자",z:"블루존 안",avg:2,ad:.70,w:[0,0,10,40,35,15]}];
+const BOX=CR.slice(0,5).map(c=>({n:c[0]==="secret"?"비밀의 방":c[1],z:{ammo:"전 구역",weapon:"중간 이상",locker:"외곽·중간",secret:"열쇠 필요",supply:"블루존 안"}[c[0]],avg:c[3],ad:c[4],w:c[10].map(x=>Math.round(x*100))}));
 let tab3="duel",boxI=3,dA=5,dB=0,dd=30;
 function s3(){
   $("playbox").innerHTML=`<div class="tabs2" role="tablist"><button type="button" data-t="duel" aria-selected="${tab3==="duel"}">1:1 교전</button><button type="button" data-t="box" aria-selected="${tab3==="box"}">상자 열기</button></div><div id="p3"></div>`;
@@ -655,7 +767,7 @@ function box(){
     lootSel=lootList.length?0:-1;$("addet").style.display=lootList.length?"block":"none";adDetail();
     $("loot").querySelectorAll("[data-l]").forEach(x=>{const f=()=>{lootSel=+x.dataset.l;adDetail();$("loot").querySelectorAll("[data-l]").forEach(y=>y.style.outline=y===x?"2px solid var(--ink)":"")};x.onclick=f;x.onkeydown=e=>{if(e.key==="Enter")f()}});
     const f0=$("loot").querySelector("[data-l]");if(f0)f0.style.outline="2px solid var(--ink)"};
-  exnum(`<p class="small" style="margin:0 0 6px">6×6 맵 한 판 기대값 (개봉률 70% 가정)</p><div class="kv" style="margin:0"><div><b>79.8개</b><span>판당 애드온</span></div><div><b>2.8개</b><span>레전더리+얼티밋</span></div></div><p class="small" style="margin:8px 0 0"><span class="tagW">재검토</span> 봇은 판당 0.59개만 열었다. 비밀의 방 개봉률을 일반 상자와 분리해야 한다.</p>`);
+  exnum(`<p class="small" style="margin:0 0 6px">6×6 맵 한 판 기대값 (개봉률 ${OPEN*100}% 가정)</p><div class="kv" style="margin:0"><div><b>${EV.all.toFixed(1)}개</b><span>판당 애드온</span></div><div><b>${EV.lu.toFixed(1)}개</b><span>레전더리+얼티밋</span></div></div><p class="small" style="margin:8px 0 0"><span class="tagW">재검토</span> 봇은 판당 0.59개만 열었다. 비밀의 방 개봉률을 일반 상자와 분리해야 한다.</p>`);
 }
 function duel(){
   const Ra=RG(dA),Rb=RG(dB),w=winR(Ra,Rb,dd),ww=wwinR(Ra,Rb);
@@ -665,6 +777,7 @@ function duel(){
   <div class="lanes"><span></span><span class="h">반동 감소</span><span class="h">명중률</span><span class="h">평균 TTK</span>
    <span class="who"><i></i>나</span><b>${(Ra*100).toFixed(1)}%</b><b>${(hitp(Ra,dd)*100).toFixed(0)}%</b><b>${ttk(Ra,dd).toFixed(2)}초</b>
    <span class="who op"><i></i>상대</span><b>${(Rb*100).toFixed(1)}%</b><b>${(hitp(Rb,dd)*100).toFixed(0)}%</b><b>${ttk(Rb,dd).toFixed(2)}초</b></div>
+  <p class="small" style="margin:-4px 0 10px;color:var(--faint)">TTK = 첫 발부터 쓰러뜨릴 때까지. 승패에는 여기에 반응 0.25초 · 조준 0.2초와 반응 편차가 더해진다.</p>
   <div class="winbox"><div class="big"><span class="bn">${(w*100).toFixed(1)}</span><small>%</small></div><div class="s">${dd}m에서 내가 먼저 쓰러뜨릴 확률</div><div class="s">거리 가중 승률 <b>${pct(ww)}</b></div></div>
   <div class="mini"><svg id="dsv" viewBox="0 0 600 170" role="img" aria-label="거리별 승률"></svg></div>`;
   $("sa").onclick=e=>{const b=e.target.closest("button");if(b){dA=+b.dataset.g;duel()}};
@@ -682,13 +795,13 @@ function duel(){
   const gap=(wwinR(Ra,RG(0))-.5)*100,mo=MAPO.includes(dA);
   exnum(`<div class="bigline" style="margin:0"><span class="small">내 등급 ${G[dA]} vs 클래식 (거리 가중)</span><b>${pp(gap)}</b></div>
    <p class="small" style="margin:6px 0 0">${dA===0?"기준 등급":mo?`맵 전용 기준 8~12%p ${gap>=8&&gap<=12?'<span class="flag ok">범위 안</span>':'<span class="flag over">범위 밖</span>'}`:`출발선 기준 5%p ${gap<=5?'<span class="flag ok">이내</span>':'<span class="flag over">초과</span>'}`}</p>
-   <p class="small" style="margin:6px 0 0">교전 밖 대가: 총소리 들리는 거리 +${dA*3}%${mo?" · 저장 불가":""}</p>`);
+   <p class="small" style="margin:6px 0 0">교전 밖 대가: 총소리 들리는 거리 +${dA*3}%${mo?" · 저장 불가":""} (승률 계산에는 넣지 않음)</p>`);
 }
 
 /* ④ 운반 */
 let crew=1,load=30,sw=.70,sc=.60;
 function s4(){
-  const bag=10*crew,trunk=20,walk=Math.min(load,bag)*sw,car=Math.min(load,bag+trunk)*sc,be=Math.min(load,bag)*sw/Math.min(load,bag+trunk);
+  const bag=PV("bag_slots")*crew,trunk=PV("trunk_slots"),walk=Math.min(load,bag)*sw,car=Math.min(load,bag+trunk)*sc,be=Math.min(load,bag)*sw/Math.min(load,bag+trunk);
   $("playbox").innerHTML=`<div class="k">운반 계산기 <span class="small">탑승 인원과 실제 짐 양에 따라 달라진다</span></div>
   <div class="calc">
    <div><label>탑승 인원 <span>${crew}명 · 가방 ${bag}칸 + 트렁크 20칸</span></label><div class="seg" id="crew" style="grid-template-columns:repeat(4,1fr)">${[1,2,3,4].map(n=>`<button type="button" data-n="${n}" aria-pressed="${n===crew}">${n}명</button>`).join("")}</div></div>
@@ -707,7 +820,7 @@ function s4(){
 /* ⑤ 철수 */
 let exDist=800,exCar=false;
 function s5(){
-  const WIN=180,WAIT=10,spd=exCar?20:5,move=exDist/spd,total=move+WAIT,ok=total<=WIN,maxD=(WIN-WAIT)*spd;
+  const WIN=PV("extract_window_sec"),WAIT=PV("extract_wait_sec"),spd=exCar?PV("car_mps"):PV("walk_mps"),move=exDist/spd,total=move+WAIT,ok=total<=WIN,maxD=(WIN-WAIT)*spd;
   $("playbox").innerHTML=`<div class="k">철수 지점까지 갈 수 있나 <span class="tagA">속도·창 길이 가정</span></div>
   <div class="tl" aria-hidden="true"><div class="ax2"></div>${[[8,11],[12,15],[16,19]].map(([a,b])=>`<div class="w" style="left:${a/20*100}%;width:${(b-a)/20*100}%">${a}~${b}분</div>`).join("")}${[0,5,10,15,20].map(m=>`<span class="m" style="left:${Math.min(96,Math.max(3,m/20*100))}%">${m}분</span>`).join("")}</div>
   <p class="small" style="margin:0 0 12px">철수 지점은 한 번 열리면 3분 동안만 열려 있다.</p>
@@ -723,28 +836,127 @@ function s5(){
 }
 
 /* ⑥ 정산 */
-const ITEMS=[["에픽 애드온",3,"반입"],["레어 애드온",1,"반입"],["얼티밋 애드온",5,"진열"],["부품",0,"제작"],["진열용 수집품",0,"진열"],["레전더리 애드온",4,"분해"]];
+const ITEMS=[["에픽 애드온",3,"반입"],["레어 애드온",1,"반입"],["얼티밋 애드온",5,"진열",1],["부품",0,"제작"],["3레벨 조끼",0,"분해",2],["진열용 수집품",0,"진열"],["레전더리 애드온",4,"분해",1]];
 let pick=null;
 function s6(){
-  const DEST=[["반입","다음 판 로드아웃 (예산 5점 안)"],["제작","작업대 · 차고 개조 재료"],["진열","진열장 · 전적 기록실 (과시)"],["분해 (제안)","저장 불가 등급 → 재료와 기록으로"]];
+  const DEST=[["반입","다음 판 로드아웃 (예산 5점 안)"],["제작","작업대 · 차고 개조 재료"],["진열","진열장 · 전적 기록실 (과시)"],["분해 (제안)","저장 불가 품목 → 재료와 기록으로"]];
   $("playbox").innerHTML=`<div class="k">반출품 정산 <span class="small">아이템을 누르면 어디로 가는지 보인다</span></div>
   <div class="flow6"><div class="bag">${ITEMS.map(([n,g],i)=>`<span class="it t${g}" data-i="${i}" role="button" tabindex="0" style="${pick===i?"outline:2px solid var(--ink)":""}">${n}</span>`).join("")}</div><span class="arrow">→</span>
   <div class="dest">${DEST.map(([d,s])=>`<div class="${pick!=null&&ITEMS[pick][2]===d.replace(" (제안)","")?"hit":""}"><b>${d}</b><span>${s}</span></div>`).join("")}</div></div>
-  <p class="small" style="margin:12px 0 0">${pick==null?"&nbsp;":ITEMS[pick][1]>=4?`${ITEMS[pick][0]}은 저장할 수 없다. 이번 판의 기록으로 진열하거나 분해해 재료로 남기는 안을 검토 중이다.`:`${ITEMS[pick][0]} → ${ITEMS[pick][2]}.${ITEMS[pick][2]==="반입"?" 다음 판에도 예산 5점 안에서만 쓸 수 있다.":""}`}</p>`;
+  <p class="small" style="margin:12px 0 0">${pick==null?"&nbsp;":ITEMS[pick][3]===2?`${ITEMS[pick][0]}는 저장할 수 없다. 방어구는 반입하지 않으니 분해해 부품으로 남긴다 (제안).`:ITEMS[pick][3]?`${ITEMS[pick][0]}은 저장할 수 없다. 이번 판의 기록으로 진열하거나 분해해 재료로 남긴다 (제안).`:`${ITEMS[pick][0]} → ${ITEMS[pick][2]}.${ITEMS[pick][2]==="반입"?" 다음 판에도 예산 5점 안에서만 쓸 수 있다.":""}`}</p>`;
   $("playbox").querySelectorAll(".bag .it").forEach(x=>{const f=()=>{pick=+x.dataset.i;s6()};x.onclick=f;x.onkeydown=e=>{if(e.key==="Enter")f()}});
-  exnum(`<div class="tw"><table class="t" style="min-width:0"><tr><th>동기</th><th>시스템</th><th>전투력</th></tr><tr><td>수집</td><td>등급별 도감</td><td>없음</td></tr><tr><td>숙련</td><td>도전과제 → 시설 해금</td><td>편의</td></tr><tr><td>과시</td><td>진열장 · 트로피</td><td>없음</td></tr><tr><td>운반</td><td>차고 개조</td><td>선택지</td></tr></table></div>`);
+  exnum(`<div class="k" style="margin:0 0 4px">판과 판 사이에 무엇이 들어오고 나가나</div>
+   <table class="cyc"><tr><th>들어온다</th><td>살아서 가져온 애드온 · 부품 · 수집품. 등급이 오를 때마다 가치 2배 <span class="tagA">가정</span></td></tr>
+   <tr><th>나간다</th><td>죽으면 보험 1칸 외 전부 <span class="tagA">가정</span> · 제작에 쓴 부품 · 저장 불가 품목은 판 끝에 분해</td></tr>
+   <tr><th>남는다</th><td>에픽 이하 애드온(다음 판 예산 5점 안) · 시설 해금 · 진열 기록</td></tr>
+   <tr><th>처음 하는 유저</th><td>무료 클래식 로드아웃으로 입장. 잃을 것이 없다 (대신 가져 나갈 수도 없다)</td></tr>
+   <tr><th>오래 한 유저</th><td>도감 완성 · 진열장 · 차고 개조 · 챔피언 기록. 쌓이는 것이 전투력이 아니라 기록이다</td></tr></table>
+   <div class="tw" style="margin-top:12px"><table class="t lt" style="min-width:0"><tr><th>동기</th><th>시스템</th><th>전투력</th></tr><tr><td>수집</td><td>등급별 도감</td><td>없음</td></tr><tr><td>숙련</td><td>도전과제 → 시설 해금</td><td>편의</td></tr><tr><td>과시</td><td>진열장 · 트로피</td><td>없음</td></tr><tr><td>운반</td><td>차고 개조</td><td>선택지</td></tr></table></div>`);
 }
 
-/* ── 부록 테이블 ── */
-const T={
- grades:{t:"등급 (addon_tiers)",h:["id","등급","효과 배율","반입 비용","얻는 곳"],r:G.map((g,i)=>[`T${i}`,g,"×"+MULT[i].toFixed(2),COST[i]??"반입 불가",["외곽 · 무료 로드아웃","외곽·중간","중간","중간·고위험","고위험 · 비밀의 방","비밀의 방 · 보급"][i]]),y:[2]},
- addons:{t:"애드온 기준값 (addons) · 클래식",h:["id","슬롯","애드온","효과","교전 밖 대가 (단계당)","출처"],r:AD.map((a,i)=>{const src={"보정기":"rankedboost (구버전)","소염기":"rankedboost (구버전)","소음기":"rankedboost (구버전)","앵글 손잡이":"rankedboost (구버전)","전술 개머리판":"rankedboost (구버전)","칙패드":"rankedboost (구버전)","퀵드로우 탄창":"rankedboost (구버전)","대용량 탄창":"PUBG Wiki (비공식)"}[a[1]]||"작성자 가정";return["A"+String(i+1).padStart(2,"0"),a[0],a[1],a[2].map(([k,v])=>k+" "+v+"%").join(" · ")+(a[1]==="배율 스코프"?" · 배율 레어 2 / 엘리트 4 / 에픽 6 / 레전더리 8 / 얼티밋 15배":"")+(a[3]?" · "+a[3]:""),a[1]==="보정기"?"총소리 거리 +3%":"-",src]}),y:[3]},
- crates:{t:"상자 (crates)",h:["id","상자","구역","평균 개수","애드온 비율","클","레","엘","에","레전","얼"],r:BOX.map((b,i)=>[`C${i+1}`,b.n,b.z,b.avg,b.ad*100+"%",...b.w]),y:[3,4,5,6,7,8,9,10]},
- maps:{t:"맵 (maps)",h:["id","맵","크기","밀도 (명/㎢)","도보 한 변","차량 한 변","탄약","무기","사물함","비밀","보급"],r:[["M1","봉쇄 항만 도시","4×4",1.00,"13분","3분",50,30,60,3,2],["M2","댐과 지하 계곡","6×6",0.44,"20분","5분",60,40,70,3,3],["M3","사막 고속도로 회랑","8×8",0.25,"27분","7분",70,45,60,3,4]],y:[6,7,8,9,10]}
-};
-$("tables").innerHTML=Object.entries(T).map(([k,v])=>`<h3 style="margin:14px 0 6px">${v.t}</h3><div class="tw"><table class="t"><tr>${v.h.map(h=>`<th>${h}</th>`).join("")}</tr>${v.r.map(r=>`<tr>${r.map((c,i)=>`<td class="${v.y.includes(i)?"y":""}${/^[-+×]?[\d.,]+%?$/.test(String(c))?" num":""}">${c}</td>`).join("")}</tr>`).join("")}</table></div><button class="csvb" type="button" data-k="${k}">${k}.csv</button>`).join("")+`<p class="src">노란 칸 = 작성자 가정.</p>`;
 function dl(name,rows){const b=new Blob(["﻿"+rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n")],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-$("tables").onclick=e=>{const b=e.target.closest(".csvb");if(!b)return;const v=T[b.dataset.k];dl(b.dataset.k+".csv",[v.h,...v.r])};
+/* ── 부록: 데이터 테이블 ──
+   표는 위 게임 데이터와 본문 시뮬레이터 상수(G·MULT·COST·AD·RANGE…)에서 바로 만든다. 열 이름(key)은 프로토타입 CSV와 같다.
+   열 옵션: y = 작성자 가정(노란 칸), d = 다른 표에서 계산한 값(CSV 제외), x = 화면 표시용(CSV 제외) */
+const SRC={pubg:"비공식 · pubgstatistics.com",rb:"구버전 · rankedboost",wiki:"비공식 · PUBG Wiki",me:"작성자 가정",calc:"파란 글씨 = 이 페이지 계산"};
+const KO_ZONE={head:"머리",neck:"목",clavicle:"쇄골",chest:"가슴",ustomach:"윗배",lstomach:"아랫배",pelvis:"골반",uarm:"위팔",farm:"아래팔",hand:"손",thigh:"허벅지",calf:"종아리",foot:"발"};
+const pc=v=>typeof v==="number"?+(v*100).toFixed(2)+"%":v, ko=(m)=>v=>m[v]??v, kind=v=>v==="ref"?"기획서 표":"프로토타입에서 추가";
+const ZK={outer:"외곽",mid:"중간",high:"고위험"}, GK={head:"머리",torso:"몸통",pelvis:"골반",arm:"팔",leg:"다리"}, SLOTK={helmet:"헬멧",vest:"조끼"};
+const ADSRC={"보정기":"rb","소염기":"rb","소음기":"rb","앵글 손잡이":"rb","전술 개머리판":"rb","칙패드":"rb","퀵드로우 탄창":"rb","대용량 탄창":"wiki"};
+const ADROWS=[];AD.forEach(([slot,nm,fxs,note],i)=>{const id="A"+String(i+1).padStart(2,"0");
+  fxs.forEach(([k,v],j)=>ADROWS.push([`${id}-${j+1}`,slot,nm,k+(nm==="대용량 탄창"?" (AR 30 → 40발 기준)":""),v/100,v/100*MULT[5],ADSRC[nm]||"me"]));
+  if(note&&nm!=="대용량 탄창")ADROWS.push([`${id}-s`,slot,nm,note,"-","-",ADSRC[nm]||"me"]);
+  if(nm==="보정기")ADROWS.push([`${id}-c`,slot,nm,"교전 밖 대가: 총소리 가청 거리 (단계당)",.03,.03*5,"me"]);});
+const SRCN={rb:"구버전 · rankedboost",wiki:"비공식 · PUBG Wiki",me:"작성자 가정"};
+const DT=[
+ {g:"전투",id:"weapons",t:"무기",f:"weapons.csv",use:[2,"duel"],src:["pubg","me"],d:"총기 기본 수치. 모두 M416으로 시작하고, 다른 총은 맵에서 줍는다.",
+  c:[["weapon","무기"],["class","분류"],["damage","데미지"],["rpm","분당 발사"],["shot_interval_s","발사 간격 (초)","d"],["mag","탄창","y"],["reload_sec","재장전 (초)","y"]],
+  r:WEAP.map(([w,c,dm,rpm,m,rl])=>[w,c,dm,rpm,+(60/rpm).toFixed(3),m,rl]),n:"데미지·분당 발사는 비공식 자료, 탄창·재장전은 작성자 가정. 교전 모델은 M416 기준이다."},
+ {g:"전투",id:"armor",t:"방어구",f:"armor.csv",use:[0],src:["pubg","calc"],d:"조끼 레벨별 피해 경감. 레벨이 다르면 상대가 맞혀야 하는 발 수가 달라져, 방어구는 반입하지 않는다.",
+  c:[["level","레벨",,v=>v||"없음"],["reduction","경감",,pc],["chest_dmg","M416 가슴 1발","d"],["hits_to_kill","필요 명중","d",v=>v+"발"],["carry","반입","x"]],
+  r:ARMOR.map((r,i)=>[i,r,+(CHEST*(1-r)).toFixed(1),hitsTo(r),["-","모두 1레벨 지급","맵에서만","맵에서만"][i]]),
+  n:`필요 명중 = 올림(체력 100 ÷ (40 × 가슴 1.1 × (1 − 경감))). 1·2레벨은 같은 ${hitsTo(.3)}발이라 교전 모델의 필요 명중 ${N}발은 기본 지급 1레벨 기준이다.`},
+ {g:"전투",id:"hit_zones",t:"부위 배율",f:"hit_zones.csv",src:["pubg"],d:"맞은 부위별 피해 배율과 어떤 방어구가 그 부위를 막는지.",
+  c:[["zone","부위"],["name","이름","x"],["multiplier","배율"],["group","묶음",,ko(GK)],["armor_slot","막는 장비",,v=>SLOTK[v]||"-"]],
+  r:HZ.map(([z,m,g,a])=>[z,KO_ZONE[z],m,g,a]),n:"피해 = 데미지 × 부위 배율 × 무기 분류 배율 × (1 − 방어구 경감). 목·팔·다리는 막는 장비가 없다."},
+ {g:"전투",id:"class_mult",t:"무기 분류 배율",f:"class_mult.csv",src:["pubg"],d:"부위 배율에 곱하는 무기 분류별 배율. 머리 피해 차이는 여기서 정해진다.",
+  c:[["class","분류"],["head","머리"],["upper","상체"],["lower","하체"],["arm","팔"],["leg","다리"]],r:CLS.map(r=>r.slice()),n:`M416(AR) 가슴 1발 = 40 × 1.1 × 1.0 = ${CHEST}.`},
+ {g:"전투",id:"duel_params",t:"교전 모델 상수",f:"엑셀 '교전 모델' 시트 · game_params.csv",use:[2,"duel"],src:["me"],d:"1:1 교전 승률 계산에 들어가는 상수. 무기·방어구 표에서 온 값과 작성자 가정이 섞여 있다.",
+  c:[["key","key"],["label","항목","x"],["value","값",,(v,r)=>r[5]?[v,"y"]:v],["unit","단위"],["from","근거","x"]],
+  r:[["shot_interval_s","발사 간격",+IV.toFixed(4),"초","60 ÷ 700 (무기 표)",0],["hits_to_kill","필요 명중",N,"발","1레벨 조끼 · 가슴 (방어구 표)",0],["hits_vest3","필요 명중 · 3레벨 조끼",VEST3,"발","방어구 표",0],["mag","탄창",MAG,"발","무기 표",1],["reload_sec","재장전",RELOAD,"초","엑셀 교전 모델",1],["ads_sec","조준 시간",ADS,"초","모든 등급 같음",1],["react_sec","반응 시간",REACT,"초","양쪽 같음",1],["react_sd","반응 편차",SIG,"초","한 사람 기준 표준편차",1],["recoil_w_vert","반동 가중치 · 수직",.5,"","종합 반동 감소 = .5 수직 + .3 패턴 + .2 수평",1],["recoil_w_pat","반동 가중치 · 패턴",.3,"","",1],["recoil_w_hor","반동 가중치 · 수평",.2,"","",1]],
+  n:"재장전은 30발 안에 끝나는 교전에서는 쓰이지 않는다. 무기 표의 2.4초로 바꿔도 승률은 같다."},
+ {g:"전투",id:"hit_table",t:"거리별 명중률",f:"game_params.csv (hit_d · hit_lo · hit_hi)",use:[2,"duel"],src:["me"],d:"반동 감소 0%와 100%일 때의 명중률. 그 사이는 종합 반동 감소 비율로 나눈다. 교전 비중은 거리별 승률을 합칠 때 쓴다.",
+  c:[["distance_m","거리",,v=>v+"m"],["weight","교전 비중","y",pc],["hit_lo","명중 · 반동 감소 0%","y",pc],["hit_hi","명중 · 반동 감소 100%","y",pc]],
+  r:DB.map((d,i)=>{const[lo,hi]=hitRange(d);return[d,WT[i],+lo.toFixed(4),+hi.toFixed(4)]}),n:"150m는 100m와 200m 값의 직선 보간이다."},
+ {g:"애드온",id:"addon_tiers",t:"등급",f:"addon_tiers.csv",use:[0],src:["me"],d:"등급별 효과 배율, 반입 비용, 아이템 가치. 레전더리·얼티밋은 반입·저장이 안 된다.",
+  c:[["tier","id",,v=>"T"+v],["name","등급"],["effect_mult","효과 배율","y",v=>"×"+v.toFixed(2)],["carry_cost","반입 비용","y",v=>v==null?"반입 불가":v+"점"],["item_value","아이템 가치","y"],["zoom","배율 스코프","x"],["store","저장","x"],["where","얻는 곳","x"]],
+  r:G.map((g,i)=>[i,g,MULT[i],COST[i],TVAL[i],ZOOM[i]?ZOOM[i]+"배":"-",MAPO.includes(i)?"불가":"가능",["외곽 · 무료 로드아웃","외곽 · 중간","중간","중간 · 고위험","고위험 · 비밀의 방","비밀의 방 · 보급"][i]]),
+  n:"효과 = 클래식 기준값 × 효과 배율. 레어~에픽은 단계마다 +0.1, 맵 전용 두 등급은 크게 뛴다(×1.6 · ×1.8)."},
+ {g:"애드온",id:"addons",t:"애드온 효과",f:"addons.csv",use:[2,"box"],src:["rb","wiki","me","calc"],d:"애드온 13종의 효과를 한 줄에 하나씩. 얼티밋 값은 클래식 기준값 × 1.8로 계산한다.",
+  c:[["id","id"],["slot","슬롯"],["addon","애드온"],["item","효과"],["base_value_classic","클래식",,pc],["ultimate","얼티밋","d",v=>typeof v==="number"?+(v*100).toFixed(1)+"%":v],["source","출처","x",v=>SRCN[v]]],
+  r:ADROWS,n:"교전 안 단점은 v0.2에서 뺐다. 상위 등급의 대가는 교전 밖(보정기의 총소리)에서 치른다."},
+ {g:"파밍",id:"crates",t:"상자 배치",f:"crates.csv",use:[2,"box"],src:["me","calc"],d:"상자 종류별 배치 수, 내용물 양, 놓이는 구역. 판당 애드온은 6×6 맵 기준 기대값이다.",
+  c:[["id","id"],["name","상자"],["count_6x6","6×6 배치","y"],["avg_items","평균 개수","y"],["addon_share","애드온 비율","y",pc],["z_outer","외곽","y",pc],["z_mid","중간","y",pc],["z_high","고위험","y",pc],["needs_key","열쇠",,v=>v?"필요":"-"],["opens_min","열리는 시각",,v=>v?v+"분":"-"],["kind","정한 곳",,kind],["ev","판당 애드온","d",v=>v?v.toFixed(2):"-"]],
+  r:CR.map(c=>[c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9],c[12],crEV(c)]),
+  n:`판당 애드온 = 배치 수 × 개봉률 ${OPEN*100}%(가정) × 평균 개수 × 애드온 비율. 합계 ${EV.all.toFixed(1)}개, 레전더리+얼티밋 ${EV.lu.toFixed(1)}개. 보급 상자는 블루존 안에 떨어진다. 대형 부품 상자·금고의 큰 물건은 트렁크가 있어야 다 가져간다.`},
+ {g:"파밍",id:"crate_weights",t:"상자 내용물 가중치",f:"crates.csv (w_t · n_)",use:[2,"box"],src:["me"],d:"상자를 열면 개수 → 분류(애드온인가) → 등급 순으로 뽑는다. 애드온이 아니면 오른쪽 기타 가중치로 뽑는다.",
+  c:[["id","id"],["w_t0","클래식","y",pc],["w_t1","레어","y",pc],["w_t2","엘리트","y",pc],["w_t3","에픽","y",pc],["w_t4","레전더리","y",pc],["w_t5","얼티밋","y",pc],["n_ammo","탄약","y"],["n_med","회복","y"],["n_mat","재료","y"],["n_big","대형 부품","y"],["n_coll","수집품","y"]],
+  r:CR.map(c=>[c[0],...c[10],...c[11]]),n:"레전더리·얼티밋 가중치는 비밀의 방 상자와 보급 상자에만 있다."},
+ {g:"파밍",id:"items",t:"아이템",f:"items.csv",use:[5],src:["me"],d:"가방에 들어가는 아이템의 칸 수와 정산 가치. 애드온 가치는 등급마다 2배.",
+  c:[["id","id"],["name","이름"],["slots","칸",,v=>v+"칸"],["value","가치","y"],["kind","정한 곳",,kind]],
+  r:[...ITM.map(r=>[...r,"assume"]),...G.map((g,i)=>["addon_t"+i,"애드온 "+g,1,TVAL[i],"assume"])],n:"대형 부품(2칸)은 가방에 넣을 수 없어 트렁크로만 옮긴다. 열쇠는 칸을 차지하지 않는다."},
+ {g:"맵",id:"maps",t:"맵",f:"기획서 맵 후보 · params.csv (map_side_km)",use:[1],src:["me","calc"],d:"맵 후보 3종과 상자 배치 수. 1순위는 6×6 댐과 지하 계곡.",
+  c:[["id","id"],["name","맵"],["side_km","크기",,v=>v+"×"+v],["density","밀도 (명/㎢)","d",v=>v.toFixed(2)],["walk_min","도보 한 변","d",v=>v.toFixed(0)+"분"],["car_min","차량 한 변","d",v=>v.toFixed(0)+"분"],["n_ammo","탄약","y"],["n_weapon","무기","y"],["n_locker","사물함","y"],["n_secret","비밀","y"],["n_supply","보급","y"]],
+  r:MAPS.map((m,i)=>[`M${i+1}`,m.n,m.s,PV("players")/(m.s*m.s),m.s*1000/PV("walk_mps")/60,m.s*1000/PV("car_mps")/60,...[[50,30,60,3,2],[60,40,70,3,3],[70,45,60,3,4]][i]]),
+  n:"6×6 배치 수는 상자 배치 표와 같다. 프로토타입 그레이박스(4×4)는 6×6 표를 면적 비율로 줄여 썼다."},
+ {g:"맵",id:"zones",t:"구역",f:"zones.csv",use:[2,"box"],src:["me"],d:"맵을 외곽 · 중간 · 고위험으로 나눈 비율. 고위험일수록 좋은 상자가 많고 자주 마주친다.",
+  c:[["zone","구역",,ko(ZK)],["area_share","면적","y",pc],["spawn_share","시작 위치","y",pc],["encounter_k","교전 계수","y"]],r:ZONES.map(z=>[z[0],z[2],z[3],z[4]]),
+  n:"교전 계수 = 같은 구역 생존자 1명당 분당 교전 확률(봇 시뮬레이션). 고위험은 외곽의 6배."},
+ {g:"맵",id:"zone_phases",t:"블루존 단계",f:"zone_phases.csv",use:[4],src:["me"],d:"시간에 따라 안전 구역이 좁아지고 바깥 피해가 커진다. 철수 압박 타이머 역할.",
+  c:[["phase","단계"],["start_min","시작",,v=>v+"분"],["end_min","끝",,v=>v+"분"],["safe_area_share","안전 구역","y",pc],["dps","초당 피해","y"]],r:PHASES.map(r=>r.slice()),
+  n:"철수 창(8~11 · 12~15 · 16~19분)이 열릴 때마다 블루존이 한 단계씩 좁아져, 늦게 나갈수록 블루존 피해를 더 받는다."},
+ {g:"운반·철수",id:"vehicles",t:"차량",f:"vehicles.csv",use:[3],src:["me"],d:"차량 1종. 트렁크로 더 싣는 대신 엔진 소리로 위치가 드러나고, 파괴되면 트렁크째 잃는다.",
+  c:[["vehicle","차량"],["seats","좌석","y"],["trunk_slots","트렁크","y",v=>v+"칸"],["hp","내구도","y"],["noise_radius_m","엔진 소리","y",v=>v+"m"],["fuel_min","연료","y",v=>v+"분"],["spawn_4x4","4×4 대수","y"],["spawn_6x6","6×6 대수","y"],["spawn_8x8","8×8 대수","y"]],r:VEH.map(r=>r.slice()),
+  n:`이동 중 교전 계수 ×${PV("car_noise_mult")}, 차에서 교전할 때 실력 ×${PV("car_ambush_skill")} (전역 값 표). 봇 점검에서 차량이 오히려 안전하게 나와 소음 배율을 다시 맞춘다.`},
+ {g:"운반·철수",id:"extraction",t:"철수 창",f:"extraction.csv",use:[4],src:["me"],d:"철수 지점은 정해진 시간에만 열린다. 창마다 지점 3곳.",
+  c:[["window","창"],["open_min","열림",,v=>v+"분"],["close_min","닫힘",,v=>v+"분"],["points","지점 수","y"]],r:EXW.map(r=>r.slice()),
+  n:`창이 열린 ${PV("extract_window_sec")/60}분 안에 ${PV("extract_wait_sec")}초 대기까지 끝내려면 도보 ${((PV("extract_window_sec")-PV("extract_wait_sec"))*PV("walk_mps")).toLocaleString()}m, 차량 ${((PV("extract_window_sec")-PV("extract_wait_sec"))*PV("car_mps")).toLocaleString()}m 안이어야 한다. 지점 거리는 ${PV("extract_dist_min_m")}~${PV("extract_dist_max_m").toLocaleString()}m.`},
+ {g:"정산·봇",id:"loadouts",t:"로드아웃",f:"loadouts.csv",use:[0],src:["me","calc"],d:"입장할 때 고르는 장비 묶음. 모두 M416 · 1레벨 조끼이고 애드온 등급만 예산 안에서 다르다.",
+  c:[["loadout","로드아웃"],["weapon","무기"],["armor_lv","조끼"],["muzzle_tier","총구",,v=>G[v]],["grip_tier","손잡이",,v=>G[v]],["stock_tier","개머리판",,v=>G[v]],["cost","예산",,v=>v+"점"],["share","봇 선택 비율","y",pc],["out","반출","x"],["gap","클래식 대비","d",pp]],
+  r:LOADS.map(l=>[...l,l[0]==="무료"?"불가":"가능",(wwinR(recoil(l[3],l[4],l[5]),RG(0))-.5)*100]),
+  n:"예산 최대 = 반입 예산으로 만들 수 있는 최고 빌드(에픽 총구 · 엘리트 손잡이). 무료 로드아웃은 잃을 것이 없는 대신 가지고 나갈 수 없다."},
+ {g:"정산·봇",id:"bot_profiles",t:"봇 성향",f:"bot_profiles.csv",src:["me"],d:"검증에 쓴 봇 16명의 성향. 언리얼 프로토타입 봇이 이 값을 읽는다.",
+  c:[["profile","성향"],["count","인원","y"],["flee_prob","도망 확률","y",pc],["skill_mult","실력","y",v=>"×"+v],["open_mult","상자 여는 속도","y",v=>"×"+v],["extract_by_min","철수 시작","y",v=>v+"분"],["zone_schedule","구역 이동","y",v=>v.split(";").map(s=>{const[z,m]=s.split("@");return ZK[z]+" "+m+"분"}).join(" → ")],["uses_vehicle","차량","y",v=>v?"탄다":"-"]],
+  r:BOTS.map(r=>r.slice())},
+ {g:"정산·봇",id:"params",t:"전역 값",f:"params.csv · game_params.csv",src:["me"],d:"여러 단계에서 같이 쓰는 값. 노란 칸은 작성자 가정, 나머지는 규칙으로 정한 값.",
+  c:[["key","key"],["label","항목","x"],["value","값",,(v,r)=>r[4]?[v,"y"]:v],["unit","단위"]],r:PRM.map(r=>r.slice()),n:"extract_window_sec(철수 창 표에서 계산)와 crate_open_share(기대값 계산용)는 기획서가 더한 값이다. 나머지 key는 프로토타입 CSV와 같다."}
+];
+let dtSel="weapons";
+function dtShow(){const x=DT.find(t=>t.id===dtSel);
+  document.querySelectorAll("#tables .dtb").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===dtSel));
+  const cell=(v,i,row)=>{const[ ,,o="",f]=x.c[i];let s=f?f(v,row):v,c="";if(Array.isArray(s)){c=s[1];s=s[0]}
+    return `<td class="${o.includes("y")||c==="y"?"y":""}${o.includes("d")?" dv":""}${/^[-+×]?[\d.,]+(%|%p|배|초|m|칸|분|점|발)?$/.test(String(s))?" num":""}">${s}</td>`};
+  $("dtp").innerHTML=`<div class="dth"><div><b>${x.t}</b><span>${x.f}</span></div>${x.use?`<button type="button" class="dtgo" data-s="${x.use[0]}"${x.use[1]?` data-t="${x.use[1]}"`:""}>쓰이는 곳: ${x.use[0]+1} ${STEPS[x.use[0]].t} →</button>`:""}</div>
+   <p class="small" style="margin:4px 0 8px">${x.d}</p><div class="dsrc">${x.src.map(s=>`<span>${SRC[s]}</span>`).join("")}</div>
+   <div class="tw"><table class="t"><tr>${x.c.map(([k,l,o=""])=>`<th>${l}${/[xd]/.test(o)||k===l?"":`<small>${k}</small>`}</th>`).join("")}</tr>${x.r.map(row=>`<tr>${row.slice(0,x.c.length).map((v,i)=>cell(v,i,row)).join("")}</tr>`).join("")}</table></div>
+   ${x.n?`<p class="src" style="margin:8px 0 0">${x.n}</p>`:""}<button class="csvb" type="button" id="dtcsv">${x.id}.csv 내려받기</button>`;
+  FX.swap($("dtp"))}
+const dtCsv=x=>{const k=x.c.map((c,i)=>[c,i]).filter(([c])=>!/[dx]/.test(c[2]||""));return [k.map(([c])=>c[0]),...x.r.map(r=>k.map(([,i])=>r[i]??""))]};
+$("tables").innerHTML=`<p class="small" style="margin:0 0 10px">열 이름(회색 key)은 언리얼 프로토타입이 읽는 CSV와 같아, 내려받아 바로 넣을 수 있다. 표를 고르면 무엇을 정하는 표인지와 쓰이는 단계가 보인다. 수치 조사 2026-10-16 ~ 10-22.</p>
+ <div class="dtnav">${[...new Set(DT.map(x=>x.g))].map(g=>`<div class="dtg"><span>${g}</span>${DT.filter(x=>x.g===g).map(x=>`<button type="button" class="dtb" data-id="${x.id}">${x.t}<small>${x.r.length}</small></button>`).join("")}</div>`).join("")}</div>
+ <div class="dtp" id="dtp"></div>
+ <div class="dtlg"><span><i class="sw y"></i>작성자 가정</span><span><i class="sw d"></i>다른 표에서 계산 (CSV 제외)</span><button class="csvb" type="button" id="dtall" style="margin:0">${DT.length}종 전체 JSON</button></div>
+ <div class="note" style="margin-top:12px"><b style="color:var(--ink)">프로토타입 CSV와 다른 값 (기획서가 기준)</b><ul style="margin:6px 0 0;padding-left:18px">
+  <li>로드아웃 조끼: 기획서는 모두 1레벨(v0.4 규칙), 프로토타입은 예산 로드아웃에 2레벨. 프로토타입 측정값은 규칙을 바꾸기 전 값이다.</li>
+  <li>M416 재장전: 교전 모델 2.1초, 프로토타입 무기 표 2.4초. 승률 결과는 같다.</li>
+  <li>애드온 효과: 프로토타입 표에는 v0.1의 교전 안 단점 행이 남아 있다.</li>
+  <li>조준 애드온: 프로토타입은 '레드닷·홀로' 한 줄, 기획서는 레드도트와 홀로그램 스코프로 나눴다.</li></ul></div>`;
+$("tables").onclick=e=>{const b=e.target.closest(".dtb");if(b){dtSel=b.dataset.id;dtShow();return}
+  const g=e.target.closest(".dtgo");if(g){if(g.dataset.t)tab3=g.dataset.t;go(+g.dataset.s);$("play").scrollIntoView({behavior:"smooth"});return}
+  if(e.target.id==="dtcsv"){const x=DT.find(t=>t.id===dtSel);dl(x.id+".csv",dtCsv(x));return}
+  if(e.target.id==="dtall"){const o={};DT.forEach(x=>{const[h,...r]=dtCsv(x);o[x.id]={file:x.f,columns:h,rows:r}});const b2=new Blob([JSON.stringify(o,null,1)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b2);a.download="extraction_data.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}};
+dtShow();
+
 let MX=null;
 function mx(){if(MX)return;MX=G.map((_,i)=>G.map((_,j)=>wwinR(RG(i),RG(j))));
   const col=v=>{const t=Math.max(-1,Math.min(1,(v-.5)/.2));return t>=0?`rgba(29,78,216,${.06+t*.5})`:`rgba(180,80,11,${.06+(-t)*.5})`};
@@ -753,7 +965,15 @@ document.querySelectorAll("details.ap")[1].addEventListener("toggle",mx);
 $("csvM").onclick=()=>{mx();dl("duel_winrate.csv",[["나\\상대",...G],...MX.map((r,i)=>[G[i],...r.map(v=>(v*100).toFixed(2))])])};
 
 /* 요약 수치는 모델에서 계산 */
-{let m=-1;for(let a=0;a<4;a++)for(let b=0;b<4;b++)for(let c=0;c<4;c++)if(COST[a]+COST[b]+COST[c]<=5)m=Math.max(m,wwinR(recoil(a,b,c),RG(0)));$("r1").textContent=pp((m-.5)*100)}$("r2").textContent=pp((wwinR(RG(5),RG(0))-.5)*100);
+$("r1").textContent=pp(best5());$("r2").textContent=pp((wwinR(RG(5),RG(0))-.5)*100);
+/* 기준 크기 환산: 반응 시간 · 3레벨 조끼 */
+{const R0=RG(0),ult=(wwinR(RG(5),R0)-.5)*100,vest=(wwinR(R0,R0,N,VEST3)-.5)*100,b=best5();
+ const eq=t=>{let lo=0,hi=.6;for(let k=0;k<28;k++){const m=(lo+hi)/2;((wwinR(R0,R0,N,N,m)-.5)*100<t)?lo=m:hi=m}return (lo+hi)/2};
+ const sec=x=>x.toFixed(3)+"초",W=v=>Math.min(100,v/40*100);
+ const rows=[["예산 최대 애드온 빌드","반입 가능 · 기준 5%p",b,""],["얼티밋 애드온","맵에서만 · 기준 8~12%p",ult,""],["3레벨 조끼 (상대 1레벨)","PUBG 방어구 · 맵에서 획득",vest,"vest"]];
+ $("cmpb").innerHTML=`<span class="h hl">비교 대상</span><span class="h">클래식 대비 승률 격차 (세로선 = 5%p)</span><span class="h" style="text-align:right">격차</span><span class="h" style="text-align:right">반응 환산</span>`+
+  rows.map(([n,s,v,c])=>`<div class="lb"><b>${n}</b><span>${s}</span></div><div class="br"><i class="${c}" style="width:${W(v)}%"></i><span class="lim" style="left:${W(5)}%"></span></div><span class="v">${pp(v)}</span><span class="ms">${sec(eq(v))}</span>`).join("");
+ $("cmpmsg").innerHTML=`반입할 수 있는 장비의 최대 이득은 반응이 <b>${sec(eq(b))}</b> 빠른 것과 같다. 맵에서만 얻는 얼티밋은 <b>${sec(eq(ult))}</b>로, PUBG가 이미 파밍으로 주는 3레벨 조끼 격차의 약 ${Math.round(ult/vest*100)}%다.`;}
 
 /* 목차 표시 */
 const links=[...document.querySelectorAll(".side ol>li>a")];
