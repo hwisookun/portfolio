@@ -76,11 +76,6 @@ h3{font-size:17px;letter-spacing:-.01em;margin:0 0 6px}
 .docinfo li{padding:6px 12px;border-right:1px solid var(--line)}
 .docinfo li:last-child{border-right:0}
 .docinfo b{color:var(--ink)}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin:0 0 18px}
-.kpis div{padding:14px 16px;border-right:1px solid var(--line)}
-.kpis div:last-child{border-right:0}
-.kpis b{display:block;font-size:32px;letter-spacing:-.03em;line-height:1.1}
-.kpis span{font-size:13px;color:var(--muted)}
 .ticker{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .tk{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:13.5px}
 .tk .q{margin:0 0 4px;color:var(--muted)}
@@ -261,8 +256,6 @@ details.ot>summary span{font-size:12.5px;color:var(--muted)}
   .sysd,.lim{margin-left:16px;margin-right:16px}
   .steps4{grid-template-columns:1fr 1fr}
   .roles{grid-template-columns:1fr}
-  .kpis b{font-size:26px}
-  .kpis div{padding:12px 10px}
   .mrow li{grid-template-columns:56px 1fr}
   .mrow li a{grid-column:2}
   .on3{grid-template-columns:1fr 1fr 1fr}
@@ -291,11 +284,6 @@ details.ot>summary span{font-size:12.5px;color:var(--muted)}
   <p class="eyebrow">AI 활용 경험</p>
   <h1>기획서와 앱을 Claude와 만들고,<br>결정과 검증은 직접 했습니다</h1>
   <p class="lead">무엇을 만들지, 어떤 기준으로 판정할지는 제가 정했습니다. 계산·구현·초안은 Claude에게 맡기고, 결과가 맞는지는 직접 확인했습니다. 대표 사례는 PUBG 익스트랙션 모드 기획서와 향수 앱 '맡다.'입니다.</p>
-  <div class="kpis">
-    <div><b>4</b><span>Claude로 진행한 프로젝트</span></div>
-    <div><b>7</b><span>AI의 첫 답을 되돌린 장면</span></div>
-    <div><b>15</b><span>혼자 구현한 앱 화면</span></div>
-  </div>
   <div class="ticker" id="ticker"></div>
 
   <div class="sum" style="margin-top:18px">
@@ -526,8 +514,7 @@ const links=[...document.querySelectorAll(".side ol a")];
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-40% 0px -55% 0px"});
 document.querySelectorAll("main section").forEach(s=>io.observe(s));
 /* 모션 */
-FX.count(".kpis b");
-FX.reveal(".docinfo, #top h1, #top .lead, .kpis>div, .tk",document,.06);
+FX.reveal(".docinfo, #top h1, #top .lead, .tk",document,.06);
 FX.reveal(".sum>.blk, .mrow, .case, .fx, .scn, .s4, .s4d, .roles>div, .princ, .quote, details.ot");
 {const _p=pipeTo;pipeTo=i=>{_p(i);FX.swap($("pd"))};const _y=sys;sys=()=>{_y();FX.swap($("sysd"))};const _f=s4;s4=i=>{_f(i);FX.swap($("s4d"))}}
 $("scn").addEventListener("click",e=>{const b=e.target.closest(".scn>button");if(b&&b.parentElement.classList.contains("open"))FX.swap(b.parentElement.querySelector(".body"))});

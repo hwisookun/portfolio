@@ -153,11 +153,6 @@ h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.1
 
 /* ── AI ── */
 .ai-intro{margin:0 0 28px;font-size:17px;max-width:680px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:36px}
-.stats div{padding:18px 20px;border-right:1px solid var(--line)}
-.stats div:last-child{border-right:0}
-.stats b{display:block;font-family:var(--mono);font-size:42px;font-weight:600;line-height:1.1;color:var(--accent)}
-.stats span{font-size:13.5px;color:var(--muted)}
 .track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:14px}
 .track::before,.track .prog{content:"";position:absolute;left:12.5%;top:21px;height:2px;background:var(--line)}
 .track::before{right:12.5%}
@@ -271,8 +266,6 @@ footer a:hover{color:var(--accent)}
   .phead{grid-template-columns:44px minmax(0,1fr) 32px}
   .vs{grid-template-columns:1fr}
   .vs>div+div{border-left:0;border-top:1px solid var(--line)}
-  .stats b{font-size:32px}
-  .stats div{padding:14px 10px}
   .nav .brand span{display:none}
   .nav .cta{display:none}
 }
@@ -373,11 +366,6 @@ footer a:hover{color:var(--accent)}
     <div class="rail"><span class="no">03</span><h2>AI 활용 경험</h2><p>일은 AI에게 맡기고, 결정과 검증은 제가 했습니다.</p></div>
     <div>
       <p class="ai-intro">익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다.</p>
-      <div class="stats">
-        <div><b data-to="4">4</b><span>Claude로 진행한 프로젝트</span></div>
-        <div><b data-to="7">7</b><span>AI의 첫 답을 되돌린 장면</span></div>
-        <div><b data-to="15">15</b><span>혼자 구현한 앱 화면</span></div>
-      </div>
       <div class="track" role="tablist" aria-label="일하는 방식" id="steps"><span class="prog" id="prog"></span></div>
       <div class="sdesc" id="sdesc" role="tabpanel" aria-live="polite"></div>
       <div class="vs">
@@ -1054,7 +1042,7 @@ spy("section.sec","nav a.l");
  addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd()}
 /* 모션 */
 FX.reveal(".hero-grid>div>*, .photo",document,.08);
-FX.reveal(".rail, .case, .plist>li, .ai-intro, .stats>div, .track, .sdesc, .vs, .gtop, .stack, .legend, .gbar, .contact .k, .contact h2, .mailrow");
+FX.reveal(".rail, .case, .plist>li, .ai-intro, .track, .sdesc, .vs, .gtop, .stack, .legend, .gbar, .contact .k, .contact h2, .mailrow");
 {const _s=step;step=i=>{_s(i);FX.swap($("sdesc"))}}
 </script>
 </body>
