@@ -72,7 +72,6 @@ h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.1
 .btn.ghost:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
 .photo{position:relative;margin:0;align-self:start;margin-top:66px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--soft);border:1px dashed #C9C3BA}
 .photo:has(img){border:0;box-shadow:0 20px 50px -20px rgba(20,19,18,.35)}
-.photo .ph{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--faint);font-size:13px}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
 .photo figcaption{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);font-size:13px}
 .photo:not(:has(img)) figcaption{display:none}
@@ -132,11 +131,6 @@ h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.1
 .mini .k{font-family:var(--mono);font-size:11px;color:var(--muted)}
 .mini .v{font-family:var(--mono);font-size:22px;font-weight:600}
 .mini .gauge{margin:8px 0 18px}
-.next{margin-top:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 24px;border:1px dashed #C9C3BA;border-radius:14px}
-.next .k{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.next h4{margin:0;font-size:17px}
-.next .chips{margin-left:auto}
-.next .soon{font-family:var(--mono);font-size:11.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--paper)}
 
 /* ── principles ── */
 .plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
@@ -273,7 +267,6 @@ footer a:hover{color:var(--accent)}
   .case-body>div+div{border-left:0;border-top:1px solid var(--line)}
   .case-foot{grid-template-columns:1fr;padding:12px 24px 20px;gap:8px}
   .foot-note{padding:14px 24px 0}
-  .next .chips{margin-left:0}
   .pbody{padding:0 4px 24px 4px}
   .phead{grid-template-columns:44px minmax(0,1fr) 32px}
   .vs{grid-template-columns:1fr}
@@ -379,7 +372,7 @@ footer a:hover{color:var(--accent)}
   <div class="wrap sec-grid">
     <div class="rail"><span class="no">03</span><h2>AI 활용 경험</h2><p>일은 AI에게 맡기고, 결정과 검증은 제가 했습니다.</p></div>
     <div>
-      <p class="ai-intro">익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다. 일은 AI에게 맡기고, 결정과 검증은 제가 했습니다.</p>
+      <p class="ai-intro">익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다.</p>
       <div class="stats">
         <div><b data-to="4">4</b><span>Claude로 진행한 프로젝트</span></div>
         <div><b data-to="7">7</b><span>AI의 첫 답을 되돌린 장면</span></div>
@@ -487,7 +480,7 @@ const RAW=`이터널 리턴|AOS·배틀로얄
 발로란트|슈터
 테일즈런너|스포츠·레이싱
 SD 건담 캡슐파이터|격투
-철권7|격투
+철권 7|격투
 블러디 로어 2|격투
 라쳇 & 클랭크 퓨처|액션·어드벤처
 라쳇 & 클랭크 리부트|액션·어드벤처
@@ -500,8 +493,8 @@ SD 건담 캡슐파이터|격투
 록맨 X8|액션·어드벤처
 리니지|MMORPG
 리니지 2|MMORPG
-블레이드앤소울|MMORPG
-블레이드앤소울 2|MMORPG
+블레이드 & 소울|MMORPG
+블레이드 & 소울 2|MMORPG
 검은사막|MMORPG
 아이온|MMORPG
 아이온 2|MMORPG
@@ -511,8 +504,8 @@ SD 건담 캡슐파이터|격투
 PUBG: 배틀그라운드|슈터
 PUBG: 배틀그라운드 모바일|슈터
 쿠키런|캐주얼
-쿠키런 : 오븐브레이크|캐주얼
-쿠키런 : 모험의 탑|수집형·모바일
+쿠키런: 오븐브레이크|캐주얼
+쿠키런: 모험의 탑|수집형·모바일
 쿠키런 킹덤|수집형·모바일
 언차티드: 엘도라도의 보물|액션·어드벤처
 언차티드 2: 황금도와 사라진 함대|액션·어드벤처
@@ -535,8 +528,8 @@ PUBG: 배틀그라운드 모바일|슈터
 리듬 세상|퍼즐·리듬
 놀러오세요 동물의 숲|캐주얼
 도와줘! 리듬 히어로|퍼즐·리듬
-포켓몬스터DP 디아루가|RPG
-포켓몬스터DP 펄기아|RPG
+포켓몬스터 DP 디아루가|RPG
+포켓몬스터 DP 펄기아|RPG
 포켓몬스터 하트골드|RPG
 포켓몬스터 소울실버|RPG
 포켓몬스터 블랙|RPG
@@ -548,9 +541,9 @@ PUBG: 배틀그라운드 모바일|슈터
 젤다의 전설 스카이워드 소드|액션·어드벤처
 위쳐 3|RPG
 폴아웃 3|RPG
-콜 오브 듀티 4 : 모던 워페어|슈터
-배트맨 : 아캄 나이트|액션·어드벤처
-엘더스크롤 : 5 스카이림|RPG
+콜 오브 듀티 4: 모던 워페어|슈터
+배트맨: 아캄 나이트|액션·어드벤처
+엘더스크롤 5: 스카이림|RPG
 더 라스트 오브 어스|액션·어드벤처
 더 라스트 오브 어스 파트 I|액션·어드벤처
 더 라스트 오브 어스 파트 II|액션·어드벤처
@@ -558,7 +551,7 @@ PUBG: 배틀그라운드 모바일|슈터
 오버워치|슈터
 다크에덴|MMORPG
 그랜드체이스|MMORPG
-로스트사가|슈터
+로스트사가|격투
 바람의 나라|MMORPG
 메이플스토리|MMORPG
 메이플스토리 DS|MMORPG
@@ -572,12 +565,12 @@ PUBG: 배틀그라운드 모바일|슈터
 버블 파이터|슈터
 F1 24|스포츠·레이싱
 F1 25|스포츠·레이싱
-피파 온라인2|스포츠·레이싱
-피파 온라인3|스포츠·레이싱
-피파 온라인4|스포츠·레이싱
+피파 온라인 2|스포츠·레이싱
+피파 온라인 3|스포츠·레이싱
+피파 온라인 4|스포츠·레이싱
 FC 온라인|스포츠·레이싱
 퍼스트 디센던트|슈터
-퍼스트 버서커 : 카잔|액션·어드벤처
+퍼스트 버서커: 카잔|액션·어드벤처
 사이퍼즈|AOS·배틀로얄
 던전앤파이터|MMORPG
 던전앤파이터 모바일|MMORPG
@@ -586,14 +579,14 @@ FC 온라인|스포츠·레이싱
 레드 데드 리뎀션 2|액션·어드벤처
 서든어택|슈터
 카운터 스트라이크 온라인|슈터
-카운터 스트라이크 온라인2|슈터
+카운터 스트라이크 온라인 2|슈터
 카운터 스트라이크 글로벌 오펜시브|슈터
 그랜드 테프트 오토 2|액션·어드벤처
 그랜드 테프트 오토: 바이스 시티|액션·어드벤처
 그랜드 테프트 오토: 산 안드레아스|액션·어드벤처
 그랜드 테프트 오토 IV|액션·어드벤처
 그랜드 테프트 오토 V|액션·어드벤처
-클레르 옵스퀴르 : 33 원정대|RPG
+클레르 옵스퀴르: 33 원정대|RPG
 아웃라스트|생존·공포
 잇 테이크 투|액션·어드벤처
 레프트 4 데드|슈터
@@ -612,15 +605,15 @@ P의 거짓|액션·어드벤처
 바이오하자드 5|생존·공포
 바이오하자드 6|생존·공포
 바이오하자드 7|생존·공포
-검은 신화 : 오공|액션·어드벤처
+검은 신화: 오공|액션·어드벤처
 호라이즌 제로 던|액션·어드벤처
 호라이즌 포비든 웨스트|액션·어드벤처
 심즈 4|시뮬레이션
-stonewards|카드·전략
-니케 : 승리의 여신|수집형·모바일
-몬길 : 스타다이브|수집형·모바일
+Stonewards|카드·전략
+승리의 여신: 니케|수집형·모바일
+몬길: 스타다이브|수집형·모바일
 에픽세븐|수집형·모바일
-서머너즈워|수집형·모바일
+서머너즈 워|수집형·모바일
 윈드러너|캐주얼
 팔라독|수집형·모바일
 디아블로 II|RPG
@@ -964,7 +957,7 @@ EA 스포츠 FC 25|스포츠·레이싱
 오투잼|퍼즐·리듬
 야생의 땅: 듀랑고|샌드박스
 블루 아카이브|수집형·모바일
-메이플스토리 월드|캐주얼
+메이플스토리 월드|샌드박스
 메이플스토리 2|MMORPG
 카트라이더: 드리프트|스포츠·레이싱
 카트라이더 러쉬플러스|스포츠·레이싱
@@ -973,7 +966,7 @@ FC 모바일|스포츠·레이싱
 블레이드 & 소울 레볼루션|MMORPG
 블레이드 & 소울 NEO|MMORPG
 세븐나이츠 2|수집형·모바일
-서머너즈 워: 백년전쟁|RPG
+서머너즈 워: 백년전쟁|카드·전략
 프리스타일 풋볼|스포츠·레이싱
 라테일|MMORPG
 카발 온라인|MMORPG
@@ -1061,7 +1054,7 @@ spy("section.sec","nav a.l");
  addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd()}
 /* 모션 */
 FX.reveal(".hero-grid>div>*, .photo",document,.08);
-FX.reveal(".rail, .case, .next, .plist>li, .ai-intro, .stats>div, .track, .sdesc, .vs, .gtop, .stack, .legend, .gbar, .contact .k, .contact h2, .mailrow");
+FX.reveal(".rail, .case, .plist>li, .ai-intro, .stats>div, .track, .sdesc, .vs, .gtop, .stack, .legend, .gbar, .contact .k, .contact h2, .mailrow");
 {const _s=step;step=i=>{_s(i);FX.swap($("sdesc"))}}
 </script>
 </body>

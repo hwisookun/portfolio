@@ -255,6 +255,8 @@ table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-a
 table.t th{color:var(--muted);font-weight:600;font-size:12px;background:var(--soft)}
 table.t th:first-child,table.t td:first-child{text-align:left}
 table.t td.y{background:var(--inp-bg)}
+#tables table.t th,#tables table.t td{text-align:left}
+#tables table.t td.num{text-align:right}
 .csvb{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:8px;border:1px solid var(--ink);background:var(--paper);cursor:pointer;margin:12px 0 6px}
 .csvb:hover{background:var(--ink);color:#fff}
 .src{font-size:11.5px;color:var(--muted)}
@@ -349,7 +351,6 @@ table.t td.y{background:var(--inp-bg)}
 <section id="intent">
   <p class="eyebrow">02 · 기획 의도</p>
   <h2>왜 PUBG에 익스트랙션과 차량을 붙였나</h2>
-  <p class="oneline">PUBG에 '판과 판 사이를 잇는 성장(은신처)'과 '위험을 싣고 나가는 차량'을 붙인 16인 익스트랙션 모드</p>
   <div class="int2">
     <div class="blk"><h3>문제</h3><p>PUBG는 한 판이 끝나면 아이템과 성과가 모두 리셋된다. 잘해도 쌓이는 것이 없어, 다음 판을 할 이유가 '또 해보고 싶다'는 감정에만 기댄다.</p></div>
     <div class="blk"><h3>왜 익스트랙션을 접목했나</h3><ol><li><b>남는 것이 생긴다.</b> 살아서 가져온 것만 내 것이 되고(한 판의 긴장), 가져온 것으로 은신처가 자란다(판과 판 사이의 이유).</li><li><b>PUBG와 뼈대가 같다.</b> 파밍하고, 싸우고, 살아남는 흐름이 이미 PUBG의 핵심이다. 바뀌는 건 '1등'에 '살아서 나가기'라는 목표가 하나 더 붙는 것이다.</li><li><b>검증된, 커지는 장르다.</b> 타르코프는 정식 출시 한 달 만에 100만 장, 아크 레이더스는 1,400만 장 이상 (2차 인용).</li></ol><p class="mut" style="margin-top:6px;font-size:13.5px">레이드의 위험이 은신처의 가치를 만들고, 은신처의 성장이 다시 레이드로 돌아오는 이유가 된다.</p></div>
@@ -387,16 +388,16 @@ table.t td.y{background:var(--inp-bg)}
   <p class="mut" style="margin:0 0 14px">위 단계의 설계가 기획 의도대로 작동하는지 합격선과 대 본 결과다. 통과하지 못한 것도 그대로 적고 다음 조정을 정했다.</p>
   <div class="tw blk" style="padding:0;overflow:hidden"><table class="vt"><tr><th>확인한 것</th><th>기준</th><th>결과</th><th>판정</th><th></th></tr>
     <tr><td>평등한 시작</td><td>예산 최대 빌드 vs 풀 클래식, 승률 격차 5%p 이내</td><td><b id="r1">+3.5%p</b></td><td><span class="flag ok">통과</span></td><td><button class="go" data-s="0">1 준비 →</button></td></tr>
-    <tr><td>노릴 가치</td><td>얼티밋 vs 클래식, 승률 격차 8~12%p <span class="tagA">예시 기준</span></td><td><b id="r2">+10.5%p</b></td><td><span class="flag ok">범위 안</span></td><td><button class="go" data-s="2" data-t="duel">3 교전 →</button></td></tr>
+    <tr><td>노릴 가치</td><td>얼티밋 vs 클래식, 승률 격차 8~12%p <span class="tagA">가정</span></td><td><b id="r2">+10.5%p</b></td><td><span class="flag ok">범위 안</span></td><td><button class="go" data-s="2" data-t="duel">3 교전 →</button></td></tr>
     <tr><td>차량 vs 도보</td><td>차량 손익분기 (솔로, 짐 가득) 대비 실제 생존</td><td><b>23%</b> · 봇 94.5% vs 89.9%</td><td><span class="flag over">가정과 방향 반대 · 소음 배율 재조정</span></td><td><button class="go" data-s="3">4 운반 →</button></td></tr>
     <tr><td>최고 등급 공급</td><td>레전더리+얼티밋 판당 1~4개가 실제로 열림</td><td><b>0.59개</b> (계산 2.8개)</td><td><span class="flag over">미달 · 열쇠 확률 조정</span></td><td><button class="go" data-s="2" data-t="box">3 상자 →</button></td></tr>
     <tr><td>판이 굴러가는가</td><td>탈출률 50~60%, 판당 교전 5회 안팎</td><td><b>60.8%</b> · 5.3회</td><td><span class="flag over">탈출률 소폭 초과</span></td><td><button class="go" data-s="4">5 철수 →</button></td></tr></table></div>
   <p class="small" style="margin:8px 0 0">교전 승률은 1:1 교전 모델(엑셀 수식), 나머지는 봇 16명 × 3,000판 점검 값이다. 기준 값은 모두 작성자 가정.</p>
 
   <h3 style="margin:26px 0 6px">실제로 돌아가는 게임에서 다시 확인했다</h3>
-  <p class="mut" style="margin:0 0 12px">위 표의 수치는 공간이 없는 시뮬레이션 값이다. 같은 규칙을 언리얼 5.5 프로토타입(사람 1 + 봇 15, 맵 2 &quot;댐과 지하 계곡&quot;)에 넣어 봇만 여러 판 돌려, 시뮬레이션과 얼마나 같은지 비교했다.</p>
+  <p class="mut" style="margin:0 0 12px">위 표의 수치는 공간이 없는 시뮬레이션 값이다. 같은 규칙을 언리얼 5.5 프로토타입(사람 1 + 봇 15, 6×6 &quot;댐과 지하 계곡&quot;)에 넣어 봇만 여러 판 돌려, 시뮬레이션과 얼마나 같은지 비교했다.</p>
   <div class="tw blk" style="padding:0;overflow:hidden"><table class="vt"><tr><th>비교한 것</th><th>시뮬레이션</th><th>프로토타입</th><th>판정</th></tr>
-    <tr><td>교전 모델 구현</td><td>얼티밋 vs 클래식 +10.5%p · 예산 최대 +3.5%p</td><td><b>+10.47%p · +3.46%p</b><br><span class="small">닫힌 식과 360만 판 모의 교전의 최대 차이 0.0082</span></td><td><span class="flag ok">일치</span></td></tr>
+    <tr><td>교전 모델 구현</td><td>얼티밋 vs 클래식 +10.5%p · 예산 최대 +3.5%p</td><td><b>+10.47%p · +3.46%p</b><br><span class="small">닫힌 식과 360만 판 모의 교전의 최대 차이 0.82%p</span></td><td><span class="flag ok">일치</span></td></tr>
     <tr><td>살아서 끝난 비율</td><td>철수 60.8% <span class="small">(챔피언 약 4% 별도 집계)</span></td><td><b>철수+챔피언 59.6~61.3%</b><br><span class="small">봇 16판 × 2회, 오차 ±6%p</span></td><td><span class="flag ok">비슷 · 집계 기준 다름</span></td></tr>
     <tr><td>차량형 봇 철수율</td><td>70.2%</td><td><b>67.8%</b> <span class="small">(봇 30판, 오차 ±8%p)</span></td><td><span class="flag ok">오차 안</span></td></tr>
     <tr><td>차량 철수 비율</td><td>21.7%</td><td><b>14.0%</b> <span class="small">(차량 판단 조절값을 켠 측정, 37건)</span><br><span class="small">기본 설정에서는 0.8~8.5%</span></td><td><span class="flag over">미달 · 차 3~4대뿐</span></td></tr>
@@ -444,7 +445,7 @@ table.t td.y{background:var(--inp-bg)}
   </div></details>
 
   <details class="ap"><summary>시뮬레이션을 게임에 맞춘 기록<small>언리얼 프로토타입 · 자체 측정</small></summary><div class="apb">
-    <p class="small" style="margin:0 0 8px">목표는 위키 시뮬레이션 값(철수 60.8%, 차량 철수 21.7%). 봇 30판(450건) 단위, 사람 차량 없음. 맵 1(그레이박스) 기준, 건물이 바뀐 마지막 줄은 지도가 조금 다르다.</p>
+    <p class="small" style="margin:0 0 8px">목표는 기획서 시뮬레이션 값(철수 60.8%, 차량 철수 21.7%). 봇 30판(450건) 단위, 사람 차량 없음. 그레이박스 시험 지도 기준이고, 마지막 줄은 건물이 바뀐 지도라 조건이 조금 다르다.</p>
     <div class="tw"><table class="t"><tr><th>단계</th><th>철수+챔피언</th><th>차량 철수</th><th>무엇을 고쳤나</th></tr>
       <tr><td>첫 측정</td><td>3.3%</td><td>0%</td><td style="white-space:normal;text-align:left">봇이 블루존에서 도망치지 않음, 철수 지점이 블루존 밖에 놓임</td></tr>
       <tr><td>결함 2개 수정</td><td>48.0%</td><td>0%</td><td style="white-space:normal;text-align:left">블루존 사망 82건 → 0건</td></tr>
@@ -470,7 +471,7 @@ table.t td.y{background:var(--inp-bg)}
       <tr><td>v0.1</td><td>2026-10-16</td><td style="white-space:normal;text-align:left">엑셀 기획서와 위키 첫 작성</td></tr>
       <tr><td>v0.2</td><td>2026-10-21</td><td style="white-space:normal;text-align:left">'한 판 따라가기'로 재구성 · 1:1 교전 승률 모델 도입(TTK 식 수정, 지수 2 가정 폐기) · 교전 단점을 교전 밖 대가로 이동 · 등급 곡선 2단(레전더리 ×1.6, 얼티밋 ×1.8) · 차량 손익분기에 탑승 인원과 짐 양 반영</td></tr>
       <tr><td>v0.3</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">언리얼 프로토타입으로 시뮬레이션 결과 재확인(교전 모델 일치, 봇 판 단위 비교) · 검증 결과에 한계 추가 · 부록에 시뮬레이션 맞추기 기록</td></tr>
-      <tr><td>v1.0</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">v0.3 내용으로 확정</td></tr></table></div>
+      <tr><td>v1.0</td><td>2026-10-22</td><td style="white-space:normal;text-align:left">v0.3 내용으로 확정 · 애드온 데이터 표를 13종 전체로 정리 · 표기 통일</td></tr></table></div>
   </div></details>
 
   <p class="foot">원본: 익스트랙션_기획서_단계흐름형.xlsx · 작성 김휘수 · 만든 방식은 <a href="ai-experience.html">AI 활용 경험</a>에 정리했다.</p>
@@ -573,7 +574,7 @@ function go(i){cur=Math.max(0,Math.min(5,i));[...$("steps").children].forEach((b
 const exnum=h=>$("exnum").innerHTML=h?`<div class="blk">${h}</div>`:"";
 
 /* ① 로드아웃 빌더 */
-const SL=[["총구","보정기",true],["조준","레드닷",false],["손잡이","수직 손잡이",true],["개머리판","전술 개머리판",true],["탄창","대용량 탄창",false]];
+const SL=[["총구","보정기",true],["조준","레드도트",false],["손잡이","수직 손잡이",true],["개머리판","전술 개머리판",true],["탄창","대용량 탄창",false]];
 let LO=[3,0,2,0,0];
 function s1(){
   const used=LO.reduce((a,g)=>a+COST[g],0);
@@ -737,11 +738,11 @@ function s6(){
 /* ── 부록 테이블 ── */
 const T={
  grades:{t:"등급 (addon_tiers)",h:["id","등급","효과 배율","반입 비용","얻는 곳"],r:G.map((g,i)=>[`T${i}`,g,"×"+MULT[i].toFixed(2),COST[i]??"반입 불가",["외곽 · 무료 로드아웃","외곽·중간","중간","중간·고위험","고위험 · 비밀의 방","비밀의 방 · 보급"][i]]),y:[2]},
- addons:{t:"애드온 기준값 (addons) · 클래식",h:["id","슬롯","애드온","효과","교전 밖 대가 (단계당)","출처"],r:[["A01","총구","보정기","수직 15 · 패턴 25 · 수평 10%","총소리 거리 +3%","rankedboost (구버전)"],["A02","손잡이","수직 손잡이","수직 15 · 패턴 20%","-","작성자 가정"],["A03","개머리판","전술 개머리판","패턴 20 · 회복 15%","-","rankedboost (구버전)"],["A04","탄창","대용량 탄창","장탄 +33.3% (30→40발)","재장전 +3%","PUBG Wiki (비공식)"]],y:[3]},
+ addons:{t:"애드온 기준값 (addons) · 클래식",h:["id","슬롯","애드온","효과","교전 밖 대가 (단계당)","출처"],r:AD.map((a,i)=>{const src={"보정기":"rankedboost (구버전)","소염기":"rankedboost (구버전)","소음기":"rankedboost (구버전)","앵글 손잡이":"rankedboost (구버전)","전술 개머리판":"rankedboost (구버전)","칙패드":"rankedboost (구버전)","퀵드로우 탄창":"rankedboost (구버전)","대용량 탄창":"PUBG Wiki (비공식)"}[a[1]]||"작성자 가정";return["A"+String(i+1).padStart(2,"0"),a[0],a[1],a[2].map(([k,v])=>k+" "+v+"%").join(" · ")+(a[1]==="배율 스코프"?" · 배율 레어 2 / 엘리트 4 / 에픽 6 / 레전더리 8 / 얼티밋 15배":"")+(a[3]?" · "+a[3]:""),a[1]==="보정기"?"총소리 거리 +3%":"-",src]}),y:[3]},
  crates:{t:"상자 (crates)",h:["id","상자","구역","평균 개수","애드온 비율","클","레","엘","에","레전","얼"],r:BOX.map((b,i)=>[`C${i+1}`,b.n,b.z,b.avg,b.ad*100+"%",...b.w]),y:[3,4,5,6,7,8,9,10]},
  maps:{t:"맵 (maps)",h:["id","맵","크기","밀도 (명/㎢)","도보 한 변","차량 한 변","탄약","무기","사물함","비밀","보급"],r:[["M1","봉쇄 항만 도시","4×4",1.00,"13분","3분",50,30,60,3,2],["M2","댐과 지하 계곡","6×6",0.44,"20분","5분",60,40,70,3,3],["M3","사막 고속도로 회랑","8×8",0.25,"27분","7분",70,45,60,3,4]],y:[6,7,8,9,10]}
 };
-$("tables").innerHTML=Object.entries(T).map(([k,v])=>`<h3 style="margin:14px 0 6px">${v.t}</h3><div class="tw"><table class="t"><tr>${v.h.map(h=>`<th>${h}</th>`).join("")}</tr>${v.r.map(r=>`<tr>${r.map((c,i)=>`<td class="${v.y.includes(i)?"y":""}">${c}</td>`).join("")}</tr>`).join("")}</table></div><button class="csvb" type="button" data-k="${k}">${k}.csv</button>`).join("")+`<p class="src">노란 칸 = 작성자 가정. 개인 사물함의 등급 상한(레어)과 엘리트 가중치 불일치는 수정 예정.</p>`;
+$("tables").innerHTML=Object.entries(T).map(([k,v])=>`<h3 style="margin:14px 0 6px">${v.t}</h3><div class="tw"><table class="t"><tr>${v.h.map(h=>`<th>${h}</th>`).join("")}</tr>${v.r.map(r=>`<tr>${r.map((c,i)=>`<td class="${v.y.includes(i)?"y":""}${/^[-+×]?[\d.,]+%?$/.test(String(c))?" num":""}">${c}</td>`).join("")}</tr>`).join("")}</table></div><button class="csvb" type="button" data-k="${k}">${k}.csv</button>`).join("")+`<p class="src">노란 칸 = 작성자 가정.</p>`;
 function dl(name,rows){const b=new Blob(["﻿"+rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n")],{type:"text/csv"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 $("tables").onclick=e=>{const b=e.target.closest(".csvb");if(!b)return;const v=T[b.dataset.k];dl(b.dataset.k+".csv",[v.h,...v.r])};
 let MX=null;

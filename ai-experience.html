@@ -115,7 +115,7 @@ h3{font-size:17px;letter-spacing:-.01em;margin:0 0 6px}
 .case-h p{margin:4px 0 0;color:var(--muted)}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap}
 .btn:hover{background:var(--accent)}
-.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;padding:18px 24px 6px;position:relative}
+.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:0;padding:18px 24px 6px;position:relative}
 .pn{position:relative;border:0;background:none;cursor:pointer;text-align:center;padding:0 4px;color:var(--muted)}
 .pn .d{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 8px;border-radius:12px;border:2px solid var(--line);background:var(--paper);font-weight:800;font-size:15px;transition:all .2s}
 .pn .t{font-size:13px;font-weight:700;display:block}
@@ -318,7 +318,7 @@ details.ot>summary span{font-size:12.5px;color:var(--muted)}
   <h2>시뮬레이터로 찾은 값을 바로 데이터로</h2>
   <p class="sub">PUBG 익스트랙션 모드 기획서의 모든 수치를 이 흐름으로 만들었습니다. 단계를 누르면 AI가 한 일과 제가 한 일이 나옵니다.</p>
   <article class="case">
-    <div class="case-h"><div><span class="chip c-gdd">게임 기획서</span><h3 style="margin-top:6px;font-size:20px">PUBG 익스트랙션 모드 기획서</h3><p>16인 익스트랙션 + 차량 운반 + 은신처 성장. 엑셀 수식 기반, 웹에서는 '한 판 따라가기'로 직접 눌러 본다.</p></div><a class="btn" href="extraction-wiki.html">기획서 보기 →</a></div>
+    <div class="case-h"><div><span class="chip c-gdd">게임 기획서</span><h3 style="margin-top:6px;font-size:20px">PUBG 익스트랙션 모드 기획서</h3><p>16인 익스트랙션 + 차량 운반 + 은신처 성장. 엑셀 수식으로 계산하고 언리얼 5.5 프로토타입에서 다시 확인했다. 웹에서는 '한 판 따라가기'로 직접 눌러 본다.</p></div><a class="btn" href="extraction-wiki.html">기획서 보기 →</a></div>
     <div class="pipe" role="tablist" id="pipe"></div>
     <div class="pd" id="pd" role="tabpanel" aria-live="polite"></div>
     <div class="c1-fix"><div class="k">AI의 계산을 그대로 쓰지 않은 사례 <span>수정 전 · 후를 눌러 비교</span></div><div class="fixes" id="fixes"></div></div>
@@ -436,13 +436,13 @@ $("ticker").innerHTML=TK.map(([p,q,a])=>`<div class="tk"><span class="chip ${p==
 /* 01 대응표 */
 const MAP=[
  ["시스템 설계","규칙과 구조",[["gdd","반입 예산 5점 · 슬롯 5 · 등급 6단계, 최고 등급은 저장 불가","#gdd"],["app","도감 3단계 보유, 데일리 가챠, 친밀도 게이지","#app"]]],
- ["밸런스·수치 검증","기준을 먼저 세우고 확인",[["gdd","출발선 격차 기준을 먼저 정하고 엑셀 수식으로 계산","#gdd"],["gdd","1:1 교전 승률 모델로 등급별 이득폭 검증","#gdd"]]],
- ["데이터 작업","결과를 바로 쓰는 데이터로",[["gdd","시뮬레이터 결과를 ID 붙은 CSV 데이터 테이블로 변환","#gdd"],["gdd","CSV 15개로 봇 16명 × 3,000판 점검","#gdd"]]],
+ ["밸런스·수치 검증","기준을 먼저 세우고 확인",[["gdd","합격선(예산 최대 빌드 승률 격차 5%p 이내)을 먼저 정하고 엑셀 수식으로 계산","#gdd"],["gdd","1:1 교전 승률 모델로 등급별 이득폭 검증","#gdd"]]],
+ ["데이터 작업","결과를 바로 쓰는 데이터로",[["gdd","시뮬레이터 결과를 ID 붙은 CSV 데이터 테이블로 변환","#gdd"],["gdd","봇 판 집계를 게임 로그와 대조해, 챔피언을 철수 실패로 센 집계 오류(61.3%가 55.3%로 보임)를 찾음","extraction-wiki.html#appendix"]]],
  ["조사와 근거 관리","믿을 수 있는 숫자만",[["gdd","출처를 공식·2차 인용·비공식·구버전으로 구분, 근거 없는 값은 노란 칸","#gdd"],["app","원문을 확인할 수 없는 건강 근거는 폐기","#scenes"]]],
  ["플레이테스트·QA","직접 써 보고 판정",[["app","에뮬레이터로 써 보며 피드백 14건 → 반영 9 · 부분 3 · 보류 2","#app"],["gdd","언리얼 프로토타입에서 봇 판을 돌려 시뮬레이션과 대조, 결함을 고쳐 철수율 3.3% → 65.6%","extraction-wiki.html#result"],["sch","검증 점수 대신 별도 테스트 498장으로 재측정 (폐 CT)","#other"]]],
  ["온보딩·리텐션","처음 온 사람이 막히지 않게",[["app","온보딩 5단계 취향 설문, 진행률과 '상관 없어요' 탈출구","#app"],["app","하루 한 번 뽑는 가챠로 매일 돌아올 이유","#app"]]],
  ["문서·협업","말 대신 보여 주기",[["gdd","글 대신 '한 판 따라가기'로 눌러 보는 기획서","#gdd"],["app","AI가 읽는 설명서(CLAUDE.md)·PRD를 코드 기준으로 정정","#scenes"]]],
- ["악용 대응","규칙의 구멍 막기",[["app","닉네임 30일 1회 변경으로 제재 회피 차단","#app"],["gdd","무료 로드아웃 부계정 파밍 등 악용 시나리오 대응","#gdd"]]]
+ ["악용 대응","규칙의 구멍 막기",[["app","닉네임 30일 1회 변경으로 제재 회피 차단","#app"]]]
 ];
 const PN={gdd:["c-gdd","기획서"],app:["c-app","맡다."],sch:["c-sch","학교"]};
 $("maprows").innerHTML=MAP.map(([j,s,items])=>`<div class="mrow"><div class="job">${j}<small>${s}</small></div><ul>${items.map(([p,t,h])=>`<li data-p="${p}"><span class="chip ${PN[p][0]}">${PN[p][1]}</span><span>${esc(t)}</span><a href="${h}">보기 →</a></li>`).join("")}</ul></div>`).join("");
@@ -455,6 +455,7 @@ const PIPE=[
  ["수식","엑셀",false,"모든 수치를 엑셀 수식으로 연결해, 가정 하나를 바꾸면 결론까지 다시 계산되게 합니다.","AI가 수식을 짜고, 저는 수정할 때마다 재계산해 오류와 참조 끊김을 확인했습니다."],
  ["시뮬레이터","등급·거리",false,"1:1 교전 승률, 파밍 기대값, 차량 손익분기를 시뮬레이터로 돌립니다. 웹에서도 같은 식으로 계산해 엑셀 값과 대조합니다.","계산식의 논리 오류를 점검하라고 지시해, TTK 식의 명중률 처리 오류와 근거 없는 승률 지수 가정을 찾아 고쳤습니다. 1:1 교전 모델은 난수 시뮬레이션 대신 엑셀 수식으로 돌아가게 정했습니다."],
  ["기준 판정","합격선",false,"합격선을 먼저 정하고 결과를 대 봅니다. 예산 최대 빌드는 클래식 대비 +3.5%p로 출발선 기준 5%p 이내, 얼티밋은 +10.5%p로 맵 전용 범위 안.","'단점이 교전을 뒤집는다'는 결과를 보고 상위 등급의 단점을 교전 밖(총소리)으로 옮기는 설계 판단을 제가 내렸습니다."],
+ ["게임에서 확인","프로토타입",false,"같은 규칙을 언리얼 5.5 프로토타입에 넣고 봇 판을 돌려 시뮬레이션 값과 대조합니다. 첫 측정의 철수율 3.3%에서 원인(봇이 블루존을 피하지 않음, 철수 지점이 블루존 밖)을 찾아 고쳐 65.6%까지 맞췄습니다.","구현과 자동 검사는 AI에게 맡기고, 어디까지 맞출지는 제가 정했습니다. 기준값이 가정이라, 유형별 차이는 확정 전에는 더 맞추지 않기로 했습니다."],
  ["데이터","CSV",false,"검증된 결과를 ID가 붙은 데이터 테이블(등급·애드온·상자·맵·승률표)로 내보냅니다. 개발에서 바로 쓰는 형태입니다.","손으로 옮겨 적지 않아 작업 시간과 옮겨 적기 실수를 줄였습니다."]
 ];
 let pi=0;
