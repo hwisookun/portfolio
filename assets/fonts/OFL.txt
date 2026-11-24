@@ -1,5 +1,5 @@
 Copyright (c) 2024 PT& (피티앤)
-Freesentation (프리젠테이션). The woff2 files here are subsets of the original TTF files, made for this site.
+Freesentation (프리젠테이션) version 2.001. The woff2 files here are subsets of the original TTF files, made for this site.
 
 SIL OPEN FONT LICENSE
 
