@@ -26,11 +26,11 @@
 @font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-8ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap}
 
 :root{
-  --bg:#F5F4F0; --paper:#FFFFFF; --soft:#ECEAE4; --line:#E1DED7;
-  --ink:#15171C; --muted:#5A5F68; --faint:#9AA0A8;
-  --accent:#C2410C; --accent-hi:#FF7A3D; --accent-soft:#FCEBDD;
-  --good:#1F6B37; --good-soft:#E3F1E6; --warn:#B42318; --warn-soft:#FDE8E6;
-  --hud:#15171C; --hud-2:#1F232B; --hud-line:#2E333D; --hud-ink:#F5F4F0; --hud-muted:#A9AEB7;
+  --bg:#FFFFFF; --paper:#FFFFFF; --soft:#F2F4F6; --line:#E5E8EB; --alt:#F9FAFB;
+  --ink:#191F28; --muted:#4E5968; --faint:#8B95A1;
+  --accent:#1B64DA; --accent-hi:#6AA8FF; --accent-soft:#E8F3FF;
+  --good:#0A7A47; --good-soft:#E3F6EC; --warn:#D22030; --warn-soft:#FDECEE;
+  --hud:#191F28; --hud-2:#222A35; --hud-line:#333D4B; --hud-ink:#F9FAFB; --hud-muted:#B0B8C1;
   --sans:"Freesentation","Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
   color-scheme:light;
 }
@@ -44,7 +44,7 @@ a{color:inherit}
 .skip:focus{top:12px}
 
 /* ── 상단 바 ── */
-.nav{position:sticky;top:0;z-index:30;background:rgba(245,244,240,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{max-width:1120px;display:flex;align-items:center;gap:16px;height:60px}
 .brand{font-weight:800;font-size:18px;text-decoration:none;white-space:nowrap}
 .nav nav{flex:1;min-width:0;display:flex;justify-content:center}
@@ -53,8 +53,8 @@ a{color:inherit}
 .nav a.l{display:block;padding:7px 14px;border-radius:999px;font-size:15px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap}
 .nav a.l:hover{color:var(--ink);background:var(--soft)}
 .nav a.l.on{color:#fff;background:var(--ink)}
-.nav .cta{padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
-.nav .cta:hover{background:var(--ink)}
+.nav .cta{padding:8px 16px;border-radius:999px;background:var(--ink);color:#fff;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+.nav .cta:hover{background:var(--accent)}
 
 /* ── 버튼 ── */
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -68,7 +68,7 @@ a{color:inherit}
 .hero>.wrap{position:relative;z-index:2;width:100%;pointer-events:none}
 .hero-center{position:relative;max-width:700px;margin:0 auto;text-align:center}
 .hero-center>*{pointer-events:auto}
-.hero-center::before{content:"";position:absolute;inset:-70px -120px;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,var(--bg) 60%,rgba(245,244,240,.85) 76%,rgba(245,244,240,0))}
+.hero-center::before{content:"";position:absolute;inset:-70px -120px;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,var(--bg) 60%,rgba(255,255,255,.85) 76%,rgba(255,255,255,0))}
 .avatar{width:156px;aspect-ratio:4/5;height:auto;margin:0 auto 22px;border-radius:18px;overflow:hidden;border:3px solid var(--paper);box-shadow:0 12px 30px -14px rgba(21,23,28,.5)}
 .avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .who{margin:-4px 0 18px;font-size:clamp(18px,2.2vw,22px);font-weight:600;color:var(--ink)}
@@ -86,7 +86,7 @@ h1 .hl{color:var(--accent)}
 
 /* ── 섹션 공통: 가운데 머리 ── */
 .sec{padding:88px 0}
-.sec.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec.alt{background:var(--alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .head{max-width:640px;margin:0 auto 36px;text-align:center}
 .head .no{display:inline-block;margin:0 0 10px;font-size:15px;font-weight:700;color:var(--accent)}
 .head h2{margin:0 0 8px;font-size:clamp(30px,4.2vw,42px);font-weight:800;line-height:1.2;letter-spacing:-.02em}
@@ -115,29 +115,41 @@ h1 .hl{color:var(--accent)}
 
 /* ── 한 일 카드 ── */
 .works{display:grid;gap:24px;max-width:880px;margin:0 auto}
-.proj{display:block;background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
-.proj:hover{transform:translateY(-2px);border-color:var(--faint);box-shadow:0 24px 50px -30px rgba(21,23,28,.45)}
-.proj:hover .go i{transform:translateX(4px)}
+.proj{display:block;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
+a.proj:hover{transform:translateY(-2px);border-color:var(--faint);box-shadow:0 24px 50px -30px rgba(21,23,28,.45)}
+a.proj:hover .go i{transform:translateX(4px)}
 .proj-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--hud);color:var(--hud-ink)}
 .proj-kpi>div{display:flex;flex-direction:column;gap:6px;padding:24px 26px;border-right:1px solid var(--hud-line);min-width:0}
 .proj-kpi>div:last-child{border-right:0}
-.proj-kpi .v{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--accent-hi)}
+.proj-kpi .v{white-space:nowrap;font-size:clamp(24px,2.5vw,32px);font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--accent-hi)}
 .proj-kpi .k{font-size:14px;color:var(--hud-muted);line-height:1.4}
 .proj-kpi .chip{align-self:flex-start;margin-top:4px}
-.proj-kpi .chip.pass{background:rgba(74,190,120,.16);color:#7FD8A3}
+.proj-kpi .chip.pass{background:rgba(52,199,123,.16);color:#6EE2A4}
+.proj-kpi .chip.info{background:rgba(106,168,255,.16);color:#9CC6FF}
 .proj-kpi .chip.over{background:rgba(255,107,91,.16);color:#FF9A8C}
 .proj-body{padding:28px 30px 26px}
 .proj h3{margin:0 0 8px;font-size:28px;font-weight:800;line-height:1.3;letter-spacing:-.02em}
 .proj .sum{margin:0 0 20px;color:var(--muted)}
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px}
-.pd>div{padding:16px 18px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.pd>div{padding:16px 18px;border-radius:14px;background:var(--alt);border:1px solid var(--line)}
 .pd small{display:block;margin:0 0 4px;font-size:14px;font-weight:700;color:var(--muted)}
 .pd>div+div small,.pd .me small{color:var(--accent)}
 .pd p{margin:0;font-size:16px;line-height:1.6}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
 .chips li{padding:3px 10px;border-radius:999px;background:var(--soft);font-size:14px;font-weight:500;color:var(--muted)}
 .go{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--ink);color:#fff;font-size:16px;font-weight:600}
-.proj:hover .go{background:var(--accent)}
+a.proj:hover .go{background:var(--accent)}
+.go.wait{background:var(--soft);color:var(--muted)}
+.idx{display:inline-block;margin-right:8px;font-weight:800;color:var(--accent)}
+.uses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.uses>div{display:flex;flex-direction:column;gap:4px;padding:18px;border-radius:14px;background:var(--alt);border:1px solid var(--line)}
+.uses small{font-size:14px;font-weight:700;color:var(--accent)}
+.uses b{font-size:18px;line-height:1.35}
+.uses p{margin:2px 0 6px;font-size:15px;line-height:1.55;color:var(--muted)}
+.uses .n{margin-top:auto;font-size:22px;font-weight:800;letter-spacing:-.01em}
+.uses .n span{display:block;font-size:13px;font-weight:500;color:var(--faint)}
+.flowline{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 18px;padding:12px 16px;border-radius:12px;background:var(--accent-soft);font-size:15px;font-weight:600;color:var(--accent)}
+.flowline i{font-style:normal;color:var(--faint)}
 .go i{font-style:normal;transition:transform .2s}
 .flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0 0 18px;padding:0;list-style:none;counter-reset:f}
 .flow li{position:relative;display:flex;flex-direction:column;gap:2px;padding:16px 14px 16px 16px;background:var(--paper);border:1px solid var(--line);margin-left:-1px}
@@ -148,7 +160,7 @@ h1 .hl{color:var(--accent)}
 .flow span{font-size:17px;font-weight:700}
 .flow small{font-size:13.5px;color:var(--muted);line-height:1.45}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.sec.alt .card{background:var(--bg)}
+.sec.alt .proj{background:var(--paper)}
 .card-head{padding:28px 30px 22px}
 .tag{display:inline-block;margin:0 0 10px;padding:3px 10px;border-radius:999px;background:var(--soft);font-size:14px;font-weight:600;color:var(--muted)}
 .card h3{margin:0 0 8px;font-size:clamp(24px,3vw,30px);font-weight:800;line-height:1.3;letter-spacing:-.02em}
@@ -271,6 +283,7 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
   .proj-body{padding:22px 20px}
   .proj h3{font-size:24px}
   .pd{grid-template-columns:1fr}
+  .uses{grid-template-columns:1fr}
   .flow{grid-template-columns:1fr 1fr;gap:8px}
   .flow li,.flow li:first-child,.flow li:last-child{border-radius:12px;margin-left:0}
   .flow li::after{display:none}
@@ -333,7 +346,7 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
       </div>
       <ul class="stats">
         <li><small>가치관</small><b>규칙을 만들고<br><em>수식으로 검증</em></b></li>
-        <li><small>대표 프로젝트</small><b>던파 쿨타임 감소<br>역기획서</b></li>
+        <li><small>대표 프로젝트</small><b>칠흑의 정화<br>쿨타임 감소 역기획서</b></li>
         <li><small>플레이한 게임</small><span class="big" data-to="515">515</span><b style="display:inline;font-size:18px"> 개</b></li>
         <li><small>일하는 방식</small><b>AI는 빠른 손,<br><em>판단과 검증은 직접</em></b></li>
         <li><small>강점</small><b>왜 이건지 한 번 더<br><em>생각해 보는 신중함</em></b></li>
@@ -345,8 +358,46 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
 
 <section class="sec alt" id="works">
   <div class="wrap">
-    <div class="head"><span class="no">01</span><h2>프로젝트</h2><p>문제를 정의하고, 기준을 세우고, 수치로 확인했습니다.</p></div>
+    <div class="head"><span class="no">01</span><h2>프로젝트</h2><p>원리를 계산하고, 도구로 검증하고, 개선안까지 냈습니다.</p></div>
     <div class="works">
+      <article class="proj">
+        <div class="proj-kpi" aria-label="개선안 결과">
+          <div><span class="v">50% → 64%</span><span class="k">직업 쿨감 20% 이상 직업의 칠흑 데미지 증가</span><span class="chip pass">격차 축소</span></div>
+          <div><span class="v">4개 → 21개</span><span class="k">정화가 타락보다 나은 직업 (63개 중)</span><span class="chip pass">선택지 회복</span></div>
+          <div><span class="v">18.6% → 16.1%</span><span class="k">쿨이 찼는데 못 누른 시전 비율</span><span class="chip pass">손실 감소</span></div>
+        </div>
+        <div class="proj-body">
+          <span class="tag"><span class="idx">01</span>전투 밸런스 역기획서 · 던전앤파이터</span>
+          <h3>칠흑의 정화 쿨타임 감소 역기획서</h3>
+          <p class="sum">같은 장비의 쿨타임 감소가 직업마다 왜 다르게 먹히는지, 직업별 칠흑 1위 63명의 43초 사이클로 계산했습니다.</p>
+          <div class="pd">
+            <div><small>문제</small><p>타락의 쿨타임 감소 55%는 한도 70%에 먼저 막히는 직업일수록 덜 강해지고, 정화를 고를 이유는 사라집니다.</p></div>
+            <div><small>채택안</small><p>한도를 넘은 쿨타임 감소는 1%p당 최종 데미지 1.5%로 돌려주고, 정화의 최종 데미지를 17.5%에서 30%로 올립니다.</p></div>
+          </div>
+          <ul class="chips"><li>쿨타임 감소 공식</li><li>정수 사용 횟수</li><li>개선안 3종 비교</li><li>리스크·확인 지표</li></ul>
+          <span class="go wait">공개 준비 중</span>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="proj-kpi" aria-label="시뮬레이터 규모">
+          <div><span class="v">63개 직업</span><span class="k">던담 직업별 칠흑 1위의 실제 스킬</span><span class="chip info">데이터</span></div>
+          <div><span class="v">59 / 63</span><span class="k">던담 총 데미지와 ±10% 안으로 재현</span><span class="chip pass">재현 오차</span></div>
+          <div><span class="v">0.01초</span><span class="k">43초 사이클을 시뮬레이션하는 단위</span><span class="chip info">사이클</span></div>
+        </div>
+        <div class="proj-body">
+          <span class="tag"><span class="idx">02</span>웹 시뮬레이터 · 01 역기획서 검증용</span>
+          <h3>정화 개선안 시뮬레이터</h3>
+          <p class="sum">직업·규칙·상태를 바꾸면 43초 동안 스킬을 몇 번 쓰고, 몇 번 못 누르는지 바로 보여 줍니다. 역기획서의 개선안 세 가지를 이 도구로 비교했습니다.</p>
+          <div class="pd">
+            <div><small>왜 만들었나</small><p>쿨타임 감소의 효과는 퍼센트가 아니라 정수 사용 횟수로 나타나서, 직업별 실제 사이클을 돌려 봐야 판단할 수 있습니다.</p></div>
+            <div><small>어떻게 돌리나</small><p>손이 비면 준비된 스킬 중 한 번 데미지가 큰 것부터 씁니다. 소환사·카오스·다크나이트는 구조가 달라 뺐습니다.</p></div>
+          </div>
+          <ul class="chips"><li>현행 · 개선안 A · B · C</li><li>정화 · 타락 전환</li><li>못 누른 시전 표시</li></ul>
+          <span class="go wait">공개 준비 중</span>
+        </div>
+      </article>
+
       <a class="proj" href="extraction-wiki.html">
         <div class="proj-kpi" aria-label="검증 결과">
           <div><span class="v">+3.5%p</span><span class="k">예산 최대 빌드 vs 클래식 승률</span><span class="chip pass">기준 5%p 이내 · 통과</span></div>
@@ -354,7 +405,7 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
           <div><span class="v">23%</span><span class="k">차량 손익분기 (솔로)</span><span class="chip over">봇 결과와 반대 · 재검토</span></div>
         </div>
         <div class="proj-body">
-          <span class="tag">신규 모드 기획서 · PUBG</span>
+          <span class="tag"><span class="idx">03</span>신규 모드 기획서 · PUBG</span>
           <h3>PUBG 익스트랙션 모드 기획서</h3>
           <p class="sum">16인 익스트랙션에 차량 운반과 은신처 성장을 붙인 모드입니다. 엑셀 시뮬레이션과 언리얼 5.5 프로토타입으로 확인했습니다.</p>
           <div class="pd">
@@ -368,19 +419,15 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
 
       <a class="proj" href="ai-experience.html">
         <div class="proj-body">
-          <span class="tag">AI 활용 경험</span>
+          <span class="tag"><span class="idx">04</span>AI 활용 경험</span>
           <h3>일은 AI에게, 결정과 검증은 제가</h3>
-          <p class="sum">익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다.</p>
-          <ol class="flow" aria-label="일하는 순서">
-            <li><b>1</b><span>계획 먼저</span><small>조사·계획 문서부터 받기</small></li>
-            <li><b>2</b><span>승인 뒤 구현</span><small>방향을 정하기 전엔 코드 금지</small></li>
-            <li><b>3</b><span>되묻기</span><small>근거와 반례를 묻기</small></li>
-            <li><b>4</b><span>확인</span><small>숫자·문서·원문 대조</small></li>
-          </ol>
-          <div class="pd who2">
-            <div><small>AI에게 맡긴 일</small><p>기획안·설계 초안·화면 시안, 코드 구현과 버그 수정, 자료 조사와 문서 정리</p></div>
-            <div class="me"><small>제가 한 일</small><p>무엇을 만들지와 우선순위, 구현 전 승인과 방향 수정, 결과 확인과 최종 판단</p></div>
+          <p class="sum">앱, 시뮬레이터, 학교 프로젝트를 모두 Claude와 만들었습니다. 무엇을 만들지와 결과가 맞는지는 직접 정하고 확인했습니다.</p>
+          <div class="uses">
+            <div><small>앱 개발</small><b>향수 추천·기록 앱 '맡다.'</b><p>1인 기획·디자인·개발. 하루 한 번 뽑기와 18계열 도감으로 수집 구조를 설계했습니다.</p><span class="n">18계열 도감<span>DB 확보를 못 풀어 출시는 못 함</span></span></div>
+            <div><small>시뮬레이터</small><b>기획 수치를 도구로 검증</b><p>칠흑 63개 직업 사이클 시뮬레이터, 익스트랙션 기획서의 엑셀 수식 시뮬레이션을 만들었습니다.</p><span class="n">59 / 63<span>던담 데미지 ±10% 안 재현</span></span></div>
+            <div><small>학교 프로젝트</small><b>폐 CT 분류 · 스마트팜</b><p>검증 점수에서 멈추지 않고 따로 받은 테스트로 다시 재고, 분석 구조의 한계를 직접 짚었습니다.</p><span class="n">97.39%<span>학습에 안 쓴 테스트 498장</span></span></div>
           </div>
+          <p class="flowline">계획 먼저 <i>→</i> 승인 뒤 구현 <i>→</i> 되묻기 <i>→</i> 확인</p>
           <span class="go">AI 활용 경험 보기 <i aria-hidden="true">→</i></span>
         </div>
       </a>
@@ -1013,7 +1060,7 @@ pl.querySelector(".phead").click();
 
 /* 게임: 장르 색은 주황에서 모래색으로 */
 $("gtotal").textContent=games.length;document.querySelector(".stats .big").dataset.to=games.length;
-const shade=i=>{const t=Math.min(1,i/Math.max(1,gen.length-1)),a=[194,65,12],b=[236,214,196];return `rgb(${a.map((v,k)=>Math.round(v+(b[k]-v)*t)).join(",")})`};
+const shade=i=>{const t=Math.min(1,i/Math.max(1,gen.length-1)),a=[27,100,218],b=[208,226,252];return `rgb(${a.map((v,k)=>Math.round(v+(b[k]-v)*t)).join(",")})`};
 let active=null,query="";
 const stack=$("stack"),legend=$("legend");
 gen.forEach(([g,c],i)=>{
