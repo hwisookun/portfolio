@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>칠흑의 정화 쿨타임 감소 역기획서 | 김휘수 포트폴리오</title>
+<meta name="description" content="같은 장비의 쿨타임 감소가 직업마다 왜 다르게 먹히는지, 직업별 칠흑 1위 63명의 아포 딜(43초) 사이클로 계산하고 개선안을 냈습니다.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="김휘수 포트폴리오">
+<meta property="og:title" content="칠흑의 정화 쿨타임 감소 역기획서 | 김휘수 포트폴리오">
+<meta property="og:description" content="같은 장비의 쿨타임 감소가 직업마다 왜 다르게 먹히는지, 직업별 칠흑 1위 63명의 아포 딜(43초) 사이클로 계산하고 개선안을 냈습니다.">
+<meta property="og:image" content="https://hwisookun.github.io/portfolio/assets/slides/dnf-cooldown/01.webp">
+<link rel="preload" href="assets/fonts/Freesentation2-4Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Freesentation2-7Bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-feature-settings:"tnum";word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.topbar{position:sticky;top:0;z-index:30}
+.topbar a{text-decoration:none}
+main{margin:0 auto}
+.docinfo{display:flex;flex-wrap:wrap;width:max-content;max-width:100%;margin:0 0 22px;padding:0;list-style:none;border:1px solid var(--line);font-size:13px;color:var(--muted);background:var(--paper)}
+.docinfo li{padding:6px 12px;border-right:1px solid var(--line);white-space:nowrap}
+.docinfo li:last-child{border-right:0}
+.docinfo b{color:var(--ink);font-weight:600}
+.eyebrow{color:#C8372D!important}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:28px 0 22px;border:1px solid var(--line);border-top:4px solid #C8372D;border-radius:18px;overflow:hidden;text-align:left;background:var(--paper)}
+.kpis div{padding:18px 22px;border-right:1px solid var(--line)}
+.kpis div:last-child{border-right:0}
+.kpis b{display:block;font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;color:#C8372D;white-space:nowrap}
+.kpis span{display:block;margin-top:4px;font-size:14px;color:var(--muted);line-height:1.45}
+.acts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:16px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px);background:#C8372D;border-color:#C8372D}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{color:#fff}
+.slides{display:grid;gap:28px;margin-top:8px}
+.slide{position:relative;margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -30px rgba(25,31,40,.4);scroll-margin-top:84px}
+.slide img{display:block;width:100%;height:auto}
+.pn{position:absolute;right:12px;bottom:10px;padding:2px 8px;border-radius:6px;background:rgba(25,31,40,.72);color:#fff;font-size:12px}
+@media (max-width:760px){.kpis{grid-template-columns:1fr}.kpis div{border-right:0;border-bottom:1px solid var(--line)}.kpis div:last-child{border-bottom:0}.slides{gap:16px}}
+</style>
+<style id="theme-v2">
+/* ── theme v2: 메인과 같은 글꼴·색·상단 바 ── */
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-4Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-5Medium.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-6SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-7Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-8ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap}
+:root{
+  --bg:#FFFFFF;--paper:#FFFFFF;--soft:#F2F4F6;--alt:#F9FAFB;--ink:#191F28;--muted:#4E5968;--faint:#8B95A1;--line:#E5E8EB;
+  --accent:#1B64DA;--accent-soft:#E8F3FF;--warn:#D22030;--warn-soft:#FDECEE;--good:#0A7A47;--good-soft:#E3F6EC;
+  --sans:"Freesentation","Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+html{scroll-padding-top:76px}
+body{background:var(--bg);font-size:16px;line-height:1.7}
+/* 왼쪽 목차 대신 가운데 상단 바 */
+@media (min-width:1100px){body{padding-left:0!important}.side{display:none!important}.topbar{display:block!important}}
+.topbar{background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .in{display:flex;align-items:center;gap:16px;max-width:1120px;height:60px;margin:0 auto;padding:0 24px;overflow:visible}
+.topbar a.home{position:static;flex:none;padding:0;background:transparent;color:var(--ink);font-size:16px;font-weight:800}
+.topbar .tl{flex:1;min-width:0;display:flex;justify-content:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.topbar .tl::-webkit-scrollbar{display:none}
+.topbar .tl a{padding:7px 12px;border-radius:0;font-size:15px;font-weight:500;color:var(--muted);white-space:nowrap}
+.topbar .tl a:hover{color:var(--ink)}
+.topbar .tl a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
+.topbar .sp{flex:none;width:64px}
+/* 가운데 단일 열 */
+main{max-width:920px;padding:56px 24px 104px}
+section{padding-top:104px}
+.eyebrow{font-size:15px;font-weight:700;color:var(--accent);margin:0 0 10px}
+section>.eyebrow,section>h2,section>.sub{text-align:center;margin-left:auto;margin-right:auto}
+h1{font-size:clamp(34px,5vw,54px);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+h2{font-size:clamp(28px,3.8vw,38px);font-weight:800;line-height:1.25;letter-spacing:-.02em;margin:0 auto 10px;text-wrap:balance}
+h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.sub{max-width:640px;margin:0 auto 36px;color:var(--muted);text-wrap:balance}
+main>section:first-child{text-align:center}
+main>section:first-child>*{margin-left:auto;margin-right:auto}
+main>section:first-child .lead{max-width:640px;text-wrap:balance}
+main>section:first-child>div{text-align:left}
+.docinfo{margin-left:auto;margin-right:auto;border-radius:10px;overflow:hidden}
+.lead{font-size:18px;color:var(--muted)}
+/* 카드·표 */
+.blk{border-radius:18px;padding:20px 22px;border-color:var(--line);background:var(--paper)}
+table{font-size:15px}
+th{background:var(--alt);color:var(--muted);font-weight:600}
+.foot{margin-top:80px;text-align:center;color:var(--faint)}
+@media (max-width:760px){
+  main{padding:32px 16px 72px}
+  section{padding-top:72px}
+  .topbar .in{padding:0 16px;gap:8px}
+  .topbar .sp{display:none}
+  .topbar .tl{justify-content:flex-start}
+  .topbar .tl a{padding:6px 10px;font-size:14px}
+}
+.specs{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--alt)}
+.specs b{font-size:24px;font-weight:800}
+.specs span{font-size:14px}
+.topbar .tl{align-items:center}
+.topbar .tl a{display:inline-flex;align-items:center;height:36px;line-height:1;margin:0}
+section>h2+p{text-align:center;margin-left:auto;margin-right:auto;max-width:640px;color:var(--muted)}
+/* AI 슬롭 정리: 섹션마다 붙은 라벨, 스크롤 페이드 */
+main>section:not(:first-child)>.eyebrow{display:none}
+[data-fx]{opacity:1!important;transform:none!important}
+main{max-width:1080px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="in"><a class="home" href="index.html">← 김휘수</a><nav class="tl" aria-label="장 이동"><a href="#s02">요약</a><a href="#s04">원리</a><a href="#s08">게임플레이 영향</a><a href="#s11">개선안과 검증</a><a href="#s13">결과</a><a href="#s18">결론</a></nav><span class="sp"></span></div></div>
+<main>
+<section id="top" style="padding-top:0">
+  <ul class="docinfo"><li>문서 <b>칠흑의 정화 쿨타임 감소 역기획서</b></li><li>분량 <b>20장</b></li><li>작성 <b>김휘수</b></li></ul>
+  <p class="eyebrow">전투 밸런스 역기획서 · 던전앤파이터</p>
+  <h1>칠흑의 정화<br>쿨타임 감소 역기획서</h1>
+  <p class="lead">같은 장비의 쿨타임 감소가 직업마다 왜 다르게 먹히는지, 직업별 칠흑 1위 63명의 아포 딜(43초) 사이클로 계산하고 개선안을 냈습니다.</p>
+  <div class="kpis"><div><b>18.6% → 11.4%</b><span>쿨타임이 돌았는데 바로 못 쓴 횟수 비율</span></div><div><b>4개 → 15개</b><span>정화가 타락보다 나은 직업 (63개 중)</span></div><div><b>+2.6% → +3.9%</b><span>비교 세트 대비 칠흑, 차이는 1.3%p만 증가</span></div></div>
+  <div class="acts"><a class="btn" href="#s01">슬라이드 보기 ↓</a><a class="btn ghost" href="assets/docs/dnf-cooldown-reverse-design.pdf" download>PDF 받기</a></div>
+</section>
+<section id="deck" aria-label="슬라이드 20장">
+  <div class="slides">
+    <figure class="slide" id="s01"><img src="assets/slides/dnf-cooldown/01.webp" width="1600" height="901" alt="1장. 칠흑의 정화 쿨타임 감소 역기획서 표지"><span class="pn">1 / 20</span></figure>
+    <figure class="slide" id="s02"><img src="assets/slides/dnf-cooldown/02.webp" width="1600" height="901" alt="2장. 요약: 칠흑 쿨타임 감소 문제와 하한 4초 · 정화 상향 개선"><span class="pn">2 / 20</span></figure>
+    <figure class="slide" id="s03"><img src="assets/slides/dnf-cooldown/03.webp" width="1600" height="901" loading="lazy" alt="3장. 목차"><span class="pn">3 / 20</span></figure>
+    <figure class="slide" id="s04"><img src="assets/slides/dnf-cooldown/04.webp" width="1600" height="901" loading="lazy" alt="4장. 쿨타임 감소 계산: 곱해서 쌓고, 70%에서 멈추며, 각성기는 제외"><span class="pn">4 / 20</span></figure>
+    <figure class="slide" id="s05"><img src="assets/slides/dnf-cooldown/05.webp" width="1600" height="901" loading="lazy" alt="5장. 사용 횟수는 정수, 아포 딜(43초) 안에서 횟수가 늘어나는 지점을 넘을 때만 증가"><span class="pn">5 / 20</span></figure>
+    <figure class="slide" id="s06"><img src="assets/slides/dnf-cooldown/06.webp" width="1600" height="901" loading="lazy" alt="6장. 각성기에 쿨타임 감소가 적용된다면: 270초 딜에서 사용 횟수 최대 4배"><span class="pn">6 / 20</span></figure>
+    <figure class="slide" id="s07"><img src="assets/slides/dnf-cooldown/07.webp" width="1600" height="901" loading="lazy" alt="7장. 칠흑의 정화: 정화와 타락 중 하나를 서약으로 고정해서 쓰는 세트"><span class="pn">7 / 20</span></figure>
+    <figure class="slide" id="s08"><img src="assets/slides/dnf-cooldown/08.webp" width="1600" height="901" loading="lazy" alt="8장. 극단적인 쿨타임 감소: 쿨타임이 돌아도 다른 스킬 시전 중이라 바로 못 쓰는 스킬 증가"><span class="pn">8 / 20</span></figure>
+    <figure class="slide" id="s09"><img src="assets/slides/dnf-cooldown/09.webp" width="1600" height="901" loading="lazy" alt="9장. 같은 장비점수면 칠흑과 비교 세트의 차이는 +2.4%, 격차는 약함"><span class="pn">9 / 20</span></figure>
+    <figure class="slide" id="s10"><img src="assets/slides/dnf-cooldown/10.webp" width="1600" height="901" loading="lazy" alt="10장. 빌드를 고르는 재미: 합은 같고 구성이 달라야 선택이 생기는 구조"><span class="pn">10 / 20</span></figure>
+    <figure class="slide" id="s11"><img src="assets/slides/dnf-cooldown/11.webp" width="1600" height="901" loading="lazy" alt="11장. 개선안 세 가지: 버려지는 감소를 데미지로, 쿨타임 하한, 가속 공식"><span class="pn">11 / 20</span></figure>
+    <figure class="slide" id="s12"><img src="assets/slides/dnf-cooldown/12.webp" width="1600" height="901" loading="lazy" alt="12장. 검증 방법: 직업별 칠흑 1위의 실제 스킬로 그로기 딜(17초) · 아포 딜(43초) 재현"><span class="pn">12 / 20</span></figure>
+    <figure class="slide" id="s13"><img src="assets/slides/dnf-cooldown/13.webp" width="1600" height="901" loading="lazy" alt="13장. 개선안 1: 70%를 넘은 쿨타임 감소를 최종 데미지로 돌려주기"><span class="pn">13 / 20</span></figure>
+    <figure class="slide" id="s14"><img src="assets/slides/dnf-cooldown/14.webp" width="1600" height="901" loading="lazy" alt="14장. 개선안 2: 기본 쿨타임 4초 이상 스킬은 4초 밑으로 줄이지 않기"><span class="pn">14 / 20</span></figure>
+    <figure class="slide" id="s15"><img src="assets/slides/dnf-cooldown/15.webp" width="1600" height="901" loading="lazy" alt="15장. 하한 4초와 환산 75%: 3 · 4 · 5 · 6초, 50 · 75 · 100%를 모두 돌려 고른 값"><span class="pn">15 / 20</span></figure>
+    <figure class="slide" id="s16"><img src="assets/slides/dnf-cooldown/16.webp" width="1600" height="901" loading="lazy" alt="16장. 개선안 3: 쿨타임 감소를 가속 수치로 바꾸는 공식 변경"><span class="pn">16 / 20</span></figure>
+    <figure class="slide" id="s17"><img src="assets/slides/dnf-cooldown/17.webp" width="1600" height="901" loading="lazy" alt="17장. 비교: 개선안 2만 비교 세트와의 차이를 지키면서 바로 못 쓰는 스킬을 줄임"><span class="pn">17 / 20</span></figure>
+    <figure class="slide" id="s18"><img src="assets/slides/dnf-cooldown/18.webp" width="1600" height="901" loading="lazy" alt="18장. 결론: 개선안 2 + 정화 최종 데미지 25%를 채택안으로 선택"><span class="pn">18 / 20</span></figure>
+    <figure class="slide" id="s19"><img src="assets/slides/dnf-cooldown/19.webp" width="1600" height="901" loading="lazy" alt="19장. 기대 효과: 늘어난 사용 횟수를 다 못 쓰는 직업은 정화, 다 쓰는 직업은 타락"><span class="pn">19 / 20</span></figure>
+    <figure class="slide" id="s20"><img src="assets/slides/dnf-cooldown/20.webp" width="1600" height="901" loading="lazy" alt="20장. 리스크와 확인 지표"><span class="pn">20 / 20</span></figure>
+  </div>
+</section>
+<p class="foot">원본 PDF · <a href="assets/docs/dnf-cooldown-reverse-design.pdf" download>칠흑의 정화 쿨타임 감소 역기획서.pdf</a> · 작성 김휘수 · <a href="index.html">포트폴리오 메인</a></p>
+</main>
+<script>
+(()=>{const ls=[...document.querySelectorAll('.topbar .tl a[href^="#"]')];const secs=ls.map(a=>document.querySelector(a.getAttribute('href')));
+ const upd=()=>{const y=scrollY+innerHeight*.35;let k=-1;secs.forEach((s,i)=>{if(s&&s.offsetTop<=y)k=i});ls.forEach((a,i)=>a.classList.toggle('on',i===k))};
+ addEventListener('scroll',upd,{passive:true});upd()})();
+</script>
+</body>
+</html>
