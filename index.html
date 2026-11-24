@@ -78,6 +78,28 @@ h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.1
 .photo figcaption b{font-size:14px}
 .photo figcaption span{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
+/* ── hero: 플레이한 게임 이름이 가운데서 양옆으로 흩어짐 ── */
+.hero{position:relative;overflow:hidden;display:flex;align-items:center;min-height:min(900px,calc(100svh - 56px));padding:72px 0 92px}
+.hero>.wrap{position:relative;z-index:2;width:100%;pointer-events:none}
+.hero-center{position:relative;max-width:720px;margin:0 auto;text-align:center}
+.hero-center>*{pointer-events:auto}
+.hero-center::before{content:"";position:absolute;inset:-70px -110px;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,var(--bg) 58%,rgba(251,250,248,.85) 74%,rgba(251,250,248,0))}
+.hero .doc-meta{margin-left:auto;margin-right:auto}
+.hero .lead{margin-left:auto;margin-right:auto}
+.hero .tags,.hero .btns{justify-content:center}
+.avatar{width:84px;height:84px;margin:0 auto 22px;border-radius:50%;overflow:hidden;box-shadow:0 12px 30px -14px rgba(20,19,18,.45)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
+.drift-note{margin:22px auto 0;font-size:13px;color:var(--muted)}
+.drift-note b{color:var(--ink)}
+.drift{position:absolute;inset:0;z-index:1;overflow:hidden}
+.drift span{position:absolute;left:0;top:0;white-space:nowrap;line-height:1;letter-spacing:-.025em;color:var(--ink);cursor:pointer;user-select:none;will-change:transform,opacity;transition:color .2s}
+.drift span.on{color:var(--accent);opacity:1!important;z-index:2}
+.drift span.on::after{content:attr(data-g);margin-left:.45em;font-size:.42em;font-weight:500;letter-spacing:0;color:var(--muted);vertical-align:middle}
+.drift-ctl{position:absolute;right:20px;bottom:18px;z-index:3;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font:inherit;font-size:12.5px;cursor:pointer}
+.drift-ctl:hover{color:var(--ink);border-color:var(--faint)}
+@media (max-width:760px){.hero{min-height:0;padding:44px 0 72px}.hero-center::before{inset:-30px -16px}.drift-ctl{right:12px;bottom:12px}}
+@media (prefers-reduced-motion:reduce){.drift-ctl{display:none}}
+
 /* ── evidence strip ── */
 .evidence{margin-top:64px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
 .ev{padding:22px 22px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:6px;min-width:0}
@@ -302,28 +324,25 @@ footer a:hover{color:var(--accent)}
 
 <main id="top">
 <section class="hero" id="intro">
+  <div class="drift" id="drift" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <ul class="doc-meta" aria-label="문서 정보">
-          <li>지원 <b>Game Design</b></li><li>작성 <b>김휘수</b></li><li>2026</li>
-        </ul>
-        <h1>만든 규칙을<br><span class="hl">수치로 확인하는</span><br>게임 기획자</h1>
-        <p class="lead">PUBG 이벤트 모드를 즐기며 새 모드를 기획하고 전투 수치를 다시 설계해 보고 싶어졌습니다. 기획서의 모든 수치를 엑셀 수식으로 계산하고, 근거가 없는 값은 가정으로 따로 표시해 남이 값을 바꿔 볼 수 있게 만듭니다. 한번 정하면 끝까지 해내는 추진력과 집념이 강점입니다.</p>
-        <ul class="tags"><li>모드·시스템 기획</li><li>수식 기반 밸런스 검증</li><li>AI 협업 워크플로</li></ul>
-        <div class="btns">
-          <a class="btn" href="#projects">기획서 보기 →</a>
-          <a class="btn ghost" href="ai-experience.html">AI 활용 경험</a>
-          <a class="btn ghost" href="#contact">연락하기</a>
-        </div>
+    <div class="hero-center">
+      <figure class="avatar" aria-label="프로필 사진"><img src="assets/profile.jpg" alt="김휘수 프로필 사진" onerror="this.parentNode.remove()"></figure>
+      <ul class="doc-meta" aria-label="문서 정보">
+        <li>지원 <b>Game Design</b></li><li>작성 <b>김휘수</b></li><li>2026</li>
+      </ul>
+      <h1>만든 규칙을<br><span class="hl">수치로 확인하는</span><br>게임 기획자</h1>
+      <p class="lead">PUBG 이벤트 모드를 즐기며 새 모드를 기획하고 전투 수치를 다시 설계해 보고 싶어졌습니다. 기획서의 모든 수치를 엑셀 수식으로 계산하고, 근거가 없는 값은 가정으로 따로 표시해 남이 값을 바꿔 볼 수 있게 만듭니다. 한번 정하면 끝까지 해내는 추진력과 집념이 강점입니다.</p>
+      <ul class="tags"><li>모드·시스템 기획</li><li>수식 기반 밸런스 검증</li><li>AI 협업 워크플로</li></ul>
+      <div class="btns">
+        <a class="btn" href="#projects">기획서 보기 →</a>
+        <a class="btn ghost" href="ai-experience.html">AI 활용 경험</a>
+        <a class="btn ghost" href="#contact">연락하기</a>
       </div>
-      <figure class="photo" aria-label="프로필 사진">
-        <img src="assets/profile.jpg" alt="김휘수 프로필 사진" onerror="this.remove()">
-        <figcaption><b>김휘수</b><span>Game Designer</span></figcaption>
-      </figure>
+      <p class="drift-note">뒤로 흩어지는 이름은 제가 플레이한 게임 <b id="dcount">515</b>개입니다. 이름을 누르면 아래 목록에서 찾아 줍니다.</p>
     </div>
-
   </div>
+  <button class="drift-ctl" type="button" id="dctl" aria-pressed="false">움직임 멈춤</button>
 </section>
 
 <section class="sec" id="projects">
@@ -1040,8 +1059,55 @@ spy("section.sec","nav a.l");
   if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)k=ids.length-1;
   ls.forEach((a,i)=>a.classList.toggle("on",i===k));const a=ls[k];bar.style.height=(a.offsetTop+a.offsetHeight-6)+"px"};
  addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd()}
+/* 첫 화면: 플레이한 게임 이름이 가운데서 양옆으로 흩어짐 */
+{const box=$("drift"),hero=$("intro"),ctl=$("dctl");$("dcount").textContent=games.length;
+ const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ let W=0,H=0,items=[],run=!still,seen=true,mx=-1e4,my=-1e4,last=0,raf=0;
+ const rnd=(a,b)=>a+Math.random()*(b-a),sm=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)};
+ const used=new Set();
+ function pickGame(){for(let k=0;k<20;k++){const g=games[Math.floor(Math.random()*games.length)];if(!used.has(g.n)){used.add(g.n);return g}}return games[0]}
+ function spawn(it,fresh){if(it.g)used.delete(it.g.n);const g=pickGame();it.g=g;it.el.textContent=g.n;it.el.dataset.g=g.g;
+  lane(it,fresh);it.x=fresh?it.dir*rnd(0,W/2):it.dir*rnd(0,16);if(fresh){const mates=items.filter(o=>o!==it&&o.g&&o.dir===it.dir&&o.lane===it.lane);if(mates.length)it.x=it.dir*Math.max(...mates.map(o=>Math.abs(o.x)))*.5}
+  it.v=(16+((it.lane*7+(it.dir>0?3:0))%9)*3.2)*(W<760?.75:1);it.ph=rnd(0,6.28);it.amp=rnd(2,6);it.wt=[400,500,600,700][Math.floor(rnd(0,4))];it.base=rnd(.28,.7);it.el.style.fontWeight=it.wt;it.vx=0;it.vy=0}
+ function lane(it,fresh){const gap=W<760?34:46,n=Math.max(4,Math.floor((H-40)/gap));let best=null,bs=-1;
+  for(let k=0;k<24;k++){const dir=Math.random()<.5?-1:1,l=Math.floor(Math.random()*n);let near=1e9;
+   items.forEach(o=>{if(o!==it&&o.g&&o.dir===dir&&o.lane===l)near=Math.min(near,Math.abs(o.x)-(fresh?0:0))});
+   const sc=fresh?Math.random()*(near>0?1:0)+near/1e4:near;if(sc>bs){bs=sc;best=[dir,l]}}
+  it.dir=best[0];it.lane=best[1];it.y=20+gap*(best[1]+.5)}
+ function size(){W=box.clientWidth;H=box.clientHeight;const n=W<760?12:W<1100?24:34;
+  while(items.length<n){const el=document.createElement("span");box.appendChild(el);const it={el};items.push(it);
+   el.addEventListener("pointerenter",()=>{it.hold=true;el.classList.add("on")});
+   el.addEventListener("pointerleave",()=>{it.hold=false;el.classList.remove("on")});
+   el.addEventListener("click",()=>find(it.g.n));spawn(it,true)}
+  while(items.length>n){const it=items.pop();used.delete(it.g.n);it.el.remove()}
+  items.forEach(it=>{if(Math.abs(it.x)>W/2+40||it.y>H)spawn(it,true)});draw()}
+ function draw(){const half=W/2,small=W<760;
+  items.forEach(it=>{const d=Math.min(1,Math.abs(it.x)/half);
+   const fs=(small?11:13)+(small?9:20)*d;
+   const op=it.hold?1:it.base*sm(.08,.3,d)*(1-sm(.82,1,d))*(small?.55:1);
+   const w=it.el.offsetWidth||0;const ax=it.dir<0?-w:0;
+   const yy=it.y+Math.sin(it.ph)*it.amp;
+   it.el.style.fontSize=fs.toFixed(1)+"px";it.el.style.opacity=op.toFixed(3);
+   it.el.style.transform=`translate3d(${(half+it.x+ax).toFixed(1)}px,${yy.toFixed(1)}px,0)`})}
+ function tick(t){const dt=Math.min(.05,(t-(last||t))/1000);last=t;const half=W/2,r=W<760?0:130;
+  items.forEach(it=>{if(it.hold)return;const d=Math.min(1,Math.abs(it.x)/half);
+   it.x+=it.dir*it.v*(1+1.6*d)*dt;it.ph+=dt*.8;
+   if(r){const cx=half+it.x,cy=it.y,dx=cx-mx,dy=cy-my,dd=Math.hypot(dx,dy);
+    if(dd<r&&dd>0){const f=(1-dd/r)*240;it.vx+=dx/dd*f*dt;it.vy+=dy/dd*f*dt}}
+   it.x+=it.vx*dt;it.y+=it.vy*dt;it.vx*=.92;it.vy*=.92;
+   if(Math.abs(it.x)>half+40||it.y<-30||it.y>H+30)spawn(it,false)});
+  draw();if(run&&seen&&!document.hidden)raf=requestAnimationFrame(tick);else raf=0}
+ function go(){if(!raf&&run&&seen&&!document.hidden){last=0;raf=requestAnimationFrame(tick)}}
+ function find(name){const q=$("q");q.value=name;q.dispatchEvent(new Event("input"));$("games").scrollIntoView({behavior:still?"auto":"smooth"})}
+ hero.addEventListener("pointermove",e=>{const b=box.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top});
+ hero.addEventListener("pointerleave",()=>{mx=my=-1e4});
+ ctl.onclick=()=>{run=!run;ctl.setAttribute("aria-pressed",String(!run));ctl.textContent=run?"움직임 멈춤":"다시 움직이기";go()};
+ new IntersectionObserver(es=>{seen=es[0].isIntersecting;go()}).observe(hero);
+ document.addEventListener("visibilitychange",go);
+ let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(size,150)});
+ size();go()}
 /* 모션 */
-FX.reveal(".hero-grid>div>*, .photo",document,.08);
+FX.reveal(".hero-center>*",document,.08);
 FX.reveal(".rail, .case, .plist>li, .ai-intro, .track, .sdesc, .vs, .gtop, .stack, .legend, .gbar, .contact .k, .contact h2, .mailrow");
 {const _s=step;step=i=>{_s(i);FX.swap($("sdesc"))}}
 </script>
