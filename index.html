@@ -69,8 +69,8 @@ a{color:inherit}
 .hero-center{position:relative;max-width:700px;margin:0 auto;text-align:center}
 .hero-center>*{pointer-events:auto}
 .hero-center::before{content:"";position:absolute;inset:-70px -120px;z-index:-1;pointer-events:none;background:radial-gradient(closest-side,var(--bg) 60%,rgba(245,244,240,.85) 76%,rgba(245,244,240,0))}
-.avatar{width:92px;height:92px;margin:0 auto 20px;border-radius:50%;overflow:hidden;border:3px solid var(--paper);box-shadow:0 12px 30px -14px rgba(21,23,28,.5)}
-.avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.avatar{width:156px;aspect-ratio:4/5;height:auto;margin:0 auto 22px;border-radius:18px;overflow:hidden;border:3px solid var(--paper);box-shadow:0 12px 30px -14px rgba(21,23,28,.5)}
+.avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
 .who{margin:-4px 0 18px;font-size:clamp(18px,2.2vw,22px);font-weight:600;color:var(--ink)}
 h1{text-wrap:balance;margin:0 0 20px;font-size:clamp(40px,6.6vw,74px);font-weight:800;line-height:1.1;letter-spacing:-.03em}
 h1 .hl{color:var(--accent)}
@@ -100,9 +100,12 @@ h1 .hl{color:var(--accent)}
 .hud-top span{font-size:15px;color:var(--hud-muted)}
 .hud-top .lv{margin-left:auto;padding:5px 12px;border-radius:999px;background:var(--hud-2);border:1px solid var(--hud-line);font-size:14px;color:var(--accent-hi);font-weight:600;white-space:nowrap}
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:0;list-style:none}
-.stats li{padding:22px 26px;border-right:1px solid var(--hud-line);border-bottom:1px solid var(--hud-line);min-width:0}
-.stats li:nth-child(3n){border-right:0}
-.stats li:nth-last-child(-n+3){border-bottom:0}
+.stats>li{padding:22px 26px;border-right:1px solid var(--hud-line);border-bottom:1px solid var(--hud-line);min-width:0}
+.stats>li:nth-child(3n){border-right:0}
+.stats>li:nth-child(n+4){border-bottom:0}
+.stats>li.tools{grid-column:span 1;border-right:0}
+.tl{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0;padding:0;list-style:none}
+.tl li{padding:3px 10px;border-radius:999px;background:var(--hud-2);border:1px solid var(--hud-line);font-size:14px;font-weight:600;color:var(--hud-ink)}
 .stats small{display:block;margin:0 0 6px;font-size:14px;color:var(--hud-muted)}
 .stats b{display:block;font-size:21px;font-weight:700;line-height:1.35}
 .stats b em{font-style:normal;color:var(--accent-hi)}
@@ -111,7 +114,39 @@ h1 .hl{color:var(--accent)}
 .hud-foot b{color:var(--hud-ink);font-weight:600}
 
 /* ── 한 일 카드 ── */
-.works{display:grid;gap:20px;max-width:880px;margin:0 auto}
+.works{display:grid;gap:24px;max-width:880px;margin:0 auto}
+.proj{display:block;background:var(--bg);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s}
+.proj:hover{transform:translateY(-2px);border-color:var(--faint);box-shadow:0 24px 50px -30px rgba(21,23,28,.45)}
+.proj:hover .go i{transform:translateX(4px)}
+.proj-kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--hud);color:var(--hud-ink)}
+.proj-kpi>div{display:flex;flex-direction:column;gap:6px;padding:24px 26px;border-right:1px solid var(--hud-line);min-width:0}
+.proj-kpi>div:last-child{border-right:0}
+.proj-kpi .v{font-size:40px;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--accent-hi)}
+.proj-kpi .k{font-size:14px;color:var(--hud-muted);line-height:1.4}
+.proj-kpi .chip{align-self:flex-start;margin-top:4px}
+.proj-kpi .chip.pass{background:rgba(74,190,120,.16);color:#7FD8A3}
+.proj-kpi .chip.over{background:rgba(255,107,91,.16);color:#FF9A8C}
+.proj-body{padding:28px 30px 26px}
+.proj h3{margin:0 0 8px;font-size:28px;font-weight:800;line-height:1.3;letter-spacing:-.02em}
+.proj .sum{margin:0 0 20px;color:var(--muted)}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px}
+.pd>div{padding:16px 18px;border-radius:14px;background:var(--paper);border:1px solid var(--line)}
+.pd small{display:block;margin:0 0 4px;font-size:14px;font-weight:700;color:var(--muted)}
+.pd>div+div small,.pd .me small{color:var(--accent)}
+.pd p{margin:0;font-size:16px;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
+.chips li{padding:3px 10px;border-radius:999px;background:var(--soft);font-size:14px;font-weight:500;color:var(--muted)}
+.go{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--ink);color:#fff;font-size:16px;font-weight:600}
+.proj:hover .go{background:var(--accent)}
+.go i{font-style:normal;transition:transform .2s}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0 0 18px;padding:0;list-style:none;counter-reset:f}
+.flow li{position:relative;display:flex;flex-direction:column;gap:2px;padding:16px 14px 16px 16px;background:var(--paper);border:1px solid var(--line);margin-left:-1px}
+.flow li:first-child{border-radius:14px 0 0 14px;margin-left:0}
+.flow li:last-child{border-radius:0 14px 14px 0}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-7px;top:50%;width:12px;height:12px;background:var(--paper);border-top:1px solid var(--line);border-right:1px solid var(--line);transform:translateY(-50%) rotate(45deg);z-index:1}
+.flow b{width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;margin-bottom:6px}
+.flow span{font-size:17px;font-weight:700}
+.flow small{font-size:13.5px;color:var(--muted);line-height:1.45}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .sec.alt .card{background:var(--bg)}
 .card-head{padding:28px 30px 22px}
@@ -216,9 +251,10 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
   .sec{padding:64px 0}
   .wrap{padding:0 16px}
   .stats{grid-template-columns:1fr 1fr}
-  .stats li{padding:16px 18px;border-right:1px solid var(--hud-line)!important;border-bottom:1px solid var(--hud-line)!important}
-  .stats li:nth-child(2n){border-right:0!important}
-  .stats li:nth-last-child(-n+2){border-bottom:0!important}
+  .stats>li{padding:16px 18px;border-right:1px solid var(--hud-line)!important;border-bottom:1px solid var(--hud-line)!important}
+  .stats>li:nth-child(2n){border-right:0!important}
+  .stats>li:nth-child(5){grid-column:1/-1;border-right:0!important}
+  .stats>li.tools{border-bottom:0!important}
   .stats b{font-size:18px}
   .hud-top,.hud-foot{padding:16px 18px}
   .hud-top .lv{display:none}
@@ -228,6 +264,18 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
   .results{grid-template-columns:1fr}
   .res{border-right:0;border-bottom:1px solid var(--line);padding:16px 20px}
   .res:last-child{border-bottom:0}
+  .proj-kpi{grid-template-columns:1fr}
+  .proj-kpi>div{border-right:0;border-bottom:1px solid var(--hud-line);padding:18px 20px}
+  .proj-kpi>div:last-child{border-bottom:0}
+  .proj-kpi .v{font-size:32px}
+  .proj-body{padding:22px 20px}
+  .proj h3{font-size:24px}
+  .pd{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr;gap:8px}
+  .flow li,.flow li:first-child,.flow li:last-child{border-radius:12px;margin-left:0}
+  .flow li::after{display:none}
+  .stats>li.tools{grid-column:1/-1}
+  .avatar{width:120px}
   .vs{grid-template-columns:1fr}
   .vs>div{padding:16px 20px}
   .vs>div+div{border-left:0;border-top:1px solid var(--line)}
@@ -248,7 +296,7 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
     <a class="brand" href="#top">김휘수</a>
     <nav aria-label="섹션 이동"><ul>
       <li><a class="l" href="#about">한눈에</a></li>
-      <li><a class="l" href="#works">한 일</a></li>
+      <li><a class="l" href="#works">프로젝트</a></li>
       <li><a class="l" href="#principles">일하는 원칙</a></li>
       <li><a class="l" href="#games">플레이한 게임</a></li>
     </ul></nav>
@@ -266,7 +314,7 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
       <p class="who">지원자 김휘수</p>
       <p class="lead">숫자 뒤의 원리를 찾고, 근거 없는 값은 가정으로 따로 표시합니다.</p>
       <div class="btns">
-        <a class="btn" href="#works">한 일 보기 →</a>
+        <a class="btn" href="#works">프로젝트 보기 →</a>
         <a class="btn ghost" href="#contact">연락하기</a>
       </div>
       <p class="drift-note">뒤로 흩어지는 이름은 제가 플레이한 게임 <b id="dcount">515</b>개입니다. 누르면 아래 목록에서 찾아 줍니다.</p>
@@ -277,60 +325,65 @@ footer{padding:22px 0;background:var(--hud);border-top:1px solid var(--hud-line)
 
 <section class="sec" id="about">
   <div class="wrap">
-    <div class="head"><span class="no">한눈에 보기</span><h2>이런 기획자입니다</h2></div>
+    <div class="head"><span class="no">한눈에 보기</span><h2>이런 게임을 만들고 싶습니다.</h2></div>
     <div class="hud">
       <div class="hud-top">
         <img src="assets/profile.jpg" alt="" onerror="this.remove()">
         <div><b>김휘수</b><span>지원자</span></div>
-        <span class="lv">모드 · 전투 밸런스 기획</span>
       </div>
       <ul class="stats">
-        <li><small>잘하는 일</small><b>규칙을 만들고<br><em>수식으로 검증</em></b></li>
-        <li><small>대표 기획서</small><b>PUBG 익스트랙션<br>모드 기획서</b></li>
+        <li><small>가치관</small><b>규칙을 만들고<br><em>수식으로 검증</em></b></li>
+        <li><small>대표 프로젝트</small><b>던파 쿨타임 감소<br>역기획서</b></li>
         <li><small>플레이한 게임</small><span class="big" data-to="515">515</span><b style="display:inline;font-size:18px"> 개</b></li>
         <li><small>일하는 방식</small><b>AI는 빠른 손,<br><em>판단과 검증은 직접</em></b></li>
-        <li><small>도구</small><b>Excel 수식 · 웹 시뮬레이터 · Claude</b></li>
-        <li><small>강점</small><b>추진력과<br><em>끝까지 하는 집념</em></b></li>
+        <li><small>강점</small><b>왜 이건지 한 번 더<br><em>생각해 보는 신중함</em></b></li>
+        <li class="tools"><small>도구</small><ul class="tl"><li>Claude</li><li>Claude Code</li><li>Claude Design</li><li>Excel</li><li>Figma</li><li>Unreal Engine 5</li><li>Blender</li></ul></li>
       </ul>
-      <p class="hud-foot"><b>지원 동기</b> · PUBG 이벤트 모드를 즐기며 새 모드를 기획하고 전투 수치를 다시 설계해 보고 싶어졌습니다.</p>
     </div>
   </div>
 </section>
 
 <section class="sec alt" id="works">
   <div class="wrap">
-    <div class="head"><span class="no">01</span><h2>한 일</h2><p>문제를 정의하고, 기준을 세우고, 수치로 확인했습니다.</p></div>
+    <div class="head"><span class="no">01</span><h2>프로젝트</h2><p>문제를 정의하고, 기준을 세우고, 수치로 확인했습니다.</p></div>
     <div class="works">
-      <article class="card">
-        <div class="card-head">
+      <a class="proj" href="extraction-wiki.html">
+        <div class="proj-kpi" aria-label="검증 결과">
+          <div><span class="v">+3.5%p</span><span class="k">예산 최대 빌드 vs 클래식 승률</span><span class="chip pass">기준 5%p 이내 · 통과</span></div>
+          <div><span class="v">+10.5%p</span><span class="k">얼티밋 vs 클래식 승률</span><span class="chip pass">기준 8~12%p · 통과</span></div>
+          <div><span class="v">23%</span><span class="k">차량 손익분기 (솔로)</span><span class="chip over">봇 결과와 반대 · 재검토</span></div>
+        </div>
+        <div class="proj-body">
           <span class="tag">신규 모드 기획서 · PUBG</span>
           <h3>PUBG 익스트랙션 모드 기획서</h3>
-          <p>16인 익스트랙션에 차량 운반과 은신처 성장을 붙인 모드입니다. 엑셀 시뮬레이션과 언리얼 5.5 프로토타입으로 확인했습니다.</p>
+          <p class="sum">16인 익스트랙션에 차량 운반과 은신처 성장을 붙인 모드입니다. 엑셀 시뮬레이션과 언리얼 5.5 프로토타입으로 확인했습니다.</p>
+          <div class="pd">
+            <div><small>문제</small><p>한 판이 끝나면 아무것도 남지 않습니다. 그렇다고 지난 판의 성장이 전투력이 되면 '평등한 시작'이 무너집니다.</p></div>
+            <div><small>설계 방향</small><p>성장은 선택지·편의·과시에만 씁니다. 모두 같은 장비와 반입 예산으로 시작하고, 가장 강한 등급은 그 판에서만 씁니다.</p></div>
+          </div>
+          <ul class="chips"><li>모드 기획</li><li>성장 구조</li><li>Excel 시뮬레이션</li><li>언리얼 프로토타입</li></ul>
+          <span class="go">기획서 보기 <i aria-hidden="true">→</i></span>
         </div>
-        <ul class="rows">
-          <li><small>문제</small><p>PUBG는 한 판이 끝나면 아무것도 남지 않습니다. 그렇다고 지난 판의 성장이 전투력이 되면 '평등한 시작'이 무너집니다.</p></li>
-          <li><small>설계 방향</small><p>성장은 선택지·편의·과시를 넓히는 쪽으로만 씁니다. 모두 같은 기본 장비와 같은 반입 예산으로 시작하고, 가장 강한 등급은 저장할 수 없게 해 그 판에서만 강하게 둡니다.</p></li>
-        </ul>
-        <div class="results">
-          <div class="res"><span class="k">예산 최대 빌드 vs 클래식 승률</span><div class="v">+3.5%p</div><div class="gauge" data-v="3.5" data-max="15" data-th="5"></div><span class="chip pass">기준 5%p 이내 · 통과</span></div>
-          <div class="res"><span class="k">얼티밋 vs 클래식 승률</span><div class="v">+10.5%p</div><div class="gauge" data-v="10.5" data-max="15" data-th="12" data-lbl="상한 12%p"></div><span class="chip pass">기준 8~12%p · 통과</span></div>
-          <div class="res"><span class="k">차량 손익분기 (솔로)</span><div class="v">23%</div><span class="chip over">봇 결과와 반대 · 재검토</span></div>
-        </div>
-        <div class="card-foot"><a class="btn" href="extraction-wiki.html">기획서 보기 →</a></div>
-      </article>
+      </a>
 
-      <article class="card">
-        <div class="card-head">
+      <a class="proj" href="ai-experience.html">
+        <div class="proj-body">
           <span class="tag">AI 활용 경험</span>
           <h3>일은 AI에게, 결정과 검증은 제가</h3>
-          <p>익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다.</p>
+          <p class="sum">익스트랙션 기획서와 향수 앱 '맡다.'를 Claude와 혼자 기획했고, 같은 방식으로 학교 프로젝트 두 개도 진행했습니다.</p>
+          <ol class="flow" aria-label="일하는 순서">
+            <li><b>1</b><span>계획 먼저</span><small>조사·계획 문서부터 받기</small></li>
+            <li><b>2</b><span>승인 뒤 구현</span><small>방향을 정하기 전엔 코드 금지</small></li>
+            <li><b>3</b><span>되묻기</span><small>근거와 반례를 묻기</small></li>
+            <li><b>4</b><span>확인</span><small>숫자·문서·원문 대조</small></li>
+          </ol>
+          <div class="pd who2">
+            <div><small>AI에게 맡긴 일</small><p>기획안·설계 초안·화면 시안, 코드 구현과 버그 수정, 자료 조사와 문서 정리</p></div>
+            <div class="me"><small>제가 한 일</small><p>무엇을 만들지와 우선순위, 구현 전 승인과 방향 수정, 결과 확인과 최종 판단</p></div>
+          </div>
+          <span class="go">AI 활용 경험 보기 <i aria-hidden="true">→</i></span>
         </div>
-        <div class="vs">
-          <div><h4>AI에게 맡긴 일</h4><ul><li>기획안과 설계 초안, 화면 시안</li><li>코드 구현과 버그 수정</li><li>자료 조사와 문서 정리</li></ul></div>
-          <div><h4>제가 한 일</h4><ul><li>무엇을 만들지, 범위와 우선순위</li><li>구현 전 승인과 방향 수정</li><li>되묻기와 결과 확인, 최종 판단</li></ul></div>
-        </div>
-        <div class="card-foot"><a class="btn" href="ai-experience.html">AI 활용 경험 보기 →</a></div>
-      </article>
+      </a>
     </div>
   </div>
 </section>
@@ -989,31 +1042,34 @@ gauges();countUp();copyMail($("copy"),"이메일 복사");
  const rnd=(a,b)=>a+Math.random()*(b-a),sm=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t)};
  const used=new Set();
  function pickGame(){for(let k=0;k<20;k++){const g=games[Math.floor(Math.random()*games.length)];if(!used.has(g.n)){used.add(g.n);return g}}return games[0]}
+ const GAP=()=>W<760?30:40,LANES=()=>Math.max(4,Math.floor((H-30)/GAP())),CLEAR=()=>W<760?170:340;
+ function mates(it,dir,l){return items.filter(o=>o!==it&&o.g&&!o.wait&&o.dir===dir&&o.lane===l)}
  function spawn(it,fresh){if(it.g)used.delete(it.g.n);const g=pickGame();it.g=g;it.el.textContent=g.n;it.el.dataset.g=g.g;
-  lane(it,fresh);it.x=fresh?it.dir*rnd(0,W/2):it.dir*rnd(0,16);if(fresh){const mates=items.filter(o=>o!==it&&o.g&&o.dir===it.dir&&o.lane===it.lane);if(mates.length)it.x=it.dir*Math.max(...mates.map(o=>Math.abs(o.x)))*.5}
-  it.v=(16+((it.lane*7+(it.dir>0?3:0))%9)*3.2)*(W<760?.75:1);it.ph=rnd(0,6.28);it.amp=rnd(2,6);it.wt=[400,500,600,700][Math.floor(rnd(0,4))];it.base=rnd(.28,.7);it.el.style.fontWeight=it.wt;it.vx=0;it.vy=0}
- function lane(it,fresh){const gap=W<760?34:46,n=Math.max(4,Math.floor((H-40)/gap));let best=null,bs=-1;
-  for(let k=0;k<24;k++){const dir=Math.random()<.5?-1:1,l=Math.floor(Math.random()*n);let near=1e9;
-   items.forEach(o=>{if(o!==it&&o.g&&o.dir===dir&&o.lane===l)near=Math.min(near,Math.abs(o.x)-(fresh?0:0))});
-   const sc=fresh?Math.random()*(near>0?1:0)+near/1e4:near;if(sc>bs){bs=sc;best=[dir,l]}}
-  it.dir=best[0];it.lane=best[1];it.y=20+gap*(best[1]+.5)}
- function size(){W=box.clientWidth;H=box.clientHeight;const n=W<760?12:W<1100?24:34;
+  it.wt=[400,500,600,700][Math.floor(rnd(0,4))];it.base=rnd(.3,.7);it.el.style.fontWeight=it.wt;it.vx=0;it.vy=0;it.ph=rnd(0,6.28);it.amp=rnd(0,2);
+  if(!place(it,fresh)){it.wait=true;it.el.style.opacity=0}}
+ function place(it,fresh){const n=LANES(),half=W/2,cl=CLEAR();
+  for(let k=0;k<40;k++){const dir=Math.random()<.5?-1:1,l=Math.floor(Math.random()*n);
+   const x=fresh?rnd(0,half):rnd(0,12);
+   if(mates(it,dir,l).every(o=>Math.abs(Math.abs(o.x)-x)>cl)){it.dir=dir;it.lane=l;it.x=dir*x;it.y=15+GAP()*(l+.5);
+    it.v=(15+((l*7+(dir>0?3:0))%9)*3)*(W<760?.75:1);it.wait=false;return true}}
+  return false}
+ function size(){W=box.clientWidth;H=box.clientHeight;const n=W<760?24:W<1100?48:68;
   while(items.length<n){const el=document.createElement("span");box.appendChild(el);const it={el};items.push(it);
    el.addEventListener("pointerenter",()=>{it.hold=true;el.classList.add("on")});
    el.addEventListener("pointerleave",()=>{it.hold=false;el.classList.remove("on")});
    el.addEventListener("click",()=>find(it.g.n));spawn(it,true)}
   while(items.length>n){const it=items.pop();used.delete(it.g.n);it.el.remove()}
-  items.forEach(it=>{if(Math.abs(it.x)>W/2+40||it.y>H)spawn(it,true)});draw()}
+  items.forEach(it=>{if(it.wait||Math.abs(it.x)>W/2+40||it.y>H)spawn(it,true)});draw()}
  function draw(){const half=W/2,small=W<760;
-  items.forEach(it=>{const d=Math.min(1,Math.abs(it.x)/half);
-   const fs=(small?11:13)+(small?9:20)*d;
+  items.forEach(it=>{if(it.wait)return;const d=Math.min(1,Math.abs(it.x)/half);
+   const fs=(small?11:12)+(small?7:14)*d;
    const op=it.hold?1:it.base*sm(.08,.3,d)*(1-sm(.82,1,d))*(small?.55:1);
    const w=it.el.offsetWidth||0;const ax=it.dir<0?-w:0;
    const yy=it.y+Math.sin(it.ph)*it.amp;
    it.el.style.fontSize=fs.toFixed(1)+"px";it.el.style.opacity=op.toFixed(3);
    it.el.style.transform=`translate3d(${(half+it.x+ax).toFixed(1)}px,${yy.toFixed(1)}px,0)`})}
  function tick(t){const dt=Math.min(.05,(t-(last||t))/1000);last=t;const half=W/2,r=W<760?0:130;
-  items.forEach(it=>{if(it.hold)return;const d=Math.min(1,Math.abs(it.x)/half);
+  items.forEach(it=>{if(it.hold)return;if(it.wait){if(place(it,false))it.el.style.opacity=0;return}const d=Math.min(1,Math.abs(it.x)/half);
    it.x+=it.dir*it.v*(1+1.6*d)*dt;it.ph+=dt*.8;
    if(r){const cx=half+it.x,cy=it.y,dx=cx-mx,dy=cy-my,dd=Math.hypot(dx,dy);
     if(dd<r&&dd>0){const f=(1-dd/r)*240;it.vx+=dx/dd*f*dt;it.vy+=dy/dd*f*dt}}
@@ -1031,7 +1087,7 @@ gauges();countUp();copyMail($("copy"),"이메일 복사");
  size();go()}
 
 FX.reveal(".hero-center>*",document,.08);
-FX.reveal(".head, .hud, .card, .plist>li, .gtop, .stack, .legend, .gbar, .contact .wrap>*");
+FX.reveal(".head, .hud, .proj, .plist>li, .gtop, .stack, .legend, .gbar, .contact .wrap>*");
 </script>
 </body>
 </html>
