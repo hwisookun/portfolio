@@ -16,8 +16,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" href="assets/fonts/Freesentation-4Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Freesentation-7Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Freesentation2-4Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Freesentation2-7Bold.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root{
   --bg:#FBFAF8;--paper:#FFFFFF;--soft:#F4F2EF;--ink:#141312;--muted:#5F5B55;--faint:#A8A39B;--line:#E2DED8;
@@ -67,7 +67,7 @@ h3{font-size:17px;letter-spacing:-.01em;margin:0 0 6px}
 .blk{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
 .grid{display:grid;gap:12px}
 .k{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:8px}
-.chip{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap}
 .c-gdd{background:var(--accent-soft);color:var(--accent)}
 .c-app{background:var(--green-soft);color:var(--green)}
 .c-sch{background:var(--soft);color:var(--muted)}
@@ -92,7 +92,7 @@ h3{font-size:17px;letter-spacing:-.01em;margin:0 0 6px}
 
 /* mapping */
 .filt{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
-.filt button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer}
+.filt button{border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer}
 .filt button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .map{display:grid;gap:8px}
 .mrow{display:grid;grid-template-columns:170px minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow:hidden}
@@ -218,7 +218,7 @@ h3{font-size:17px;letter-spacing:-.01em;margin:0 0 6px}
 .roles>div:last-child h4{color:var(--accent)}
 .roles ul{margin:0;padding-left:18px;font-size:14px}
 .princ{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.princ span{font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--paper)}
+.princ span{font-size:13px;padding:5px 11px;border-radius:6px;border:1px solid var(--line);background:var(--paper)}
 .quote{margin:16px 0 0;padding:14px 18px;border-left:3px solid var(--accent);font-size:16px;font-weight:600}
 
 /* other */
@@ -264,11 +264,11 @@ details.ot>summary span{font-size:12.5px;color:var(--muted)}
 </style>
 <style id="theme-v2">
 /* ── theme v2: 메인과 같은 글꼴·색·상단 바 ── */
-@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-4Regular.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-5Medium.woff2) format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-6SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-7Bold.woff2) format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation-8ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-4Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-5Medium.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-6SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-7Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Freesentation";src:url(assets/fonts/Freesentation2-8ExtraBold.woff2) format("woff2");font-weight:800;font-display:swap}
 :root{
   --bg:#FFFFFF;--paper:#FFFFFF;--soft:#F2F4F6;--alt:#F9FAFB;--ink:#191F28;--muted:#4E5968;--faint:#8B95A1;--line:#E5E8EB;
   --accent:#1B64DA;--accent-soft:#E8F3FF;--warn:#D22030;--warn-soft:#FDECEE;--good:#0A7A47;--good-soft:#E3F6EC;
@@ -283,9 +283,9 @@ body{background:var(--bg);font-size:16px;line-height:1.7}
 .topbar a.home{position:static;flex:none;padding:0;background:transparent;color:var(--ink);font-size:16px;font-weight:800}
 .topbar .tl{flex:1;min-width:0;display:flex;justify-content:center;gap:2px;overflow-x:auto;scrollbar-width:none}
 .topbar .tl::-webkit-scrollbar{display:none}
-.topbar .tl a{padding:7px 14px;border-radius:999px;font-size:15px;font-weight:500;color:var(--muted);white-space:nowrap}
-.topbar .tl a:hover{background:var(--soft);color:var(--ink)}
-.topbar .tl a.on{background:var(--ink);color:#fff}
+.topbar .tl a{padding:7px 12px;border-radius:0;font-size:15px;font-weight:500;color:var(--muted);white-space:nowrap}
+.topbar .tl a:hover{color:var(--ink)}
+.topbar .tl a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
 .topbar .sp{flex:none;width:64px}
 /* 가운데 단일 열 */
 main{max-width:920px;padding:56px 24px 104px}
@@ -300,7 +300,7 @@ main>section:first-child{text-align:center}
 main>section:first-child>*{margin-left:auto;margin-right:auto}
 main>section:first-child .lead{max-width:640px;text-wrap:balance}
 main>section:first-child>div{text-align:left}
-.docinfo{margin-left:auto;margin-right:auto;border-radius:999px;overflow:hidden}
+.docinfo{margin-left:auto;margin-right:auto;border-radius:10px;overflow:hidden}
 .lead{font-size:18px;color:var(--muted)}
 /* 카드·표 */
 .blk{border-radius:18px;padding:20px 22px;border-color:var(--line);background:var(--paper)}
@@ -321,6 +321,9 @@ th{background:var(--alt);color:var(--muted);font-weight:600}
 .topbar .tl{align-items:center}
 .topbar .tl a{display:inline-flex;align-items:center;height:36px;line-height:1;margin:0}
 section>h2+p{text-align:center;margin-left:auto;margin-right:auto;max-width:640px;color:var(--muted)}
+/* AI 슬롭 정리: 섹션마다 붙은 라벨, 스크롤 페이드 */
+main>section:not(:first-child)>.eyebrow{display:none}
+[data-fx]{opacity:1!important;transform:none!important}
 </style>
 </head>
 <body>
